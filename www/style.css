@@ -1,0 +1,29 @@
+html {
+  font-family: sans-serif;
+  max-width: 45em;
+  margin: 1em;
+  line-height: 1.4em;
+  background-color: beige;
+}
+
+h2 {
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+  color: darkred;
+  border-bottom: 1px solid red;
+}
+
+th {
+  text-align: left;
+}
+
+#logo {
+  font-family: serif;
+  font-style: italic;
+  font-size: 5em;
+  margin-top: 0.5em;
+}
+
+a:link {
+  color: navy;
+}
