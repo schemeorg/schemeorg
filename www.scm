@@ -158,8 +158,8 @@
 (define fetch-atom (fetch-uri atom))
 
 ;; examples:
-;;   (pp (fetch-rss "https://speechcode.com/blog/rss"))
-;;   (pp (fetch-atom "http://www.scheme.dk/planet/atom.xml"))
+;;   (fetch-rss "https://speechcode.com/blog/rss")
+;;   (fetch-atom "http://www.scheme.dk/planet/atom.xml")
 
 (define ((read-file parse) file)
   (call-with-input-file file parse))
