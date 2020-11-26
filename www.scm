@@ -231,6 +231,21 @@
                 `((h2 ,(car group))
                   (table ,@trs)))))
         project-groups)
+     (h2 "News")
+
+     ;; Insert Planet Scheme feed.  This is just an example of what a feed could
+     ;; look like.  It livens up the page, adding frequently updated content.
+     ;; We should merge more feeds, e.g. a hypothetical SRFI feed; guard against
+     ;; rogue content, e.g. by filtering out entries with foul language or
+     ;; dangerous HTML and by limiting the length of the blurb; include the
+     ;; source; and format the date in a friendlier way.
+     (dl ,@(append-map (lambda (fi)
+		  `((dt (a (@ href ,(fi/uri fi))
+			   ,(fi/title fi)))
+		    (dd (div (@ class "date") ,(fi/date fi))
+			,(fi/description fi))))
+		(fetch-atom "http://www.scheme.dk/planet/atom.xml")))
+
      (p (a (@ (href "about/")) "About Scheme.org")))))
 
 (define (main)

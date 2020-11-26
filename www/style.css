@@ -27,3 +27,8 @@ th {
 a:link {
   color: navy;
 }
+
+.date {
+  color: grey;
+  font-size: 80%;
+}
