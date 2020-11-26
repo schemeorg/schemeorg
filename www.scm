@@ -2,12 +2,17 @@
 ;;
 ;; Based on S-expressions, markdown, and SXML templates in this file.
 ;;
-;; You need Chicken 5 and `chicken-install r7rs lowdown`.
+;; You need Chicken 5 and
+;; `chicken-install html-parser http-client lowdown openssl r7rs ssax`.
 
 (import (scheme base) (scheme file) (scheme read) (scheme write))
 (import (chicken file)) ; For create-directory.
 (import (sxml-transforms))
 (import (lowdown))      ; Markdown-to-SXML parser.
+(import (ssax))		; SSAX for parsing RSS
+(import (srfi 1))
+(import html-parser)
+(import http-client)
 
 (define (filter f xs)
   (let loop ((xs xs) (acc '()))
@@ -74,6 +79,93 @@
                              ,(substring s a b))
                            acc)))
             (else (loop a (+ b 1) acc))))))
+
+(define-record-type rss-item (make-rss-item date description title uri)
+    rss-item?
+    (date ri/date)
+    (description ri/description)
+    (title ri/title)
+    (uri ri/uri))
+
+(define (matching-subtree? name tree)
+  (and (pair? tree)
+       (eq? (car tree) name)))
+
+(define ((matches? name) tree) (and (matching-subtree? name tree) tree))
+
+(define (find-one name tree)
+  (cond ((find (matches? name) (cdr tree)) => cdr) (else #f)))
+
+(define (find-many name tree) (filter-map (matches? name) (cdr tree)))
+
+(define (skip-attributes tree)
+  (cond ((and (pair? (car tree))
+	      (eq? '@ (caar tree)))
+	 (cdr tree))
+	(else tree)))
+
+(define (parse-html string)
+  (html->sxml (open-input-string string)))
+
+(define (rss port)
+  (let ((sxml (ssax:xml->sxml port '())))
+    (map (lambda (i)
+	   (make-rss-item
+	    (car (find-one 'pubDate i))
+	    (cond ((find-one 'description i)
+		   => (lambda (d)
+			(cdr (parse-html (apply string-append d)))))
+		  (else ""))
+	    (apply string-append
+		   (skip-attributes (find-one 'title i)))
+	    (car (find-one 'link i))))
+	 (find-many 'item (find-one 'channel (cadr sxml))))))
+
+(define (atom port)
+  (define (find-html-link tree)
+    (cond ((find (lambda (subtree)
+		   (and (pair? subtree)
+			(eq? 'atom:link (car subtree))
+			(cond ((find-one 'atom:type subtree)
+			       => (lambda (type)
+				    (string=? (cdr type) "text/html")))
+			      (else #f))
+			subtree))
+		 (cdr tree))
+	   => cdr)
+	  (else #f)))
+  (let ((sxml (ssax:xml->sxml port '((atom . "http://www.w3.org/2005/Atom")))))
+    (map (lambda (e)
+	   (make-rss-item (cond ((find-one 'atom:published e) => car)
+				((find-one 'atom:updated e) => car)
+				((find-one 'atom:source e)
+				 => (lambda (s)
+				      (cond ((find-one 'atom:published s)
+					     => car)
+					    (else #f))))
+				(else #f))
+			  (cond ((find-one 'atom:summary e))
+				(else '("")))
+			  (apply string-append
+				 (skip-attributes (find-one 'atom:title e)))
+			  (find-html-link e)))
+	 (find-many 'atom:entry (find-one 'atom:feed sxml)))))
+
+(define ((fetch-uri parse) uri)
+  (call-with-input-request uri #f parse))
+
+(define fetch-rss (fetch-uri rss))
+(define fetch-atom (fetch-uri atom))
+
+;; examples:
+;;   (pp (fetch-rss "https://speechcode.com/blog/rss"))
+;;   (pp (fetch-atom "http://www.scheme.dk/planet/atom.xml"))
+
+(define ((read-file parse) file)
+  (call-with-input-file file parse))
+
+(define file-rss (read-file rss))
+(define file-atom (read-file atom))
 
 (define projects-scm (call-with-input-file "projects.scm" read))
 (define project-groups (get-list 'projects projects-scm))
