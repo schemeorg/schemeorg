@@ -80,12 +80,12 @@
                            acc)))
             (else (loop a (+ b 1) acc))))))
 
-(define-record-type rss-item (make-rss-item date description title uri)
-    rss-item?
-    (date ri/date)
-    (description ri/description)
-    (title ri/title)
-    (uri ri/uri))
+(define-record-type feed-item (make-feed-item date description title uri)
+    feed-item?
+    (date fi/date)
+    (description fi/description)
+    (title fi/title)
+    (uri fi/uri))
 
 (define (matching-subtree? name tree)
   (and (pair? tree)
@@ -110,7 +110,7 @@
 (define (rss port)
   (let ((sxml (ssax:xml->sxml port '())))
     (map (lambda (i)
-	   (make-rss-item
+	   (make-feed-item
 	    (car (find-one 'pubDate i))
 	    (cond ((find-one 'description i)
 		   => (lambda (d)
@@ -136,7 +136,7 @@
 	  (else #f)))
   (let ((sxml (ssax:xml->sxml port '((atom . "http://www.w3.org/2005/Atom")))))
     (map (lambda (e)
-	   (make-rss-item (cond ((find-one 'atom:published e) => car)
+	   (make-feed-item (cond ((find-one 'atom:published e) => car)
 				((find-one 'atom:updated e) => car)
 				((find-one 'atom:source e)
 				 => (lambda (s)
