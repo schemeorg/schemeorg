@@ -79,12 +79,15 @@
                            acc)))
             (else (loop a (+ b 1) acc))))))
 
-(define-record-type feed-item (make-feed-item date description title uri)
+(define-record-type feed-item (make-feed-item date-time description title uri)
     feed-item?
-    (date fi/date)
+    (date-time fi/date-time)
     (description fi/description)
     (title fi/title)
     (uri fi/uri))
+
+(define (fi/date-only fi)
+  (substring (fi/date-time fi) 0 (string-length "YYYY-MM-DD")))
 
 (define (matching-subtree? name tree)
   (and (pair? tree)
@@ -256,7 +259,7 @@
      (dl ,@(append-map (lambda (fi)
 		  `((dt (a (@ href ,(fi/uri fi))
 			   ,(fi/title fi)))
-		    (dd (div (@ class "date") ,(fi/date fi))
+		    (dd (div (@ class "date") ,(fi/date-only fi))
 			,(fi/description fi))))
 		(fetch-atom "http://www.scheme.dk/planet/atom.xml")))
 
