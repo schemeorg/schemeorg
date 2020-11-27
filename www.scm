@@ -205,11 +205,26 @@
   (let ((sxml (markdown-file->sxml md-filename)))
     (write-html-file html-filename (page-title-from-sxml sxml) sxml)))
 
+(define (write-menu items)
+  `(header
+    (ul (@ class "menu")
+	,@(map (lambda (i)
+		 (if (eq? 'active (cddr i))
+		     `(li (@ class "active")
+			  ,(car i))
+		     `(li (a (@ (href ,(cadr i))) ,(car i)))))
+	       items))))
+
 (define (write-front-page html-filename)
   (write-html-file
    html-filename
    "The Scheme Programming Language"
-   `((h1 (@ id "logo") "Scheme")
+   `(,(write-menu '(("Home" "https://scheme.org/" . active)
+		    ("Docs" "https://doc.scheme.org/")
+		    ("Email" "https://lists.scheme.org/")
+		    ("Files" "https://files.scheme.org/")
+		    ("Standards" "https://standards.scheme.org/")))
+     (h1 (@ id "logo") "Scheme")
      ,@(markdown-file->sxml "front.md")
      ,@(append-map
         (lambda (group)

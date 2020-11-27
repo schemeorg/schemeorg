@@ -32,3 +32,43 @@ a:link {
   color: grey;
   font-size: 80%;
 }
+
+.menu {
+  align-items: center;
+  border-bottom: 1px solid black;
+  columns: 2;
+  line-height: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.menu li {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li.active {
+  border-bottom: 5px solid black;
+  color: darkred;
+  width: max-content;
+}
+
+@media (min-width: 600px) {
+  .menu {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu li {
+    display: inline-block;
+  }
+}
