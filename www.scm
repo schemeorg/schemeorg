@@ -52,19 +52,18 @@
         ((string? expr) expr)
         (else (error "Bad XML expression"))))
 
-(define (get-list property alist) (cdr (or (assoc property alist) '(#f))))
+(define (get-list property alist)
+  (let ((entry (assoc property alist)))
+    (if entry (cdr entry) '())))
 
-(define (get-boolean key alist)
+(define (get-one valid? key alist)
   (let ((tail (cdr (or (assoc key alist) (error "Missing key" key)))))
-    (unless (and (= 1 (length tail)) (boolean? (car tail)))
-      (error "Bad alist entry"))
-    (not (not (car tail)))))
+    (if (and (= 1 (length tail)) (valid? (car tail)))
+        (car tail)
+        (error "Bad alist entry"))))
 
-(define (get-string key alist)
-  (let ((tail (cdr (or (assoc key alist) (error "Missing key" key)))))
-    (unless (and (= 1 (length tail)) (string? (car tail)))
-      (error "Bad alist entry"))
-    (car tail)))
+(define (get-boolean key alist) (get-one boolean? key alist))
+(define (get-string  key alist) (get-one string?  key alist))
 
 (define (superscripts s)
   (let ((n (string-length s)))
