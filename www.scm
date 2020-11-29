@@ -181,15 +181,14 @@
     (lambda ()
       (write-string "<!DOCTYPE html>")
       (SXML->HTML
-       `(html
-         (@ lang "en")
-         (head
-          (meta (@ charset "UTF-8"))
-          (title ,title)
-          (link (@ (rel "stylesheet") (href "/style.css")))
-          (meta (@ (name "viewport")
-                   (content "width=device-width, initial-scale=1"))))
-         (body ,@body))))))
+       `(html (@ (lang "en"))
+              (head
+               (meta (@ charset "UTF-8"))
+               (title ,title)
+               (link (@ (rel "stylesheet") (href "/style.css")))
+               (meta (@ (name "viewport")
+			(content "width=device-width, initial-scale=1"))))
+              (body ,@body))))))
 
 (define (page-title-from-sxml tags)
   (let rec ((tags tags))
@@ -207,10 +206,10 @@
 
 (define (write-menu items)
   `(header
-    (ul (@ class "menu")
+    (ul (@ (class "menu"))
 	,@(map (lambda (i)
 		 (if (eq? 'active (cddr i))
-		     `(li (@ class "active")
+		     `(li (@ (class "active"))
 			  ,(car i))
 		     `(li (a (@ (href ,(cadr i))) ,(car i)))))
 	       items))))
@@ -224,7 +223,7 @@
 		    ("Email" "https://lists.scheme.org/")
 		    ("Files" "https://files.scheme.org/")
 		    ("Standards" "https://standards.scheme.org/")))
-     (h1 (@ id "logo") "Scheme")
+     (h1 (@ (id "logo")) "Scheme")
      ,@(markdown-file->sxml "front.md")
      ,@(append-map
         (lambda (group)
@@ -255,11 +254,11 @@
      ;; dangerous HTML and by limiting the length of the blurb; include the
      ;; source; and format the date in a friendlier way.
      (dl ,@(append-map (lambda (fi)
-		  `((dt (a (@ href ,(fi/uri fi))
-			   ,(fi/title fi)))
-		    (dd (div (@ class "date") ,(fi/date fi))
-			,(fi/description fi))))
-		(fetch-atom "http://www.scheme.dk/planet/atom.xml")))
+			 `((dt (a (@ href ,(fi/uri fi))
+				  ,(fi/title fi)))
+			   (dd (div (@ (class "date")) ,(fi/date fi))
+			       ,(fi/description fi))))
+		       (fetch-atom "http://www.scheme.dk/planet/atom.xml")))
 
      (p (a (@ (href "about/")) "About Scheme.org")))))
 
