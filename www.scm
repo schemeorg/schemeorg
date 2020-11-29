@@ -114,10 +114,7 @@
     (map (lambda (i)
 	   (make-feed-item
 	    (car (find-one 'pubDate i))
-	    (cond ((find-one 'description i)
-		   => (lambda (d)
-			(cdr (parse-html (apply string-append d)))))
-		  (else ""))
+	    (or (find-one 'description i) "")
 	    (apply string-append
 		   (skip-attributes (find-one 'title i)))
 	    (car (find-one 'link i))))
