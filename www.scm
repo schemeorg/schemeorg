@@ -260,9 +260,7 @@
 				  ,(fi/title fi)))
 			   (dd (div (@ (class "date")) ,(fi/date-only fi))
 			       ,(fi/description fi))))
-		       (fetch-atom "http://www.scheme.dk/planet/atom.xml"))))
-		(fetch-atom "http://www.scheme.dk/planet/atom.xml")))
-
+		       (fetch-atom "http://www.scheme.dk/planet/atom.xml")))
      (p (a (@ (href "about/")) "About Scheme.org")))))
 
 (define (main)
