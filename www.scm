@@ -52,19 +52,18 @@
         ((string? expr) expr)
         (else (error "Bad XML expression"))))
 
-(define (get-list property alist) (cdr (or (assoc property alist) '(#f))))
+(define (get-list property alist)
+  (let ((entry (assoc property alist)))
+    (if entry (cdr entry) '())))
 
-(define (get-boolean key alist)
+(define (get-one valid? key alist)
   (let ((tail (cdr (or (assoc key alist) (error "Missing key" key)))))
-    (unless (and (= 1 (length tail)) (boolean? (car tail)))
-      (error "Bad alist entry"))
-    (not (not (car tail)))))
+    (if (and (= 1 (length tail)) (valid? (car tail)))
+        (car tail)
+        (error "Bad alist entry"))))
 
-(define (get-string key alist)
-  (let ((tail (cdr (or (assoc key alist) (error "Missing key" key)))))
-    (unless (and (= 1 (length tail)) (string? (car tail)))
-      (error "Bad alist entry"))
-    (car tail)))
+(define (get-boolean key alist) (get-one boolean? key alist))
+(define (get-string  key alist) (get-one string?  key alist))
 
 (define (superscripts s)
   (let ((n (string-length s)))
@@ -80,12 +79,15 @@
                            acc)))
             (else (loop a (+ b 1) acc))))))
 
-(define-record-type feed-item (make-feed-item date description title uri)
+(define-record-type feed-item (make-feed-item date-time description title uri)
     feed-item?
-    (date fi/date)
+    (date-time fi/date-time)
     (description fi/description)
     (title fi/title)
     (uri fi/uri))
+
+(define (fi/date-only fi)
+  (substring (fi/date-time fi) 0 (string-length "YYYY-MM-DD")))
 
 (define (matching-subtree? name tree)
   (and (pair? tree)
@@ -256,9 +258,10 @@
      (dl ,@(append-map (lambda (fi)
 			 `((dt (a (@ href ,(fi/uri fi))
 				  ,(fi/title fi)))
-			   (dd (div (@ (class "date")) ,(fi/date fi))
+			   (dd (div (@ (class "date")) ,(fi/date-only fi))
 			       ,(fi/description fi))))
-		       (fetch-atom "http://www.scheme.dk/planet/atom.xml")))
+		       (fetch-atom "http://www.scheme.dk/planet/atom.xml"))))
+		(fetch-atom "http://www.scheme.dk/planet/atom.xml")))
 
      (p (a (@ (href "about/")) "About Scheme.org")))))
 
