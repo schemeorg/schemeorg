@@ -3,7 +3,7 @@
 ;; Based on S-expressions, markdown, and SXML templates in this file.
 ;;
 ;; You need Chicken 5 and
-;; `chicken-install html-parser http-client lowdown openssl r7rs ssax`.
+;; `chicken-install http-client lowdown openssl r7rs ssax`.
 
 (import (scheme base) (scheme file) (scheme read) (scheme write))
 (import (chicken file)) ; For create-directory.
@@ -11,7 +11,6 @@
 (import (lowdown))      ; Markdown-to-SXML parser.
 (import (ssax))		; SSAX for parsing RSS
 (import (srfi 1))
-(import html-parser)
 (import http-client)
 
 (define (filter f xs)
@@ -105,9 +104,6 @@
 	      (eq? '@ (caar tree)))
 	 (cdr tree))
 	(else tree)))
-
-(define (parse-html string)
-  (html->sxml (open-input-string string)))
 
 (define (rss port)
   (let ((sxml (ssax:xml->sxml port '())))
