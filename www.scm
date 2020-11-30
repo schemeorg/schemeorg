@@ -158,7 +158,7 @@
 (define fetch-atom (fetch-uri atom))
 
 ;; examples:
-;;   (fetch-rss "https://speechcode.com/blog/rss")
+;;   (fetch-rss "https://srfi.schemers.org/srfi.rss")
 ;;   (fetch-atom "http://www.scheme.dk/planet/atom.xml")
 
 (define ((read-file parse) file)
