@@ -11,6 +11,7 @@
 (import (lowdown))      ; Markdown-to-SXML parser.
 (import (ssax))		; SSAX for parsing RSS
 (import (srfi 1))
+(import (srfi 19))
 (import http-client)
 
 (define (filter f xs)
@@ -85,8 +86,9 @@
     (title fi/title)
     (uri fi/uri))
 
-(define (fi/date-only fi)
-  (substring (fi/date-time fi) 0 (string-length "YYYY-MM-DD")))
+(define (fi-iso-date fi)
+  "Convert into \"YYYY-MM-DD\" format."
+  (date->string (fi/date-time fi) "~Y-~m-~d"))
 
 (define (matching-subtree? name tree)
   (and (pair? tree)
@@ -105,16 +107,24 @@
 	 (cdr tree))
 	(else tree)))
 
+(define (parse-rss-date string)
+  "For example, \"Sun, 29 Nov 2020 12:34:56 -0800\"."
+  (string->date string "~a, ~d ~b ~Y ~H:~M:~S ~z"))
+
 (define (rss port)
   (let ((sxml (ssax:xml->sxml port '())))
     (map (lambda (i)
 	   (make-feed-item
-	    (car (find-one 'pubDate i))
+	    (parse-rss-date (car (find-one 'pubDate i)))
 	    (or (find-one 'description i) "")
 	    (apply string-append
 		   (skip-attributes (find-one 'title i)))
 	    (car (find-one 'link i))))
 	 (find-many 'item (find-one 'channel (cadr sxml))))))
+
+(define (parse-atom-date string)
+  "For example, \"2020-11-29T12:34:56Z\"."
+  (string->date string "~Y-~m-~dT~H:~M:~SZ"))
 
 (define (atom port)
   (define (find-html-link tree)
@@ -134,21 +144,23 @@
 		  (cond ((find-one 'href attributes) => car)
 			(else #f)))))
 	  (else #f)))
+  (define (parse-date value) (parse-atom-date (car value)))
   (let ((sxml (ssax:xml->sxml port '((atom . "http://www.w3.org/2005/Atom")))))
     (map (lambda (e)
-	   (make-feed-item (cond ((find-one 'atom:published e) => car)
-				((find-one 'atom:updated e) => car)
-				((find-one 'atom:source e)
-				 => (lambda (s)
-				      (cond ((find-one 'atom:published s)
-					     => car)
-					    (else #f))))
-				(else #f))
-			  (cond ((find-one 'atom:summary e))
-				(else '("")))
-			  (apply string-append
-				 (skip-attributes (find-one 'atom:title e)))
-			  (find-html-link e)))
+	   (make-feed-item
+	    (cond ((find-one 'atom:published e) => parse-date)
+		  ((find-one 'atom:updated e) => parse-date)
+		  ((find-one 'atom:source e)
+		   => (lambda (s)
+			(cond ((find-one 'atom:published s)
+			       => parse-date)
+			      (else #f))))
+		  (else #f))
+	    (cond ((find-one 'atom:summary e))
+		  (else '("")))
+	    (apply string-append
+		   (skip-attributes (find-one 'atom:title e)))
+	    (find-html-link e)))
 	 (find-many 'atom:entry (find-one 'atom:feed sxml)))))
 
 (define ((fetch-uri parse) uri)
@@ -251,7 +263,7 @@
      (dl ,@(append-map (lambda (fi)
 			 `((dt (a (@ href ,(fi/uri fi))
 				  ,(fi/title fi)))
-			   (dd (div (@ (class "date")) ,(fi/date-only fi))
+			   (dd (div (@ (class "date")) ,(fi-iso-date fi))
 			       ,(fi/description fi))))
 		       (fetch-atom "http://www.scheme.dk/planet/atom.xml")))
      (p (a (@ (href "about/")) "About Scheme.org")))))
