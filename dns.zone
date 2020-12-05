@@ -30,9 +30,9 @@ test 10800 IN CNAME alpha.servers.scheme.org.
 
 persist 10800 IN CNAME alpha.servers.scheme.org.
 
-web 10800 IN CNAME alpha.servers.scheme.org.
-
 comm 10800 IN CNAME alpha.servers.scheme.org.
+
+web 10800 IN CNAME alpha.servers.scheme.org.
 
 r7rs 10800 IN CNAME alpha.servers.scheme.org.
 
