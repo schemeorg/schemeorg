@@ -50,6 +50,14 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers.scheme.org."))))
 
+   ((project-id "containers")
+    (title "Containers")
+    (tagline "Ready-to-run Docker containers of Scheme implementations")
+    (contacts "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers.scheme.org."))))
+
    ((project-id "registry")
     (title "Registry")
     (tagline "Catalog of identifiers and other data used around Scheme")
