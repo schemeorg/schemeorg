@@ -15,6 +15,8 @@ list 10800 IN CNAME lists.scheme.org.
 
 files 10800 IN CNAME alpha.servers.scheme.org.
 
+containers 10800 IN CNAME alpha.servers.scheme.org.
+
 registry 10800 IN CNAME alpha.servers.scheme.org.
 
 api 10800 IN CNAME alpha.servers.scheme.org.
