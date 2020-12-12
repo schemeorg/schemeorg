@@ -43,3 +43,5 @@ r6rs 10800 IN CNAME alpha.servers.scheme.org.
 r5rs 10800 IN CNAME alpha.servers.scheme.org.
 
 srfi 10800 IN CNAME srfi.schemers.org.
+
+loko 10800 IN CNAME scheme.fail.
