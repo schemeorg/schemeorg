@@ -17,6 +17,11 @@ th {
   text-align: left;
 }
 
+th,
+td {
+  vertical-align: baseline;
+}
+
 #logo {
   font-family: serif;
   font-style: italic;
