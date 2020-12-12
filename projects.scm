@@ -176,7 +176,15 @@
     (dns (rec (type "CNAME")
               (data "srfi.schemers.org.")))))
 
-  ("Implementations"))
+  ("Implementations"
+
+   ((project-id "loko")
+    (title "Loko Scheme")
+    (tagline "Bare-metal native-code compiler [R6RS, R7RS]")
+    (contacts "weinholt")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "scheme.fail."))))))
 
  (people
 
@@ -187,4 +195,7 @@
    (realname "Harold Ancell"))
 
   ((username "lassi")
-   (realname "Lassi Kortela"))))
+   (realname "Lassi Kortela"))
+
+  ((username "weinholt")
+   (realname "Göran Weinholt"))))
