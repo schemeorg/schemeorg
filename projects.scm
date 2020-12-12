@@ -180,7 +180,7 @@
 
    ((project-id "loko")
     (title "Loko Scheme")
-    (tagline "Bare-metal native-code compiler [R6RS, R7RS]")
+    (tagline "Bare-metal native-code compiler [R^6RS, R^7RS]")
     (contacts "weinholt")
     (display? #t)
     (dns (rec (type "CNAME")
