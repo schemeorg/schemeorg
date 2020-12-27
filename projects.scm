@@ -140,6 +140,14 @@
 
   ("Standards"
 
+   ((project-id "standards")
+    (title "Standards")
+    (tagline "Revised^n Report on the Algorithmic Language Scheme")
+    (contacts "arthur" "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers.scheme.org."))))
+
    ((project-id "r7rs")
     (title "R^7RS")
     (tagline "Revised^7 Report on the Algorithmic Language Scheme (2013)")

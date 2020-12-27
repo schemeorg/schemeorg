@@ -36,6 +36,8 @@ comm 10800 IN CNAME alpha.servers.scheme.org.
 
 web 10800 IN CNAME alpha.servers.scheme.org.
 
+standards 10800 IN CNAME alpha.servers.scheme.org.
+
 r7rs 10800 IN CNAME alpha.servers.scheme.org.
 
 r6rs 10800 IN CNAME alpha.servers.scheme.org.
