@@ -98,6 +98,14 @@
               (data "alpha.servers.scheme.org."))
          (rec (name "www")
               (type "CNAME")
+              (data "alpha.servers.scheme.org."))))
+
+   ((project-id "research")
+    (title "Research")
+    (tagline "Research papers, etc.")
+    (contacts "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
               (data "alpha.servers.scheme.org.")))))
 
   ("Topics"

@@ -28,6 +28,8 @@ api.staging 10800 IN CNAME alpha.servers.scheme.org.
 doc.staging 10800 IN CNAME alpha.servers.scheme.org.
 www.staging 10800 IN CNAME alpha.servers.scheme.org.
 
+research 10800 IN CNAME alpha.servers.scheme.org.
+
 test 10800 IN CNAME alpha.servers.scheme.org.
 
 persist 10800 IN CNAME alpha.servers.scheme.org.
