@@ -43,6 +43,14 @@
     (dns (rec (type "CNAME")
               (data "doc.scheme.org."))))
 
+   ((project-id "events")
+    (title "Events")
+    (tagline "Scheme Workshops and other events")
+    (contacts "arthur" "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers.scheme.org."))))
+
    ((project-id "files")
     (title "Files")
     (tagline "Scheme file archive")

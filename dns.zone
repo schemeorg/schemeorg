@@ -13,6 +13,8 @@ doc 10800 IN CNAME alpha.servers.scheme.org.
 
 docs 10800 IN CNAME doc.scheme.org.
 
+events 10800 IN CNAME alpha.servers.scheme.org.
+
 files 10800 IN CNAME alpha.servers.scheme.org.
 
 list 10800 IN CNAME lists.scheme.org.
