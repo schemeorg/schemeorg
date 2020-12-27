@@ -205,7 +205,7 @@
  (people
 
   ((username "arthur")
-   (realname "Arthur Gleckler"))
+   (realname "Arthur A. Gleckler"))
 
   ((username "hga")
    (realname "Harold Ancell"))
