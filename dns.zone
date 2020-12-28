@@ -51,3 +51,5 @@ srfi 10800 IN CNAME srfi.schemers.org.
 standards 10800 IN CNAME alpha.servers.scheme.org.
 
 loko 10800 IN CNAME scheme.fail.
+
+s7 10800 IN CNAME alpha.servers.scheme.org.
