@@ -15,7 +15,7 @@
     (title "API")
     (tagline "Programmable queries for all things Scheme")
     (contacts "lassi")
-    (display? #f)
+    (display? #t)
     (dns (rec (type "CNAME")
               (data "alpha.servers.scheme.org."))))
 
