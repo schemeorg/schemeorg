@@ -208,12 +208,24 @@
     (contacts "weinholt")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "scheme.fail."))))))
+              (data "scheme.fail."))))
+
+   ((project-id "s7")
+    (title "s7")
+    (tagline "Embeddable interpreter for music applications [R^7RS]")
+    (comments "Redirect outside scheme.org.")
+    (contacts "bil" "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers.scheme.org."))))))
 
  (people
 
   ((username "arthur")
    (realname "Arthur A. Gleckler"))
+
+  ((username "bil")
+   (realname "Bill Schottstaedt"))
 
   ((username "hga")
    (realname "Harold Ancell"))
