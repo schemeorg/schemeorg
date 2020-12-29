@@ -11,6 +11,10 @@ play 10800 IN CNAME try.scheme.org.
 
 api 10800 IN CNAME alpha.servers.scheme.org.
 
+blog 10800 IN CNAME alpha.servers.scheme.org.
+
+chat 10800 IN CNAME alpha.servers.scheme.org.
+
 containers 10800 IN CNAME alpha.servers.scheme.org.
 
 doc 10800 IN CNAME alpha.servers.scheme.org.

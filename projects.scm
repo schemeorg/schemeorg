@@ -34,6 +34,22 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers.scheme.org."))))
 
+   ((project-id "blog")
+    (title "Blog")
+    (tagline "News and views from the Scheme community")
+    (contacts "lassi" "arthur")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers.scheme.org."))))
+
+   ((project-id "chat")
+    (title "Chat")
+    (tagline "IRC and other quick communication channels")
+    (contacts "lassi" "arthur")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers.scheme.org."))))
+
    ((project-id "containers")
     (title "Containers")
     (tagline "Ready-to-run Docker containers of Scheme implementations")
