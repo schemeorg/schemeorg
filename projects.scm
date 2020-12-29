@@ -115,7 +115,7 @@
     (tagline "Revised^5 Report on the Algorithmic Language Scheme (1998)")
     (comments "For now, a simple redirect to the real homepage.")
     (contacts "lassi")
-    (display? #t)
+    (display? #f)
     (dns (rec (type "CNAME")
               (data "alpha.servers.scheme.org."))))
 
@@ -124,7 +124,7 @@
     (tagline "Revised^6 Report on the Algorithmic Language Scheme (2007)")
     (comments "For now, a simple redirect to the real homepage.")
     (contacts "lassi")
-    (display? #t)
+    (display? #f)
     (dns (rec (type "CNAME")
               (data "alpha.servers.scheme.org."))))
 
@@ -150,7 +150,7 @@
     (title "Standards")
     (tagline "Revised^n Report on the Algorithmic Language Scheme")
     (contacts "arthur" "lassi")
-    (display? #t)
+    (display? #f)
     (dns (rec (type "CNAME")
               (data "alpha.servers.scheme.org.")))))
 
