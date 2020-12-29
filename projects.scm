@@ -11,6 +11,14 @@
 
   ("Community"
 
+   ((project-id "try")
+    (title "Try Scheme")
+    (tagline "Type Scheme code and run it in your browser")
+    (contacts "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers.scheme.org."))))
+
    ((project-id "api")
     (title "API")
     (tagline "Programmable queries for all things Scheme")
