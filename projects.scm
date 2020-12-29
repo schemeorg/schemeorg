@@ -19,6 +19,13 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers.scheme.org."))))
 
+   ((project-id "play")
+    (comments "Alias for try.scheme.org")
+    (contacts "lassi" "arthur")
+    (display? #f)
+    (dns (rec (type "CNAME")
+              (data "try.scheme.org."))))
+
    ((project-id "api")
     (title "API")
     (tagline "Programmable queries for all things Scheme")
