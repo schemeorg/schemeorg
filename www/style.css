@@ -2,8 +2,11 @@ html {
   font-family: sans-serif;
   max-width: 45em;
   margin: 1em;
-  line-height: 1.4em;
   background-color: beige;
+}
+
+p {
+  line-height:1.4em;
 }
 
 h2 {
@@ -22,12 +25,12 @@ td {
   vertical-align: baseline;
 }
 
-#logo {
+h1#logo {
   font-family: serif;
   font-style: italic;
   font-size: 5em;
-  margin-top: 0.5em;
-  line-height: 1em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
 }
 
 a:link {
