@@ -27,6 +27,7 @@ td {
   font-style: italic;
   font-size: 5em;
   margin-top: 0.5em;
+  line-height: 1em;
 }
 
 a:link {
