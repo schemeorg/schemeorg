@@ -47,8 +47,8 @@
 
    ((project-id "research")
     (title "Research")
-    (tagline "Research papers, etc.")
-    (contacts "lassi")
+    (tagline "Dive into the academic research behind Scheme")
+    (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
               (data "alpha.servers.scheme.org.")))))
