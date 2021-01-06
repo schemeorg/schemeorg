@@ -7,6 +7,8 @@ www 10800 IN CNAME alpha.servers.scheme.org.
 
 try 10800 IN CNAME alpha.servers.scheme.org.
 
+faq 10800 IN CNAME alpha.servers.scheme.org.
+
 standards 10800 IN CNAME alpha.servers.scheme.org.
 
 srfi 10800 IN CNAME srfi.schemers.org.
@@ -38,6 +40,8 @@ r7rs 10800 IN CNAME alpha.servers.scheme.org.
 loko 10800 IN CNAME scheme.fail.
 
 s7 10800 IN CNAME alpha.servers.scheme.org.
+
+implementations 10800 IN CNAME alpha.servers.scheme.org.
 
 api 10800 IN CNAME alpha.servers.scheme.org.
 
