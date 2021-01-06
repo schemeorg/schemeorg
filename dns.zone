@@ -7,38 +7,19 @@ www 10800 IN CNAME alpha.servers.scheme.org.
 
 try 10800 IN CNAME alpha.servers.scheme.org.
 
-play 10800 IN CNAME try.scheme.org.
+standards 10800 IN CNAME alpha.servers.scheme.org.
 
-api 10800 IN CNAME alpha.servers.scheme.org.
+srfi 10800 IN CNAME srfi.schemers.org.
+
+research 10800 IN CNAME alpha.servers.scheme.org.
 
 blog 10800 IN CNAME alpha.servers.scheme.org.
 
 chat 10800 IN CNAME alpha.servers.scheme.org.
 
-containers 10800 IN CNAME alpha.servers.scheme.org.
-
-doc 10800 IN CNAME alpha.servers.scheme.org.
-
-docs 10800 IN CNAME doc.scheme.org.
-
 events 10800 IN CNAME alpha.servers.scheme.org.
 
-files 10800 IN CNAME alpha.servers.scheme.org.
-
-list 10800 IN CNAME lists.scheme.org.
-
 lists 10800 IN CNAME alpha.servers.scheme.org.
-
-registry 10800 IN CNAME alpha.servers.scheme.org.
-
-research 10800 IN CNAME alpha.servers.scheme.org.
-
-servers 10800 IN CNAME alpha.servers.scheme.org.
-alpha.servers 10800 IN CNAME scheme.org.
-
-api.staging 10800 IN CNAME alpha.servers.scheme.org.
-doc.staging 10800 IN CNAME alpha.servers.scheme.org.
-www.staging 10800 IN CNAME alpha.servers.scheme.org.
 
 comm 10800 IN CNAME alpha.servers.scheme.org.
 
@@ -54,10 +35,29 @@ r6rs 10800 IN CNAME alpha.servers.scheme.org.
 
 r7rs 10800 IN CNAME alpha.servers.scheme.org.
 
-srfi 10800 IN CNAME srfi.schemers.org.
-
-standards 10800 IN CNAME alpha.servers.scheme.org.
-
 loko 10800 IN CNAME scheme.fail.
 
 s7 10800 IN CNAME alpha.servers.scheme.org.
+
+api 10800 IN CNAME alpha.servers.scheme.org.
+
+containers 10800 IN CNAME alpha.servers.scheme.org.
+
+doc 10800 IN CNAME alpha.servers.scheme.org.
+
+files 10800 IN CNAME alpha.servers.scheme.org.
+
+registry 10800 IN CNAME alpha.servers.scheme.org.
+
+servers 10800 IN CNAME alpha.servers.scheme.org.
+alpha.servers 10800 IN CNAME scheme.org.
+
+api.staging 10800 IN CNAME alpha.servers.scheme.org.
+doc.staging 10800 IN CNAME alpha.servers.scheme.org.
+www.staging 10800 IN CNAME alpha.servers.scheme.org.
+
+play 10800 IN CNAME try.scheme.org.
+
+docs 10800 IN CNAME doc.scheme.org.
+
+list 10800 IN CNAME lists.scheme.org.
