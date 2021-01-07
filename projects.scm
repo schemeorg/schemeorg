@@ -7,7 +7,7 @@
     (contacts "arthur" "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org.")))))
+              (data "alpha.servers")))))
 
   ("Language"
 
@@ -17,7 +17,7 @@
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "faq")
     (title "FAQ")
@@ -25,7 +25,7 @@
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "standards")
     (title "Standards")
@@ -33,7 +33,7 @@
     (contacts "arthur" "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "srfi")
     (title "SRFI")
@@ -50,7 +50,7 @@
     (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org.")))))
+              (data "alpha.servers")))))
 
   ("Social"
 
@@ -60,7 +60,7 @@
     (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "chat")
     (title "Chat")
@@ -68,7 +68,7 @@
     (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "events")
     (title "Events")
@@ -76,7 +76,7 @@
     (contacts "arthur" "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "lists")
     (title "Mailing lists")
@@ -84,7 +84,7 @@
     (contacts "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org.")))))
+              (data "alpha.servers")))))
 
   ("Topics"
 
@@ -95,7 +95,7 @@
     (contacts "hga")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "persist")
     (title "Persistence")
@@ -104,7 +104,7 @@
     (contacts "hga")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "test")
     (title "Testing")
@@ -113,7 +113,7 @@
     (contacts "hga")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "web")
     (title "Web development")
@@ -122,7 +122,7 @@
     (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org.")))))
+              (data "alpha.servers")))))
 
   ("Standards"
 
@@ -133,7 +133,7 @@
     (contacts "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "r6rs")
     (title "R^6RS")
@@ -142,7 +142,7 @@
     (contacts "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "r7rs")
     (title "R^7RS")
@@ -151,7 +151,7 @@
     (contacts "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org.")))))
+              (data "alpha.servers")))))
 
   ("Implementations"
 
@@ -170,7 +170,7 @@
     (contacts "bil" "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "implementations")
     (title "All implementations")
@@ -178,7 +178,7 @@
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org.")))))
+              (data "alpha.servers")))))
 
   ("Tools"
 
@@ -188,7 +188,7 @@
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "containers")
     (title "Containers")
@@ -196,7 +196,7 @@
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "doc")
     (title "Documentation")
@@ -205,7 +205,7 @@
     (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "files")
     (title "Files")
@@ -213,7 +213,7 @@
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "registry")
     (title "Registry")
@@ -221,7 +221,7 @@
     (contacts "lassi" "hga" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "servers")
     (title "Servers")
@@ -229,7 +229,7 @@
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))
+              (data "alpha.servers"))
          (rec (name "alpha")
               (type "CNAME")
               (data "scheme.org."))))
@@ -241,13 +241,13 @@
     (display? #f)
     (dns (rec (name "api")
               (type "CNAME")
-              (data "alpha.servers.scheme.org."))
+              (data "alpha.servers"))
          (rec (name "doc")
               (type "CNAME")
-              (data "alpha.servers.scheme.org."))
+              (data "alpha.servers"))
          (rec (name "www")
               (type "CNAME")
-              (data "alpha.servers.scheme.org.")))))
+              (data "alpha.servers")))))
 
   ("Aliases"
 
@@ -256,21 +256,21 @@
     (contacts "lassi" "arthur")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "try.scheme.org."))))
+              (data "try"))))
 
    ((project-id "docs")
     (comments "Alias for doc.scheme.org")
     (contacts "lassi" "arthur")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "doc.scheme.org."))))
+              (data "doc"))))
 
    ((project-id "list")
     (comments "Alias for lists.scheme.org")
     (contacts "arthur" "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "lists.scheme.org."))))))
+              (data "lists"))))))
 
  (people
 
