@@ -252,21 +252,18 @@
   ("Aliases"
 
    ((project-id "play")
-    (comments "Alias for try.scheme.org")
     (contacts "lassi" "arthur")
     (display? #f)
     (dns (rec (type "CNAME")
               (data "try"))))
 
    ((project-id "docs")
-    (comments "Alias for doc.scheme.org")
     (contacts "lassi" "arthur")
     (display? #f)
     (dns (rec (type "CNAME")
               (data "doc"))))
 
    ((project-id "list")
-    (comments "Alias for lists.scheme.org")
     (contacts "arthur" "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
