@@ -171,7 +171,7 @@
 
 ;; examples:
 ;;   (fetch-rss "https://srfi.schemers.org/srfi.rss")
-;;   (fetch-atom "http://www.scheme.dk/planet/atom.xml")
+;;   (fetch-atom "https://planet.scheme.org/atom.xml")
 
 (define ((read-file parse) file)
   (call-with-input-file file parse))
@@ -265,7 +265,7 @@
 				  ,(fi/title fi)))
 			   (dd (div (@ (class "date")) ,(fi-iso-date fi))
 			       ,(fi/description fi))))
-		       (fetch-atom "https://blog.scheme.org/atom.xml")))
+		       (fetch-atom "https://planet.scheme.org/atom.xml")))
      (p (a (@ (href "about/")) "About Scheme.org")))))
 
 (define (main)
