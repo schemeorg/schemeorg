@@ -18,7 +18,7 @@ srfi IN CNAME srfi.schemers.org.
 
 research IN CNAME alpha.servers
 
-blog IN CNAME alpha.servers
+planet IN CNAME alpha.servers
 
 chat IN CNAME alpha.servers
 
@@ -62,6 +62,8 @@ alpha.servers IN CNAME scheme.org.
 api.staging IN CNAME alpha.servers
 doc.staging IN CNAME alpha.servers
 www.staging IN CNAME alpha.servers
+
+blog IN CNAME planet
 
 play IN CNAME try
 

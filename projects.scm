@@ -54,9 +54,9 @@
 
   ("Social"
 
-   ((project-id "blog")
-    (title "Blog")
-    (tagline "News and views from the Scheme community")
+   ((project-id "planet")
+    (title "Planet Scheme")
+    (tagline "Blog posts from every corner of the Scheme community")
     (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
@@ -250,6 +250,12 @@
               (data "alpha.servers")))))
 
   ("Aliases"
+
+   ((project-id "blog")
+    (contacts "lassi" "arthur")
+    (display? #f)
+    (dns (rec (type "CNAME")
+              (data "planet"))))
 
    ((project-id "play")
     (contacts "lassi" "arthur")
