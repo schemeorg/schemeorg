@@ -265,7 +265,7 @@
 				  ,(fi/title fi)))
 			   (dd (div (@ (class "date")) ,(fi-iso-date fi))
 			       ,(fi/description fi))))
-		       (fetch-atom "http://www.scheme.dk/planet/atom.xml")))
+		       (fetch-atom "https://blog.scheme.org/atom.xml")))
      (p (a (@ (href "about/")) "About Scheme.org")))))
 
 (define (main)
