@@ -7,6 +7,7 @@
 
 (import (scheme base) (scheme file) (scheme read) (scheme write))
 (import (chicken file)) ; For create-directory.
+(import (sxpath-lolevel))
 (import (sxml-transforms))
 (import (lowdown))      ; Markdown-to-SXML parser.
 (import (ssax))		; SSAX for parsing RSS
@@ -97,7 +98,7 @@
 (define ((matches? name) tree) (and (matching-subtree? name tree) tree))
 
 (define (find-one name tree)
-  (cond ((find (matches? name) tree) => cdr) (else #f)))
+  (cond ((find (matches? name) tree) => sxml:content) (else #f)))
 
 (define (find-many name tree) (filter-map (matches? name) (cdr tree)))
 
