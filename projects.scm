@@ -54,9 +54,9 @@
 
   ("Social"
 
-   ((project-id "blog")
-    (title "Blog")
-    (tagline "News and views from the Scheme community")
+   ((project-id "planet")
+    (title "Planet Scheme")
+    (tagline "Blog posts from every corner of the Scheme community")
     (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
@@ -251,22 +251,25 @@
 
   ("Aliases"
 
+   ((project-id "blog")
+    (contacts "lassi" "arthur")
+    (display? #f)
+    (dns (rec (type "CNAME")
+              (data "planet"))))
+
    ((project-id "play")
-    (comments "Alias for try.scheme.org")
     (contacts "lassi" "arthur")
     (display? #f)
     (dns (rec (type "CNAME")
               (data "try"))))
 
    ((project-id "docs")
-    (comments "Alias for doc.scheme.org")
     (contacts "lassi" "arthur")
     (display? #f)
     (dns (rec (type "CNAME")
               (data "doc"))))
 
    ((project-id "list")
-    (comments "Alias for lists.scheme.org")
     (contacts "arthur" "lassi")
     (display? #f)
     (dns (rec (type "CNAME")

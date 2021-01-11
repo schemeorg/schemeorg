@@ -171,7 +171,7 @@
 
 ;; examples:
 ;;   (fetch-rss "https://srfi.schemers.org/srfi.rss")
-;;   (fetch-atom "http://www.scheme.dk/planet/atom.xml")
+;;   (fetch-atom "https://planet.scheme.org/atom.xml")
 
 (define ((read-file parse) file)
   (call-with-input-file file parse))
