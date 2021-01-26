@@ -6,7 +6,7 @@ html {
 }
 
 p {
-  line-height:1.4em;
+  line-height: 1.4em;
 }
 
 h2 {
@@ -44,6 +44,29 @@ a:link {
 .date {
   color: grey;
   font-size: 80%;
+}
+
+.blue-box {
+  background-color: lightblue;
+}
+
+.gray-box {
+  background-color: #ddc;
+}
+
+.green-box {
+  background-color: lightgreen;
+}
+
+.red-box {
+  background-color: pink;
+}
+
+.round-box {
+  border-radius: 15px;
+  padding: 3px 20px 3px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .menu {
