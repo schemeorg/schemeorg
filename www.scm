@@ -3,7 +3,7 @@
 ;; Based on S-expressions, markdown, and SXML templates in this file.
 ;;
 ;; You need Chicken 5 and
-;; `chicken-install http-client lowdown openssl r7rs ssax`.
+;; `chicken-install http-client lowdown openssl r7rs sxpath-lolevel ssax`.
 
 (import (scheme base) (scheme file) (scheme read) (scheme write))
 (import (chicken file)) ; For create-directory.
