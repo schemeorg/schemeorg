@@ -16,6 +16,10 @@ h2 {
   border-bottom: 1px solid red;
 }
 
+sup {
+  line-height: 0;
+}
+
 th {
   text-align: left;
 }
