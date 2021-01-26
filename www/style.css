@@ -90,6 +90,7 @@ a:link {
 }
 
 .menu li {
+  border-bottom: 5px solid transparent;
   font-weight: bold;
   font-size: 1.4rem;
   margin: 0;
