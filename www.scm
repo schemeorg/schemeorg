@@ -225,24 +225,25 @@
      (h1 (@ (id "logo")) "Scheme")
      ,@(markdown-file->sxml "front.md")
      ,@(append-map
-        (lambda (group)
-          (let ((trs
-                 (map (lambda (project)
-                        `(tr (th (a (@ (href
-                                        ,(string-append
-                                          "//"
-                                          (get-string 'project-id project)
-                                          ".scheme.org/")))
-                                    ,@(superscripts
-                                       (get-string 'title project))))
-                             (td ,@(superscripts
-                                    (get-string 'tagline project)))))
-                      (filter (lambda (project)
-                                (get-boolean 'display? project))
-                              (cdr group)))))
-            (if (null? trs) '()
-                `((h2 ,(car group))
-                  (table ,@trs)))))
+        (let ()
+          (lambda (group)
+            (let ((trs
+                   (map (lambda (project)
+                          `(tr (th (a (@ (href
+                                          ,(string-append
+                                            "//"
+                                            (get-string 'project-id project)
+                                            ".scheme.org/")))
+                                      ,@(superscripts
+                                         (get-string 'title project))))
+                               (td ,@(superscripts
+                                      (get-string 'tagline project)))))
+                        (filter (lambda (project)
+                                  (get-boolean 'display? project))
+                                (cdr group)))))
+              (if (null? trs) '()
+                  `((h2 ,(car group))
+                    (table ,@trs))))))
         project-groups)
      (h2 "News")
 
