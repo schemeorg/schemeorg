@@ -10,7 +10,7 @@
 (import (sxpath-lolevel))
 (import (sxml-transforms))
 (import (lowdown))      ; Markdown-to-SXML parser.
-(import (ssax))		; SSAX for parsing RSS
+(import (ssax))         ; SSAX for parsing RSS
 (import (srfi 1))
 (import (srfi 19))
 (import http-client)
@@ -106,9 +106,9 @@
 
 (define (skip-attributes tree)
   (cond ((and (pair? (car tree))
-	      (eq? '@ (caar tree)))
-	 (cdr tree))
-	(else tree)))
+              (eq? '@ (caar tree)))
+         (cdr tree))
+        (else tree)))
 
 (define (parse-rss-date string)
   "For example, \"Sun, 29 Nov 2020 12:34:56 -0800\"."
@@ -117,13 +117,13 @@
 (define (rss port)
   (let ((sxml (ssax:xml->sxml port '())))
     (map (lambda (i)
-	   (make-feed-item
-	    (parse-rss-date (car (find-one 'pubDate i)))
-	    (or (find-one 'description i) "")
-	    (apply string-append
-		   (skip-attributes (find-one 'title i)))
-	    (car (find-one 'link i))))
-	 (find-many 'item (find-one 'channel (cadr sxml))))))
+           (make-feed-item
+            (parse-rss-date (car (find-one 'pubDate i)))
+            (or (find-one 'description i) "")
+            (apply string-append
+                   (skip-attributes (find-one 'title i)))
+            (car (find-one 'link i))))
+         (find-many 'item (find-one 'channel (cadr sxml))))))
 
 (define (parse-atom-date string)
   "For example, \"2020-11-29T12:34:56Z\"."
@@ -132,39 +132,39 @@
 (define (atom port)
   (define (find-html-link tree)
     (cond ((find (lambda (subtree)
-		   (and (pair? subtree)
-			(eq? 'atom:link (car subtree))
-			(cond ((find-one '@ subtree)
-			       => (lambda (attributes)
-				    (cond ((find-one 'type attributes)
-					   => (lambda (t)
-						(string=? (car t) "text/html")))
-					  (else #f))))
-			      (else #f))))
-		 tree)
-	   => (lambda (link)
-		(let ((attributes (find-one '@ link)))
-		  (cond ((find-one 'href attributes) => car)
-			(else #f)))))
-	  (else #f)))
+                   (and (pair? subtree)
+                        (eq? 'atom:link (car subtree))
+                        (cond ((find-one '@ subtree)
+                               => (lambda (attributes)
+                                    (cond ((find-one 'type attributes)
+                                           => (lambda (t)
+                                                (string=? (car t) "text/html")))
+                                          (else #f))))
+                              (else #f))))
+                 tree)
+           => (lambda (link)
+                (let ((attributes (find-one '@ link)))
+                  (cond ((find-one 'href attributes) => car)
+                        (else #f)))))
+          (else #f)))
   (define (parse-date value) (parse-atom-date (car value)))
   (let ((sxml (ssax:xml->sxml port '((atom . "http://www.w3.org/2005/Atom")))))
     (map (lambda (e)
-	   (make-feed-item
-	    (cond ((find-one 'atom:published e) => parse-date)
-		  ((find-one 'atom:updated e) => parse-date)
-		  ((find-one 'atom:source e)
-		   => (lambda (s)
-			(cond ((find-one 'atom:published s)
-			       => parse-date)
-			      (else #f))))
-		  (else #f))
-	    (cond ((find-one 'atom:summary e))
-		  (else '("")))
-	    (apply string-append
-		   (skip-attributes (find-one 'atom:title e)))
-	    (find-html-link e)))
-	 (find-many 'atom:entry (find-one 'atom:feed sxml)))))
+           (make-feed-item
+            (cond ((find-one 'atom:published e) => parse-date)
+                  ((find-one 'atom:updated e) => parse-date)
+                  ((find-one 'atom:source e)
+                   => (lambda (s)
+                        (cond ((find-one 'atom:published s)
+                               => parse-date)
+                              (else #f))))
+                  (else #f))
+            (cond ((find-one 'atom:summary e))
+                  (else '("")))
+            (apply string-append
+                   (skip-attributes (find-one 'atom:title e)))
+            (find-html-link e)))
+         (find-many 'atom:entry (find-one 'atom:feed sxml)))))
 
 (define ((fetch-uri parse) uri)
   (call-with-input-request uri #f parse))
@@ -197,7 +197,7 @@
                (title ,title)
                (link (@ (rel "stylesheet") (href "/style.css")))
                (meta (@ (name "viewport")
-			(content "width=device-width, initial-scale=1"))))
+                        (content "width=device-width, initial-scale=1"))))
               (body ,@body))))))
 
 (define (page-title-from-sxml tags)
@@ -217,22 +217,22 @@
 (define (write-menu items)
   `(header
     (ul (@ (class "menu"))
-	,@(map (lambda (i)
-		 (if (eq? 'active (cddr i))
-		     `(li (@ (class "active"))
-			  ,(car i))
-		     `(li (a (@ (href ,(cadr i))) ,(car i)))))
-	       items))))
+        ,@(map (lambda (i)
+                 (if (eq? 'active (cddr i))
+                     `(li (@ (class "active"))
+                          ,(car i))
+                     `(li (a (@ (href ,(cadr i))) ,(car i)))))
+               items))))
 
 (define (write-front-page html-filename)
   (write-html-file
    html-filename
    "The Scheme Programming Language"
    `(,(write-menu '(("Home" "https://scheme.org/" . active)
-		    ("Docs" "https://doc.scheme.org/")
-		    ("Email" "https://lists.scheme.org/")
-		    ("Files" "https://files.scheme.org/")
-		    ("Standards" "https://standards.scheme.org/")))
+                    ("Docs" "https://doc.scheme.org/")
+                    ("Email" "https://lists.scheme.org/")
+                    ("Files" "https://files.scheme.org/")
+                    ("Standards" "https://standards.scheme.org/")))
      (h1 (@ (id "logo")) "Scheme")
      ,@(markdown-file->sxml "front.md")
      (div (@ (class "round-box green-box"))
@@ -241,9 +241,9 @@
           ;; out entries with foul language or dangerous HTML; include
           ;; the source; and format the date in a friendlier way.
           (ul ,@(map (lambda (fi)
-		       `(li (a (@ href ,(fi/uri fi)) ,(fi/title fi))
+                       `(li (a (@ href ,(fi/uri fi)) ,(fi/title fi))
                             " " (time (@ (class "date")) ,(fi-friendly-date fi))))
-		     (take (fetch-atom "https://planet.scheme.org/atom.xml")
+                     (take (fetch-atom "https://planet.scheme.org/atom.xml")
                            5))))
      ,@(append-map
         (let ((next-color (circular-generator "blue" "orange")))
