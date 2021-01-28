@@ -15,15 +15,6 @@
 (import (srfi 19))
 (import http-client)
 
-(define (filter f xs)
-  (let loop ((xs xs) (acc '()))
-    (if (null? xs) (reverse acc)
-        (loop (cdr xs) (if (f (car xs)) (cons (car xs) acc) acc)))))
-
-(define (append-map f xs)
-  (let loop ((xs xs) (acc '()))
-    (if (null? xs) acc (loop (cdr xs) (append acc (f (car xs)))))))
-
 (define (disp . xs) (for-each display xs) (newline))
 
 (define (string->file string file)
