@@ -89,6 +89,10 @@
   "Convert into \"YYYY-MM-DD\" format."
   (date->string (fi/date-time fi) "~Y-~m-~d"))
 
+(define (fi-friendly-date fi)
+  "Convert into \"YYYY-MM-DD\" format."
+  (date->string (fi/date-time fi) "~b ~e"))
+
 (define (matching-subtree? name tree)
   (and (pair? tree)
        (eq? (car tree) name)))
@@ -231,6 +235,16 @@
 		    ("Standards" "https://standards.scheme.org/")))
      (h1 (@ (id "logo")) "Scheme")
      ,@(markdown-file->sxml "front.md")
+     (div (@ (class "round-box green-box"))
+          (h2 "What's new")
+          ;; We should guard against rogue content, e.g. by filtering
+          ;; out entries with foul language or dangerous HTML; include
+          ;; the source; and format the date in a friendlier way.
+          (ul ,@(map (lambda (fi)
+		       `(li (a (@ href ,(fi/uri fi)) ,(fi/title fi))
+                            " " (time (@ (class "date")) ,(fi-friendly-date fi))))
+		     (take (fetch-atom "https://planet.scheme.org/atom.xml")
+                           5))))
      ,@(append-map
         (let ((next-color (circular-generator "blue" "orange")))
           (lambda (group)
@@ -254,20 +268,6 @@
                          (h2 ,(car group))
                          (table ,@trs)))))))
         project-groups)
-     (h2 "News")
-
-     ;; Insert Planet Scheme feed.  This is just an example of what a feed could
-     ;; look like.  It livens up the page, adding frequently updated content.
-     ;; We should merge more feeds, e.g. a hypothetical SRFI feed; guard against
-     ;; rogue content, e.g. by filtering out entries with foul language or
-     ;; dangerous HTML and by limiting the length of the blurb; include the
-     ;; source; and format the date in a friendlier way.
-     (dl ,@(append-map (lambda (fi)
-			 `((dt (a (@ href ,(fi/uri fi))
-				  ,(fi/title fi)))
-			   (dd (div (@ (class "date")) ,(fi-iso-date fi))
-			       ,(fi/description fi))))
-		       (fetch-atom "https://planet.scheme.org/atom.xml")))
      (p (a (@ (href "about/")) "About Scheme.org")))))
 
 (define (main)
