@@ -235,8 +235,8 @@
                     ("Standards" "https://standards.scheme.org/")))
      (h1 (@ (id "logo")) "Scheme")
      ,@(markdown-file->sxml "front.md")
-     (div (@ (class "round-box green-box"))
-          (h2 "What's new")
+     (div (@ (class "round-box green-box blog-posts"))
+          (h2 "What's new in Scheme")
           ;; We should guard against rogue content, e.g. by filtering
           ;; out entries with foul language or dangerous HTML; include
           ;; the source; and format the date in a friendlier way.
@@ -244,7 +244,12 @@
                        `(li (a (@ href ,(fi/uri fi)) ,(fi/title fi))
                             " " (time (@ (class "date")) ,(fi-friendly-date fi))))
                      (take (fetch-atom "https://planet.scheme.org/atom.xml")
-                           5))))
+                           5)))
+	  (p (@ class "more")
+	     "More on "
+	     (a (@ href "https://planet.scheme.org/")
+		"planet.scheme.org")
+	     "."))
      ,@(append-map
         (let ((next-color (circular-generator "blue" "orange")))
           (lambda (group)

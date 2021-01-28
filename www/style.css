@@ -46,6 +46,19 @@ a:link {
   color: navy;
 }
 
+.blog-posts li {
+  margin-left: -2rem;
+}
+
+.blog-posts ul {
+  list-style-type: none;
+}
+
+.blog-posts .more {
+  color: grey;
+  margin-left: 0.5rem;
+}
+
 .date {
   color: grey;
   font-size: 80%;
