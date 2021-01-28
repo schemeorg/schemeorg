@@ -16,6 +16,11 @@ h2 {
   border-bottom: 1px solid red;
 }
 
+.round-box h2 {
+  color: black;
+  border-bottom: none;
+}
+
 sup {
   line-height: 0;
 }

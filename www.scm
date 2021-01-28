@@ -17,6 +17,13 @@
 
 (define (disp . xs) (for-each display xs) (newline))
 
+(define (circular-generator . elements)  ; Specified in SRFI 158.
+  (let ((xs elements))
+    (lambda ()
+      (let ((x (car xs)))
+        (set! xs (if (null? (cdr xs)) elements (cdr xs)))
+        x))))
+
 (define (string->file string file)
   (call-with-port (open-output-file file)
                   (lambda (out)
@@ -225,7 +232,7 @@
      (h1 (@ (id "logo")) "Scheme")
      ,@(markdown-file->sxml "front.md")
      ,@(append-map
-        (let ()
+        (let ((next-color (circular-generator "blue" "orange")))
           (lambda (group)
             (let ((trs
                    (map (lambda (project)
@@ -242,8 +249,10 @@
                                   (get-boolean 'display? project))
                                 (cdr group)))))
               (if (null? trs) '()
-                  `((h2 ,(car group))
-                    (table ,@trs))))))
+                  `((div (@ (class ,(string-append "round-box "
+                                                   (next-color) "-box")))
+                         (h2 ,(car group))
+                         (table ,@trs)))))))
         project-groups)
      (h2 "News")
 
