@@ -42,6 +42,8 @@ r7rs IN CNAME alpha.servers
 
 loko IN CNAME scheme.fail.
 
+mit IN CNAME mit-scheme.org.
+
 s7 IN CNAME alpha.servers
 
 implementations IN CNAME alpha.servers

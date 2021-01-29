@@ -163,6 +163,14 @@
     (dns (rec (type "CNAME")
               (data "scheme.fail."))))
 
+   ((project-id "mit")
+    (title "MIT/GNU Scheme")
+    (tagline "Native-code compiler (i386, x86-64, and AArch64 in addition to C and byte code) and development environment")
+    (contacts "arthur")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "mit-scheme.org."))))
+
    ((project-id "s7")
     (title "s7")
     (tagline "Embeddable interpreter for music applications [R^7RS]")
