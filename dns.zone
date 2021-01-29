@@ -59,6 +59,7 @@ registry IN CNAME alpha.servers
 servers IN CNAME alpha.servers
 alpha.servers IN CNAME scheme.org.
 
+staging IN CNAME www.staging
 api.staging IN CNAME alpha.servers
 doc.staging IN CNAME alpha.servers
 www.staging IN CNAME alpha.servers
