@@ -42,7 +42,7 @@ r7rs IN CNAME alpha.servers
 
 loko IN CNAME scheme.fail.
 
-mit IN CNAME alpha.servers.scheme.org.
+mit IN CNAME alpha.servers
 
 s7 IN CNAME alpha.servers
 

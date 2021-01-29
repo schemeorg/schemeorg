@@ -169,7 +169,7 @@
     (contacts "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers.scheme.org."))))
+              (data "alpha.servers"))))
 
    ((project-id "s7")
     (title "s7")
