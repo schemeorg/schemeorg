@@ -165,7 +165,7 @@
 
    ((project-id "mit")
     (title "MIT/GNU Scheme")
-    (tagline "Native-code compiler (i386, x86-64, and AArch64 in addition to C and byte code) and development environment")
+    (tagline "Native-code compiler and development environment [R^5RS, R^7RS]")
     (contacts "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
