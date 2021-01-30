@@ -155,6 +155,15 @@
 
   ("Implementations"
 
+   ((project-id "chicken")
+    (title "CHICKEN")
+    (tagline "Scheme-to-C compiler with a big, friendly community")
+    (sidenote "(R^5RS R^7RS)")
+    (contacts "Mario Domenech Goulart" "chicken-meisters at nongnu.org")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "gauche")
     (title "Gauche")
     (tagline "Fast script interpreter with many built-in libraries")
