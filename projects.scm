@@ -155,6 +155,14 @@
 
   ("Implementations"
 
+   ((project-id "gauche")
+    (title "Gauche")
+    (tagline "Fast script interpreter with many built-in libraries [R^5RS, R^7RS]")
+    (contacts "shirok")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "loko")
     (title "Loko Scheme")
     (tagline "Bare-metal native-code compiler [R^6RS, R^7RS]")
@@ -298,6 +306,9 @@
 
   ((username "lassi")
    (realname "Lassi Kortela"))
+
+  ((username "shirok")
+   (realname "Shiro Kawai"))
 
   ((username "weinholt")
    (realname "Göran Weinholt"))))
