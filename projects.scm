@@ -157,7 +157,8 @@
 
    ((project-id "gauche")
     (title "Gauche")
-    (tagline "Fast script interpreter with many built-in libraries [R^5RS, R^7RS]")
+    (tagline "Fast script interpreter with many built-in libraries")
+    (sidenote "(R^5RS R^7RS)")
     (contacts "shirok")
     (display? #t)
     (dns (rec (type "CNAME")
@@ -165,7 +166,8 @@
 
    ((project-id "loko")
     (title "Loko Scheme")
-    (tagline "Bare-metal native-code compiler [R^6RS, R^7RS]")
+    (tagline "Bare-metal native-code compiler")
+    (sidenote "(R^6RS R^7RS)")
     (contacts "weinholt")
     (display? #t)
     (dns (rec (type "CNAME")
@@ -173,7 +175,8 @@
 
    ((project-id "mit")
     (title "MIT/GNU Scheme")
-    (tagline "Native-code compiler and development environment [R^5RS, R^7RS]")
+    (tagline "Native-code compiler and development environment")
+    (sidenote "(R^5RS R^7RS)")
     (contacts "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
@@ -181,7 +184,8 @@
 
    ((project-id "s7")
     (title "s7")
-    (tagline "Embeddable interpreter for music applications [R^7RS]")
+    (tagline "Embeddable interpreter for music applications")
+    (sidenote "(R^7RS)")
     (comments "Redirect outside scheme.org.")
     (contacts "bil" "lassi")
     (display? #t)
@@ -191,6 +195,7 @@
    ((project-id "implementations")
     (title "All implementations")
     (tagline "Scheme can be considered a family of dialects")
+    (sidenote "")
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")

@@ -263,7 +263,11 @@
                                       ,@(superscripts
                                          (get-string 'title project))))
                                (td ,@(superscripts
-                                      (get-string 'tagline project)))))
+                                      (get-string 'tagline project)))
+                               ,@(map (lambda (note)
+                                        `(td (@ (class "sidenote"))
+                                             ,@(superscripts note)))
+                                      (get-list 'sidenote project))))
                         (filter (lambda (project)
                                   (get-boolean 'display? project))
                                 (cdr group)))))

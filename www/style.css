@@ -78,6 +78,10 @@ a.offsite:visited {
   font-size: 80%;
 }
 
+.sidenote {
+  text-align: right;
+}
+
 .blue-box {
   background-color: lightblue;
 }
