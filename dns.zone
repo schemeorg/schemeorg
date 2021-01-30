@@ -42,6 +42,8 @@ r7rs IN CNAME alpha.servers
 
 chicken IN CNAME alpha.servers
 
+cyclone IN CNAME alpha.servers
+
 gauche IN CNAME alpha.servers
 
 loko IN CNAME scheme.fail.

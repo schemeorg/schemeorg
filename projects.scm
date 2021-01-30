@@ -164,6 +164,15 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "cyclone")
+    (title "Cyclone")
+    (tagline "New Scheme-to-C compiler with native threads")
+    (sidenote "(R^7RS)")
+    (contacts "Justin Ethier")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "gauche")
     (title "Gauche")
     (tagline "Fast script interpreter with many built-in libraries")
