@@ -29,7 +29,7 @@
 
    ((project-id "standards")
     (title "Standards")
-    (tagline "Revised^n Report on the Algorithmic Language Scheme")
+    (tagline "Revised^n Report on Scheme and other standards")
     (contacts "arthur" "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
@@ -72,15 +72,15 @@
 
    ((project-id "events")
     (title "Events")
-    (tagline "Scheme Workshops and other events")
+    (tagline "Scheme Workshop, conferences, and other meetups")
     (contacts "arthur" "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
    ((project-id "lists")
-    (title "Mailing lists")
-    (tagline "Email discussion groups for many Scheme topics")
+    (title "Lists")
+    (tagline "Mailing lists for email discussion of many Scheme topics")
     (contacts "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
