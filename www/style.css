@@ -25,6 +25,10 @@ sup {
   line-height: 0;
 }
 
+table {
+  margin-bottom: 20px;
+}
+
 th {
   text-align: left;
 }
