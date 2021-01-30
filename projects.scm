@@ -55,7 +55,7 @@
   ("Social"
 
    ((project-id "planet")
-    (title "Planet Scheme")
+    (title "Planet")
     (tagline "Blog posts from every corner of the Scheme community")
     (contacts "lassi" "arthur")
     (display? #t)

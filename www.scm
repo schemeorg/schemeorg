@@ -248,7 +248,7 @@
 	  (p (@ class "more")
 	     "More on "
 	     (a (@ href "https://planet.scheme.org/")
-		"planet.scheme.org")
+		"Planet Scheme")
 	     "."))
      ,@(append-map
         (let ((next-color (circular-generator "blue" "orange")))
