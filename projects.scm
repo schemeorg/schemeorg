@@ -11,6 +11,22 @@
 
   ("Topics"
 
+   ((project-id "learn")
+    (title "Education")
+    (tagline "Learn Scheme, and learn computer science using Scheme")
+    (contacts "arthur" "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
+   ((project-id "apps")
+    (title "Applications")
+    (tagline "Software written or scripted in Scheme")
+    (contacts "lassi" "arthur")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "comm")
     (title "Communications")
     (tagline "Comms and networks: TCP/IP, WebSockets, peer-to-peer, radio...")
