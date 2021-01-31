@@ -210,6 +210,15 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "sagittarius")
+    (title "Sagittarius")
+    (tagline "Script interpreter with many built-in libraries")
+    (sidenote "(R^6RS R^7RS)")
+    (contacts "Takashi Kato")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "implementations")
     (title "All implementations")
     (tagline "Scheme can be considered a family of dialects")

@@ -52,6 +52,8 @@ mit IN CNAME alpha.servers
 
 s7 IN CNAME alpha.servers
 
+sagittarius IN CNAME alpha.servers
+
 implementations IN CNAME alpha.servers
 
 api IN CNAME alpha.servers
