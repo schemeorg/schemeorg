@@ -235,6 +235,15 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "stklos")
+    (title "STklos")
+    (tagline "Interpreter with CLOS object-oriented GUI")
+    (sidenote "(R^7RS)")
+    (contacts "Erick Gallesio")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "implementations")
     (title "All implementations")
     (tagline "Scheme can be considered a family of dialects")
