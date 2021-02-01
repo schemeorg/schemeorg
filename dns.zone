@@ -44,6 +44,8 @@ r6rs IN CNAME alpha.servers
 
 r7rs IN CNAME alpha.servers
 
+bigloo IN CNAME alpha.servers
+
 chicken IN CNAME alpha.servers
 
 cyclone IN CNAME alpha.servers
