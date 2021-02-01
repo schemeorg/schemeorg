@@ -174,7 +174,7 @@
    ((project-id "bigloo")
     (title "Bigloo")
     (tagline "Fast Scheme-to-C and Scheme-to-JVM compiler")
-    (sidenote "(R^5RS R^7RS)")
+    (sidenote "(R^5RS)")
     (contacts "Manuel Serrano")
     (display? #t)
     (dns (rec (type "CNAME")
