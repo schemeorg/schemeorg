@@ -171,6 +171,15 @@
 
   ("Implementations"
 
+   ((project-id "bigloo")
+    (title "Bigloo")
+    (tagline "Fast Scheme-to-C and Scheme-to-JVM compiler with FFI")
+    (sidenote "(R^5RS R^7RS)")
+    (contacts "Manuel Serrano")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "chicken")
     (title "CHICKEN")
     (tagline "Scheme-to-C compiler with a big, friendly community")
