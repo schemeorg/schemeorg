@@ -207,6 +207,15 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "kawa")
+    (title "Kawa")
+    (tagline "JVM compiler with many extensions to Scheme")
+    (sidenote "(R^7RS)")
+    (contacts "Per Bothner")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "loko")
     (title "Loko Scheme")
     (tagline "Bare-metal native-code compiler")
