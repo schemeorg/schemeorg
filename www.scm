@@ -283,8 +283,9 @@
                                   (get-boolean 'display? project))
                                 (cdr group)))))
               (if (null? trs) '()
-                  `((div (@ (class ,(string-append "round-box "
-                                                   (next-color) "-box")))
+                  `((div (@ (class ,(string-append
+                                     "front-page-group round-box "
+                                     (next-color) "-box")))
                          (h2 (@ (id ,(string->html-id group-heading)))
                              ,group-heading)
                          (table ,@trs)))))))

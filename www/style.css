@@ -25,6 +25,10 @@ sup {
   line-height: 0;
 }
 
+.front-page-group table {
+  width: 100%;
+}
+
 table {
   margin-bottom: 20px;
 }
