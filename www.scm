@@ -78,6 +78,16 @@
                            acc)))
             (else (loop a (+ b 1) acc))))))
 
+(define (string->html-id s)  ; "Foo BAR Baz!" -> "foo-bar-baz"
+  (let loop ((chars '()) (i 0) (dash? #f))
+    (if (= i (string-length s)) (list->string (reverse chars))
+        (let ((c (string-ref s i)))
+          (if (or (char-alphabetic? c) (char-numeric? c))
+              (loop (cons (char-downcase c) (if dash? (cons #\- chars) chars))
+                    (+ i 1) #f)
+              (loop chars
+                    (+ i 1) (not (null? chars))))))))
+
 (define-record-type feed-item (make-feed-item date-time description title uri)
     feed-item?
     (date-time fi/date-time)
@@ -253,7 +263,8 @@
      ,@(append-map
         (let ((next-color (circular-generator "blue" "orange")))
           (lambda (group)
-            (let ((trs
+            (let ((group-heading (car group))
+                  (trs
                    (map (lambda (project)
                           `(tr (th (a (@ (href
                                           ,(string-append
@@ -274,7 +285,8 @@
               (if (null? trs) '()
                   `((div (@ (class ,(string-append "round-box "
                                                    (next-color) "-box")))
-                         (h2 ,(car group))
+                         (h2 (@ (id ,(string->html-id group-heading)))
+                             ,group-heading)
                          (table ,@trs)))))))
         project-groups)
      (p (a (@ (href "about/")) "About Scheme.org")))))
