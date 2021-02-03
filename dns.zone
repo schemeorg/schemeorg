@@ -44,7 +44,11 @@ r6rs IN CNAME alpha.servers
 
 r7rs IN CNAME alpha.servers
 
+implementations IN CNAME alpha.servers
+
 bigloo IN CNAME alpha.servers
+
+chibi IN CNAME alpha.servers
 
 chicken IN CNAME alpha.servers
 
@@ -63,8 +67,6 @@ s7 IN CNAME alpha.servers
 sagittarius IN CNAME alpha.servers
 
 stklos IN CNAME alpha.servers
-
-implementations IN CNAME alpha.servers
 
 api IN CNAME alpha.servers
 
