@@ -189,6 +189,15 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "chibi")
+    (title "Chibi-Scheme")
+    (tagline "Small embeddable interpreter with many optional libraries")
+    (sidenote "R^7")
+    (contacts "Alex Shinn")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "chicken")
     (title "CHICKEN")
     (tagline "Scheme-to-C compiler with a big, friendly community")
