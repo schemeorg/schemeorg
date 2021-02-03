@@ -171,6 +171,15 @@
 
   ("Implementations"
 
+   ((project-id "implementations")
+    (title "Implementations")
+    (tagline "Browse and compare all known Scheme systems")
+    (sidenote "")
+    (contacts "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "bigloo")
     (title "Bigloo")
     (tagline "Fast Scheme-to-C and Scheme-to-JVM compiler")
@@ -258,15 +267,6 @@
     (tagline "Interpreter with CLOS object-oriented GUI")
     (sidenote "R^7")
     (contacts "Erick Gallesio")
-    (display? #t)
-    (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
-
-   ((project-id "implementations")
-    (title "All implementations")
-    (tagline "Scheme can be considered a family of dialects")
-    (sidenote "")
-    (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
               (data "alpha.servers")))))
