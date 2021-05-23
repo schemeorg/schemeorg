@@ -116,6 +116,14 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "wiki")
+    (title "Wiki")
+    (tagline "Scheme community wiki")
+    (contacts "lassi" "arthur")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "chat")
     (title "Chat")
     (tagline "IRC and other quick communication channels")
