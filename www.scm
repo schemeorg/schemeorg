@@ -195,7 +195,7 @@
 (define projects-scm (call-with-input-file "projects.scm" read))
 (define project-groups (get-list 'projects projects-scm))
 
-(define (write-html-file html-filename title body)
+(define (write-html-file html-filename title description body)
   (disp "Writing " html-filename)
   (with-output-to-file html-filename
     (lambda ()
@@ -207,7 +207,9 @@
                (title ,title)
                (link (@ (rel "stylesheet") (href "/style.css")))
                (meta (@ (name "viewport")
-                        (content "width=device-width, initial-scale=1"))))
+                        (content "width=device-width, initial-scale=1")))
+               (meta (@ (name "description")
+                        (content ,description))))
               (body ,@body))))))
 
 (define (page-title-from-sxml tags)
@@ -220,9 +222,12 @@
 (define (markdown-file->sxml md-filename)
   (call-with-port (open-input-file md-filename) markdown->sxml))
 
-(define (write-simple-page html-filename md-filename)
+(define (write-simple-page html-filename md-filename description)
   (let ((sxml (markdown-file->sxml md-filename)))
-    (write-html-file html-filename (page-title-from-sxml sxml) sxml)))
+    (write-html-file html-filename
+                     (page-title-from-sxml sxml)
+                     description
+                     sxml)))
 
 (define (write-menu items)
   `(header
@@ -238,6 +243,7 @@
   (write-html-file
    html-filename
    "The Scheme Programming Language"
+   "description here"
    `(,(write-menu '(("Home" "https://scheme.org/" . active)
                     ("Docs" "https://doc.scheme.org/")
                     ("Email" "https://lists.scheme.org/")
@@ -296,8 +302,10 @@
   (create-directory "www/about")
   (create-directory "www/charter")
   (write-front-page  "www/index.html")
-  (write-simple-page "www/about/index.html"   "about.md")
-  (write-simple-page "www/charter/index.html" "charter.md")
+  (write-simple-page "www/about/index.html" "about.md"
+                     "description here")
+  (write-simple-page "www/charter/index.html" "charter.md"
+                     "description here")
   0)
 
 (main)
