@@ -243,7 +243,9 @@
   (write-html-file
    html-filename
    "The Scheme Programming Language"
-   "description here"
+   (string-append "Scheme is a minimalist dialect of the Lisp family "
+                  "of programming languages. This is offical website "
+                  "for the Scheme language.")
    `(,(write-menu '(("Home" "https://scheme.org/" . active)
                     ("Docs" "https://doc.scheme.org/")
                     ("Email" "https://lists.scheme.org/")
