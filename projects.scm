@@ -81,6 +81,14 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "cookbook")
+    (title "Cookbook")
+    (tagline "Code snippets that solve common problems")
+    (contacts "Jakub T. Jankiewicz" "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "standards")
     (title "Standards")
     (tagline "Revised^n Report on Scheme and other standards")
