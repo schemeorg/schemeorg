@@ -114,7 +114,7 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers")))))
 
-  ("Social"
+  ("Community"
 
    ((project-id "planet")
     (title "Planet")
