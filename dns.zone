@@ -22,13 +22,13 @@ research IN CNAME alpha.servers
 
 community IN CNAME alpha.servers
 
-planet IN CNAME alpha.servers
-
-wiki IN CNAME alpha.servers
-
 events IN CNAME alpha.servers
 
+planet IN CNAME alpha.servers
+
 lists IN CNAME alpha.servers
+
+wiki IN CNAME alpha.servers
 
 learn IN CNAME alpha.servers
 
