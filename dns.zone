@@ -8,18 +8,6 @@ $TTL 10800
 
 www IN CNAME alpha.servers
 
-learn IN CNAME alpha.servers
-
-apps IN CNAME alpha.servers
-
-comm IN CNAME alpha.servers
-
-persist IN CNAME alpha.servers
-
-test IN CNAME alpha.servers
-
-web IN CNAME alpha.servers
-
 try IN CNAME alpha.servers
 
 faq IN CNAME alpha.servers
@@ -41,6 +29,18 @@ chat IN CNAME alpha.servers
 events IN CNAME alpha.servers
 
 lists IN CNAME alpha.servers
+
+learn IN CNAME alpha.servers
+
+apps IN CNAME alpha.servers
+
+comm IN CNAME alpha.servers
+
+persist IN CNAME alpha.servers
+
+test IN CNAME alpha.servers
+
+web IN CNAME alpha.servers
 
 r5rs IN CNAME alpha.servers
 
