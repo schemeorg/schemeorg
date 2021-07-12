@@ -62,6 +62,14 @@
 
   ("Community"
 
+   ((project-id "community")
+    (title "Community")
+    (tagline "Scheme gathering spots around the internet")
+    (contacts "lassi" "arthur" "Jakub T. Jankiewicz")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "planet")
     (title "Planet")
     (tagline "Blog posts from every corner of the Scheme community")
@@ -73,14 +81,6 @@
    ((project-id "wiki")
     (title "Wiki")
     (tagline "Scheme community wiki")
-    (contacts "lassi" "arthur")
-    (display? #t)
-    (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
-
-   ((project-id "chat")
-    (title "Chat")
-    (tagline "IRC and other quick communication channels")
     (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
