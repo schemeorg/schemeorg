@@ -78,6 +78,8 @@ containers IN CNAME alpha.servers
 
 doc IN CNAME alpha.servers
 
+man IN CNAME alpha.servers
+
 files IN CNAME alpha.servers
 
 registry IN CNAME alpha.servers

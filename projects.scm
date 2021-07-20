@@ -323,6 +323,14 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "man")
+    (title "Manual pages")
+    (tagline "Unix manual pages for tools and libraries")
+    (contacts "weinholt" "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "files")
     (title "Files")
     (tagline "Scheme file archive")
