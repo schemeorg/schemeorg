@@ -86,6 +86,14 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "video")
+    (title "Video")
+    (tagline "Videos about Scheme")
+    (contacts "Jakub T. Jankiewicz")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "lists")
     (title "Lists")
     (tagline "Mailing lists for email discussion of many Scheme topics")
