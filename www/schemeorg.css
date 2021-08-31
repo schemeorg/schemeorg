@@ -42,6 +42,12 @@ td {
   vertical-align: baseline;
 }
 
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
 h1#logo {
   font-family: serif;
   font-style: italic;
