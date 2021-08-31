@@ -124,14 +124,28 @@
   "For example, \"Sun, 29 Nov 2020 12:34:56 -0800\"."
   (string->date string "~a, ~d ~b ~Y ~H:~M:~S ~z"))
 
+(define (all-strings-in sxml)
+  (let outer ((result "") (sxml sxml))
+    (cond ((string? sxml) (string-append result sxml))
+          ((not (pair? sxml)) result)
+          ((symbol? (car sxml))
+           (let inner ((result result) (sxml (skip-attributes (cdr sxml))))
+             (cond ((null? sxml)
+                    result)
+                   ((string? (car sxml))
+                    (inner (string-append result (car sxml))
+                           (cdr sxml)))
+                   (else
+                    (inner (outer result (car sxml))
+                           (cdr sxml)))))))))
+
 (define (rss port)
   (let ((sxml (ssax:xml->sxml port '())))
     (map (lambda (i)
            (make-feed-item
             (parse-rss-date (car (find-one 'pubDate i)))
-            (or (find-one 'description i) "")
-            (apply string-append
-                   (skip-attributes (find-one 'title i)))
+            (all-strings-in (find-one 'description i))
+            (all-strings-in (find-one 'title i))
             (car (find-one 'link i))))
          (find-many 'item (find-one 'channel (cadr sxml))))))
 
@@ -171,8 +185,7 @@
                   (else #f))
             (cond ((find-one 'atom:summary e))
                   (else '("")))
-            (apply string-append
-                   (skip-attributes (find-one 'atom:title e)))
+            (all-strings-in (find-one 'atom:title e))
             (find-html-link e)))
          (find-many 'atom:entry (find-one 'atom:feed sxml)))))
 
