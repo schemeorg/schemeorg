@@ -25,10 +25,6 @@ sup {
   line-height: 0;
 }
 
-.front-page-group table {
-  width: 100%;
-}
-
 table {
   margin-bottom: 20px;
 }
@@ -46,6 +42,16 @@ table,
 th,
 td {
   border: 1px solid black;
+}
+
+.front-page-group table {
+  width: 100%;
+}
+
+.front-page-group table,
+th,
+td {
+  border: none;
 }
 
 h1#logo {
