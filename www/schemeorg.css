@@ -48,14 +48,17 @@ td {
   border: 1px solid black;
 }
 
-.front-page-group table {
-  width: 100%;
+.no-border {
+  border: none;
 }
 
-.front-page-group table,
-th,
-td {
+table.no-border th,
+table.no-border td {
   border: none;
+}
+
+.front-page-group table {
+  width: 100%;
 }
 
 h1#logo {
