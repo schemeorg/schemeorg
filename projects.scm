@@ -322,7 +322,7 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
-   ((project-id "doc")
+   ((project-id "docs")
     (title "Documentation")
     (tagline "Study and explore Scheme implementations and libraries")
     (comments "Discussed on the schemedoc@srfi.schemers.org mailing list.")
@@ -376,7 +376,7 @@
          (rec (name "api")
               (type "CNAME")
               (data "alpha.servers"))
-         (rec (name "doc")
+         (rec (name "docs")
               (type "CNAME")
               (data "alpha.servers"))
          (rec (name "www")
@@ -397,11 +397,11 @@
     (dns (rec (type "CNAME")
               (data "try"))))
 
-   ((project-id "docs")
+   ((project-id "doc")
     (contacts "lassi" "arthur")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "doc"))))
+              (data "docs"))))
 
    ((project-id "list")
     (contacts "arthur" "lassi")

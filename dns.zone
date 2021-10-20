@@ -78,7 +78,7 @@ api IN CNAME alpha.servers
 
 containers IN CNAME alpha.servers
 
-doc IN CNAME alpha.servers
+docs IN CNAME alpha.servers
 
 man IN CNAME alpha.servers
 
@@ -91,13 +91,13 @@ alpha.servers IN CNAME scheme.org.
 
 staging IN CNAME www.staging
 api.staging IN CNAME alpha.servers
-doc.staging IN CNAME alpha.servers
+docs.staging IN CNAME alpha.servers
 www.staging IN CNAME alpha.servers
 
 blog IN CNAME planet
 
 play IN CNAME try
 
-docs IN CNAME doc
+doc IN CNAME docs
 
 list IN CNAME lists
