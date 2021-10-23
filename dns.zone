@@ -76,7 +76,7 @@ stklos IN CNAME alpha.servers
 
 api IN CNAME alpha.servers
 
-containers IN CNAME alpha.servers
+containers IN CNAME neptune.servers
 
 docs IN CNAME alpha.servers
 

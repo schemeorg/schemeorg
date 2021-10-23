@@ -320,7 +320,7 @@
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "neptune.servers"))))
 
    ((project-id "docs")
     (title "Documentation")
