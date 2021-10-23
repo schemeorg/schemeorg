@@ -88,6 +88,7 @@ registry IN CNAME alpha.servers
 
 servers IN CNAME alpha.servers
 alpha.servers IN CNAME scheme.org.
+neptune.servers IN A 5.28.137.182
 
 staging IN CNAME www.staging
 api.staging IN CNAME alpha.servers

@@ -364,7 +364,10 @@
               (data "alpha.servers"))
          (rec (name "alpha")
               (type "CNAME")
-              (data "scheme.org."))))
+              (data "scheme.org."))
+         (rec (name "neptune")
+              (type "A")
+              (data "5.28.137.182"))))
 
    ((project-id "staging")
     (title "Staging")
