@@ -260,7 +260,7 @@
                   "of programming languages. This is offical website "
                   "for the Scheme language.")
    `(,(write-menu '(("Home" "https://scheme.org/" . active)
-                    ("Docs" "https://doc.scheme.org/")
+                    ("Docs" "https://docs.scheme.org/")
                     ("Community" "https://community.scheme.org/")
                     ("Standards" "https://standards.scheme.org/")
                     ("Implementations" "https://implementations.scheme.org/")))
