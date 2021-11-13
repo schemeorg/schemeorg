@@ -8,7 +8,7 @@
 
 (define domain-name "scheme.org")
 (define domain-ipv4 "8.9.4.141")
-(define domain-ipv6 "2001:19f0:5:6000:5400:02ff:fe07:9aa6")
+(define domain-ipv6 "2001:19f0:5:6000:5400:2ff:fe07:9aa6")
 (define domain-time-to-live "10800")
 
 (define (echo . strings) (for-each write-string strings) (newline))

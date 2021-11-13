@@ -4,7 +4,7 @@
 $TTL 10800
 
 @ IN A 8.9.4.141
-@ IN AAAA 2001:19f0:5:6000:5400:02ff:fe07:9aa6
+@ IN AAAA 2001:19f0:5:6000:5400:2ff:fe07:9aa6
 
 www IN CNAME alpha.servers
 
