@@ -302,6 +302,15 @@
     (contacts "Erick Gallesio")
     (display? #t)
     (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
+   ((project-id "ypsilon")
+    (title "Ypsilon")
+    (tagline "R7RS/R6RS native-code, incremental compiler with mostly concurrent GC")
+    (sidenote "R^6 R^7")
+    (contacts "Göran Weinholt, Yoshikatsu Fujita")
+    (display? #t)
+    (dns (rec (type "CNAME")
               (data "alpha.servers")))))
 
   ("Tools"
