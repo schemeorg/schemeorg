@@ -74,6 +74,8 @@ sagittarius IN CNAME alpha.servers
 
 stklos IN CNAME alpha.servers
 
+ypsilon IN CNAME alpha.servers
+
 api IN CNAME alpha.servers
 
 containers IN CNAME neptune.servers
