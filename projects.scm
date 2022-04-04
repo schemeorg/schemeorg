@@ -306,7 +306,7 @@
 
    ((project-id "ypsilon")
     (title "Ypsilon")
-    (tagline "R7RS/R6RS native-code, incremental compiler with mostly concurrent GC")
+    (tagline "Incremental native-code compiler, mostly concurrent GC")
     (sidenote "R^6 R^7")
     (contacts "Göran Weinholt"
               "Yoshikatsu Fujita")
