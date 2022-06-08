@@ -76,6 +76,8 @@ stklos IN CNAME alpha.servers
 
 ypsilon IN CNAME alpha.servers
 
+index IN A 89.40.10.46
+
 api IN CNAME alpha.servers
 
 containers IN CNAME neptune.servers
