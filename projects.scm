@@ -316,6 +316,14 @@
 
   ("Tools"
 
+   ((project-id "index")
+    (title "Index")
+    (tagline "Library search using types, tags, and names")
+    (contacts "Arvydas Silanskas")
+    (display? #t)
+    (dns (rec (type "A")
+              (data "89.40.10.46"))))
+
    ((project-id "api")
     (title "API")
     (tagline "Programmable queries for all things Scheme")
