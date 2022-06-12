@@ -76,7 +76,7 @@ stklos IN CNAME alpha.servers
 
 ypsilon IN CNAME alpha.servers
 
-index IN A 89.40.10.46
+index IN CNAME ironwolf.servers
 
 api IN CNAME alpha.servers
 
@@ -92,6 +92,8 @@ registry IN CNAME alpha.servers
 
 servers IN CNAME alpha.servers
 alpha.servers IN CNAME scheme.org.
+ironwolf.servers IN A 89.40.10.46
+ironwolf.servers IN AAAA 2a02:7b40:5928:a2e::1
 neptune.servers IN A 5.28.137.182
 
 staging IN CNAME www.staging

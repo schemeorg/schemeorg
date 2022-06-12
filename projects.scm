@@ -321,8 +321,8 @@
     (tagline "Library search using types, tags, and names")
     (contacts "Arvydas Silanskas")
     (display? #t)
-    (dns (rec (type "A")
-              (data "89.40.10.46"))))
+    (dns (rec (type "CNAME")
+              (data "ironwolf.servers"))))
 
    ((project-id "api")
     (title "API")
@@ -383,6 +383,14 @@
          (rec (name "alpha")
               (type "CNAME")
               (data "scheme.org."))
+
+         (rec (name "ironwolf")
+              (type "A")
+              (data "89.40.10.46"))
+         (rec (name "ironwolf")
+              (type "AAAA")
+              (data "2a02:7b40:5928:a2e::1"))
+
          (rec (name "neptune")
               (type "A")
               (data "5.28.137.182"))))
