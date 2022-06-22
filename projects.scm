@@ -249,6 +249,15 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "gerbil")
+    (title "Gerbil")
+    (tagline "Scheme with actors and objects, built on Gambit")
+    (sidenote "R^5 R^7")
+    (contacts "Dimitris Vyzovitis")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "cons.io."))))
+
    ((project-id "kawa")
     (title "Kawa")
     (tagline "JVM compiler with many extensions to Scheme")
