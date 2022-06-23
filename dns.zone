@@ -62,6 +62,8 @@ cyclone IN CNAME alpha.servers
 
 gauche IN CNAME alpha.servers
 
+gerbil IN CNAME cons.io.
+
 kawa IN CNAME alpha.servers
 
 loko IN CNAME scheme.fail.
