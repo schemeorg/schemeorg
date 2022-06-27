@@ -60,6 +60,8 @@ chicken IN CNAME alpha.servers
 
 cyclone IN CNAME alpha.servers
 
+gambit IN CNAME gambitscheme.org.
+
 gauche IN CNAME alpha.servers
 
 gerbil IN CNAME cons.io.
