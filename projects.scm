@@ -240,6 +240,15 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "gambit")
+    (title "Gambit")
+    (tagline "Fast, concurrent, retargetable optimizing compiler")
+    (sidenote "R^5 R^7")
+    (contacts "Marc Feeley")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "gambitscheme.org."))))
+
    ((project-id "gauche")
     (title "Gauche")
     (tagline "Fast script interpreter with many built-in libraries")
