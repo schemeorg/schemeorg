@@ -54,6 +54,8 @@ implementations IN CNAME alpha.servers
 
 bigloo IN CNAME alpha.servers
 
+chez IN CNAME alpha.servers
+
 chibi IN CNAME alpha.servers
 
 chicken IN CNAME alpha.servers
