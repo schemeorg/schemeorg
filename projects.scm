@@ -213,6 +213,16 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "chez")
+    (title "Chez Scheme")
+    (tagline "Cross-module optimizing native-code compiler")
+    (sidenote "R^6")
+    (contacts "Bob Burger"
+              "Andy Keep")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "chibi")
     (title "Chibi-Scheme")
     (tagline "Small embeddable interpreter with many optional libraries")
