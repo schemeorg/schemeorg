@@ -287,7 +287,7 @@
               (data "alpha.servers"))))
 
    ((project-id "loko")
-    (title "Loko Scheme")
+    (title "Loko")
     (tagline "Bare-metal native-code compiler")
     (sidenote "R^6 R^7")
     (contacts "weinholt")
