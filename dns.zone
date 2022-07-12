@@ -94,6 +94,8 @@ man IN CNAME alpha.servers
 
 files IN CNAME alpha.servers
 
+gitea IN CNAME alpha.servers
+
 registry IN CNAME alpha.servers
 
 servers IN CNAME alpha.servers
