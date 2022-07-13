@@ -195,7 +195,7 @@
 
   ("Implementations"
 
-   ((project-id "implementations")
+   ((project-id "get")
     (title "Implementations")
     (tagline "Browse and compare all known Scheme systems")
     (sidenote "")
