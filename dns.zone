@@ -78,6 +78,8 @@ s7 IN CNAME alpha.servers
 
 sagittarius IN CNAME alpha.servers
 
+scm IN CNAME alpha.servers
+
 stklos IN CNAME alpha.servers
 
 ypsilon IN CNAME alpha.servers

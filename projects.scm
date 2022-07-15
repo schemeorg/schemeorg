@@ -323,6 +323,16 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "scm")
+    (title "SCM")
+    (tagline "Portable C implementation that begat Guile and SLIB")
+    (sidenote "R^5")
+    (comments "Redirect outside scheme.org.")
+    (contacts "Aubrey Jaffer" "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "stklos")
     (title "STklos")
     (tagline "Interpreter with CLOS object-oriented GUI")
