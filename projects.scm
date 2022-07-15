@@ -277,6 +277,16 @@
     (dns (rec (type "CNAME")
               (data "cons.io."))))
 
+   ((project-id "jazz")
+    (title "JazzScheme")
+    (tagline "Object-oriented GUI and IDE built on Gambit")
+    (sidenote "R^5")
+    (comments "Redirect outside scheme.org.")
+    (contacts "Guillaume Cartier")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "kawa")
     (title "Kawa")
     (tagline "JVM compiler with many extensions to Scheme")
