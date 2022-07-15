@@ -68,6 +68,8 @@ gauche IN CNAME alpha.servers
 
 gerbil IN CNAME cons.io.
 
+jazz IN CNAME alpha.servers
+
 kawa IN CNAME alpha.servers
 
 loko IN CNAME scheme.fail.
