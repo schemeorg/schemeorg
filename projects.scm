@@ -270,7 +270,7 @@
 
    ((project-id "gerbil")
     (title "Gerbil")
-    (tagline "Scheme with actors and objects, built on Gambit")
+    (tagline "Scheme with actors and objects built on Gambit")
     (sidenote "R^5 R^7")
     (contacts "Dimitris Vyzovitis")
     (display? #t)
