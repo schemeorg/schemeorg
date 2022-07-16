@@ -116,7 +116,7 @@
     (title "Education")
     (tagline "Learn Scheme, and learn computer science using Scheme")
     (contacts "arthur" "lassi")
-    (display? #t)
+    (display? #f)
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
@@ -124,7 +124,7 @@
     (title "Applications")
     (tagline "Software written or scripted in Scheme")
     (contacts "lassi" "arthur")
-    (display? #t)
+    (display? #f)
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
@@ -133,7 +133,7 @@
     (tagline "Comms and networks: TCP/IP, WebSockets, peer-to-peer, radio...")
     (comments "Discussed on the schemecomm@srfi.schemers.org mailing list.")
     (contacts "hga")
-    (display? #t)
+    (display? #f)
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
@@ -142,7 +142,7 @@
     (tagline "Databases, encoding, and logging")
     (comments "Discussed on the schemepersist@srfi.schemers.org mailing list.")
     (contacts "hga")
-    (display? #t)
+    (display? #f)
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
@@ -151,7 +151,7 @@
     (tagline "Everything having to do with testing in Scheme")
     (comments "Discussed on the schemetest@srfi.schemers.org mailing list.")
     (contacts "hga")
-    (display? #t)
+    (display? #f)
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
@@ -160,7 +160,7 @@
     (tagline "HTTP, HTML, JavaScript, WebAssembly, and other web standards")
     (comments "Discussed on the schemeweb@srfi.schemers.org mailing list.")
     (contacts "lassi" "arthur")
-    (display? #t)
+    (display? #f)
     (dns (rec (type "CNAME")
               (data "alpha.servers")))))
 
