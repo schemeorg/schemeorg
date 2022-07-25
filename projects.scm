@@ -177,29 +177,26 @@
    ((project-id "r5rs")
     (title "R^5RS")
     (tagline "Revised^5 Report on the Algorithmic Language Scheme (1998)")
-    (comments "For now, a simple redirect to the real homepage.")
     (contacts "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "r6rs")
     (title "R^6RS")
     (tagline "Revised^6 Report on the Algorithmic Language Scheme (2007)")
-    (comments "For now, a simple redirect to the real homepage.")
     (contacts "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "r7rs")
     (title "R^7RS")
     (tagline "Revised^7 Report on the Algorithmic Language Scheme (2013)")
-    (comments "For now, a simple redirect to the real homepage.")
     (contacts "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "alpha.servers")))))
+              (data "redirect")))))
 
   ("Implementations"
 
@@ -219,7 +216,7 @@
     (contacts "Manuel Serrano")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "chez")
     (title "Chez Scheme")
@@ -229,7 +226,7 @@
               "Andy Keep")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "chibi")
     (title "Chibi-Scheme")
@@ -238,7 +235,7 @@
     (contacts "Alex Shinn")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "chicken")
     (title "CHICKEN")
@@ -247,7 +244,7 @@
     (contacts "Mario Domenech Goulart" "chicken-meisters at nongnu.org")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "cyclone")
     (title "Cyclone")
@@ -256,7 +253,7 @@
     (contacts "Justin Ethier")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "gambit")
     (title "Gambit")
@@ -274,7 +271,7 @@
     (contacts "shirok")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "gerbil")
     (title "Gerbil")
@@ -289,11 +286,10 @@
     (title "JazzScheme")
     (tagline "Object-oriented GUI and IDE built on Gambit")
     (sidenote "R^5")
-    (comments "Redirect outside scheme.org.")
     (contacts "Guillaume Cartier")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "kawa")
     (title "Kawa")
@@ -302,7 +298,7 @@
     (contacts "Per Bothner")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "loko")
     (title "Loko")
@@ -320,17 +316,16 @@
     (contacts "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "s7")
     (title "s7")
     (tagline "Embeddable interpreter for music applications")
     (sidenote "R^7")
-    (comments "Redirect outside scheme.org.")
     (contacts "bil" "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "sagittarius")
     (title "Sagittarius")
@@ -339,17 +334,16 @@
     (contacts "Takashi Kato")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "scm")
     (title "SCM")
     (tagline "Portable C implementation that begat Guile and SLIB")
     (sidenote "R^5")
-    (comments "Redirect outside scheme.org.")
     (contacts "Aubrey Jaffer" "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "stklos")
     (title "STklos")
@@ -358,7 +352,7 @@
     (contacts "Erick Gallesio")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "ypsilon")
     (title "Ypsilon")
@@ -368,7 +362,7 @@
               "Yoshikatsu Fujita")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers")))))
+              (data "redirect")))))
 
   ("Tools"
 
@@ -500,7 +494,13 @@
     (contacts "arthur" "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "lists"))))))
+              (data "lists"))))
+
+   ((project-id "redirect")
+    (contacts "lassi" "arthur")
+    (display? #f)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))))
 
  (people
 
