@@ -196,7 +196,7 @@
   ("Implementations"
 
    ((project-id "get")
-    (title "Implementations")
+    (title "Get Scheme")
     (tagline "Browse and compare all known Scheme systems")
     (sidenote "")
     (contacts "lassi")
