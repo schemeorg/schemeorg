@@ -32,6 +32,8 @@ lists IN CNAME alpha.servers
 
 wiki IN CNAME alpha.servers
 
+groups IN CNAME alpha.servers
+
 learn IN CNAME alpha.servers
 
 apps IN CNAME alpha.servers

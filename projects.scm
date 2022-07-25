@@ -108,6 +108,14 @@
     (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
+   ((project-id "groups")
+    (title "Groups")
+    (tagline "Work groups")
+    (contacts "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
               (data "alpha.servers")))))
 
   ("Topics"
