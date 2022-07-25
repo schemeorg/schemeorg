@@ -46,47 +46,47 @@ test IN CNAME alpha.servers
 
 web IN CNAME alpha.servers
 
-r5rs IN CNAME alpha.servers
+r5rs IN CNAME redirect
 
-r6rs IN CNAME alpha.servers
+r6rs IN CNAME redirect
 
-r7rs IN CNAME alpha.servers
+r7rs IN CNAME redirect
 
 get IN CNAME alpha.servers
 
-bigloo IN CNAME alpha.servers
+bigloo IN CNAME redirect
 
-chez IN CNAME alpha.servers
+chez IN CNAME redirect
 
-chibi IN CNAME alpha.servers
+chibi IN CNAME redirect
 
-chicken IN CNAME alpha.servers
+chicken IN CNAME redirect
 
-cyclone IN CNAME alpha.servers
+cyclone IN CNAME redirect
 
 gambit IN CNAME gambitscheme.org.
 
-gauche IN CNAME alpha.servers
+gauche IN CNAME redirect
 
 gerbil IN CNAME cons.io.
 
-jazz IN CNAME alpha.servers
+jazz IN CNAME redirect
 
-kawa IN CNAME alpha.servers
+kawa IN CNAME redirect
 
 loko IN CNAME scheme.fail.
 
-mit IN CNAME alpha.servers
+mit IN CNAME redirect
 
-s7 IN CNAME alpha.servers
+s7 IN CNAME redirect
 
-sagittarius IN CNAME alpha.servers
+sagittarius IN CNAME redirect
 
-scm IN CNAME alpha.servers
+scm IN CNAME redirect
 
-stklos IN CNAME alpha.servers
+stklos IN CNAME redirect
 
-ypsilon IN CNAME alpha.servers
+ypsilon IN CNAME redirect
 
 index IN CNAME ironwolf.servers
 
@@ -122,3 +122,5 @@ play IN CNAME try
 doc IN CNAME docs
 
 list IN CNAME lists
+
+redirect IN CNAME alpha.servers
