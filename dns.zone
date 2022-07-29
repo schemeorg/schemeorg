@@ -10,7 +10,7 @@ www IN CNAME alpha.servers
 
 try IN CNAME alpha.servers
 
-faq IN CNAME alpha.servers
+faq IN CNAME redirect
 
 cookbook IN CNAME alpha.servers
 
