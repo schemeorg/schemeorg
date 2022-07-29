@@ -25,7 +25,7 @@
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "cookbook")
     (title "Cookbook")
