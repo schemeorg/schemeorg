@@ -378,7 +378,7 @@
     (title "API")
     (tagline "Programmable queries for all things Scheme")
     (contacts "lassi")
-    (display? #t)
+    (display? #f)
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
@@ -386,7 +386,7 @@
     (title "Containers")
     (tagline "Ready-to-run Docker containers of Scheme implementations")
     (contacts "lassi")
-    (display? #t)
+    (display? #f)
     (dns (rec (type "CNAME")
               (data "neptune.servers"))))
 
