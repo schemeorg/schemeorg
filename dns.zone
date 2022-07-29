@@ -30,7 +30,7 @@ video IN CNAME alpha.servers
 
 lists IN CNAME alpha.servers
 
-wiki IN CNAME alpha.servers
+wiki IN CNAME redirect
 
 groups IN CNAME alpha.servers
 
@@ -113,6 +113,7 @@ neptune.servers IN A 5.28.137.182
 staging IN CNAME www.staging
 api.staging IN CNAME alpha.servers
 docs.staging IN CNAME alpha.servers
+wiki.staging IN CNAME alpha.servers
 www.staging IN CNAME alpha.servers
 
 blog IN CNAME planet

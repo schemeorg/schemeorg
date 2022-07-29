@@ -108,7 +108,7 @@
     (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "alpha.servers"))))
+              (data "redirect"))))
 
    ((project-id "groups")
     (title "Groups")
@@ -464,6 +464,9 @@
               (type "CNAME")
               (data "alpha.servers"))
          (rec (name "docs")
+              (type "CNAME")
+              (data "alpha.servers"))
+         (rec (name "wiki")
               (type "CNAME")
               (data "alpha.servers"))
          (rec (name "www")
