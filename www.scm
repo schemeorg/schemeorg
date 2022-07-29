@@ -272,8 +272,8 @@
      (div (@ (class "round-box green-box blog-posts"))
           (h2 "What's new in Scheme")
           ;; We should guard against rogue content, e.g. by filtering
-          ;; out entries with foul language or dangerous HTML; include
-          ;; the source; and format the date in a friendlier way.
+          ;; out entries with foul language or dangerous HTML; and
+          ;; include the source.
           (ul ,@(map (lambda (fi)
                        `(li (a (@ href ,(fi/uri fi)) ,(fi/title fi))
                             " " (time (@ (class "date")) ,(fi-friendly-date fi))))
