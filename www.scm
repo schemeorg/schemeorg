@@ -137,7 +137,10 @@
                            (cdr sxml)))
                    (else
                     (inner (outer result (car sxml))
-                           (cdr sxml)))))))))
+                           (cdr sxml))))))
+          (else
+           (outer (outer result (car sxml))
+                  (cdr sxml))))))
 
 (define (rss port)
   (let ((sxml (ssax:xml->sxml port '())))
