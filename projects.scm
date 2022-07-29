@@ -356,7 +356,7 @@
 
    ((project-id "ypsilon")
     (title "Ypsilon")
-    (tagline "Incremental native-code compiler, mostly concurrent GC")
+    (tagline "Incremental native-code compiler with concurrent GC")
     (sidenote "R^6 R^7")
     (contacts "Göran Weinholt"
               "Yoshikatsu Fujita")
@@ -384,7 +384,7 @@
 
    ((project-id "containers")
     (title "Containers")
-    (tagline "Ready-to-run Docker containers of Scheme implementations")
+    (tagline "Ready-to-run Docker containers")
     (contacts "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
@@ -392,7 +392,7 @@
 
    ((project-id "docs")
     (title "Documentation")
-    (tagline "Study and explore Scheme implementations and libraries")
+    (tagline "Study Scheme implementations and libraries")
     (comments "Discussed on the schemedoc@srfi.schemers.org mailing list.")
     (contacts "lassi" "arthur")
     (display? #t)
@@ -409,7 +409,7 @@
 
    ((project-id "files")
     (title "Files")
-    (tagline "Scheme file archive")
+    (tagline "Archive of current and historical files")
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
@@ -417,7 +417,7 @@
 
    ((project-id "gitea")
     (title "Gitea")
-    (tagline "Host Git repositories at Scheme.org")
+    (tagline "Host Git repositories under Scheme.org")
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
@@ -425,7 +425,7 @@
 
    ((project-id "registry")
     (title "Registry")
-    (tagline "Catalog of identifiers and other data used around Scheme")
+    (tagline "Catalog of identifiers and other data")
     (contacts "lassi" "hga" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
