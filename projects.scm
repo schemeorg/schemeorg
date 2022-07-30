@@ -318,6 +318,15 @@
     (dns (rec (type "CNAME")
               (data "redirect"))))
 
+   ((project-id "mosh")
+    (title "Mosh")
+    (tagline "Fast and complete R^6RS interpreter")
+    (sidenote "R^6")
+    (contacts "Taro Minowa")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "redirect"))))
+
    ((project-id "s7")
     (title "s7")
     (tagline "Embeddable interpreter for music applications")
