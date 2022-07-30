@@ -78,6 +78,8 @@ loko IN CNAME scheme.fail.
 
 mit IN CNAME redirect
 
+mosh IN CNAME redirect
+
 s7 IN CNAME redirect
 
 sagittarius IN CNAME redirect
