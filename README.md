@@ -49,3 +49,4 @@ Scheme eggs. The `*.sh` wrappers use Chicken 5 with the `r7rs` egg.
 - `./wwwlocal.sh` -- start localhost web server to browse `www`
   subdirectory.
 - `./wwwstaging.sh` -- upload `www` subdirectory to staging server.
+- `./wwwproduction.sh` -- upload `www` subdirectory to production server.
