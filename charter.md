@@ -64,8 +64,7 @@ The following standard `@scheme.org` email addresses:
 All other `@scheme.org` addresses are reserved for mailing lists
 hosted at `lists.scheme.org`.
 
-_Community projects_ shall not expose any email addresses on their
-subdomains.
+_Community projects_ shall not run mail service on their subdomains.
 
 _Owned projects_ are free to run public and/or private mailing lists,
 and to have private mailboxes, on their subdomains if they so choose.
