@@ -90,6 +90,8 @@ stklos IN CNAME redirect
 
 ypsilon IN CNAME redirect
 
+conservatory IN CNAME alpha.servers
+
 index IN CNAME ironwolf.servers
 
 api IN CNAME alpha.servers

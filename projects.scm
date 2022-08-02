@@ -371,7 +371,16 @@
               "Yoshikatsu Fujita")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect")))))
+              (data "redirect"))))
+
+   ((project-id "conservatory")
+    (title "Conservatory")
+    (tagline "Community maintenance of old implementations")
+    (sidenote "")
+    (contacts "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers")))))
 
   ("Tools"
 
