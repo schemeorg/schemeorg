@@ -10,7 +10,7 @@ www IN CNAME alpha.servers
 
 try IN CNAME alpha.servers
 
-faq IN CNAME redirect
+faq IN CNAME go
 
 cookbook IN CNAME alpha.servers
 
@@ -30,7 +30,7 @@ video IN CNAME alpha.servers
 
 lists IN CNAME alpha.servers
 
-wiki IN CNAME redirect
+wiki IN CNAME go
 
 groups IN CNAME alpha.servers
 
@@ -46,49 +46,49 @@ test IN CNAME alpha.servers
 
 web IN CNAME alpha.servers
 
-r5rs IN CNAME redirect
+r5rs IN CNAME go
 
-r6rs IN CNAME redirect
+r6rs IN CNAME go
 
-r7rs IN CNAME redirect
+r7rs IN CNAME go
 
 get IN CNAME alpha.servers
 
-bigloo IN CNAME redirect
+bigloo IN CNAME go
 
-chez IN CNAME redirect
+chez IN CNAME go
 
-chibi IN CNAME redirect
+chibi IN CNAME go
 
-chicken IN CNAME redirect
+chicken IN CNAME go
 
-cyclone IN CNAME redirect
+cyclone IN CNAME go
 
 gambit IN CNAME gambitscheme.org.
 
-gauche IN CNAME redirect
+gauche IN CNAME go
 
 gerbil IN CNAME cons.io.
 
-jazz IN CNAME redirect
+jazz IN CNAME go
 
-kawa IN CNAME redirect
+kawa IN CNAME go
 
 loko IN CNAME scheme.fail.
 
-mit IN CNAME redirect
+mit IN CNAME go
 
-mosh IN CNAME redirect
+mosh IN CNAME go
 
-s7 IN CNAME redirect
+s7 IN CNAME go
 
-sagittarius IN CNAME redirect
+sagittarius IN CNAME go
 
-scm IN CNAME redirect
+scm IN CNAME go
 
-stklos IN CNAME redirect
+stklos IN CNAME go
 
-ypsilon IN CNAME redirect
+ypsilon IN CNAME go
 
 conservatory IN CNAME alpha.servers
 
@@ -105,6 +105,8 @@ man IN CNAME alpha.servers
 files IN CNAME alpha.servers
 
 gitea IN CNAME alpha.servers
+
+go IN CNAME alpha.servers
 
 registry IN CNAME alpha.servers
 
@@ -127,5 +129,3 @@ play IN CNAME try
 doc IN CNAME docs
 
 list IN CNAME lists
-
-redirect IN CNAME alpha.servers

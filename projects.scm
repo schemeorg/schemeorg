@@ -25,7 +25,7 @@
     (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "cookbook")
     (title "Cookbook")
@@ -108,7 +108,7 @@
     (contacts "lassi" "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "groups")
     (title "Groups")
@@ -180,7 +180,7 @@
     (contacts "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "r6rs")
     (title "R^6RS")
@@ -188,7 +188,7 @@
     (contacts "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "r7rs")
     (title "R^7RS")
@@ -196,7 +196,7 @@
     (contacts "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "redirect")))))
+              (data "go")))))
 
   ("Implementations"
 
@@ -216,7 +216,7 @@
     (contacts "Manuel Serrano")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "chez")
     (title "Chez Scheme")
@@ -226,7 +226,7 @@
               "Andy Keep")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "chibi")
     (title "Chibi-Scheme")
@@ -235,7 +235,7 @@
     (contacts "Alex Shinn")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "chicken")
     (title "CHICKEN")
@@ -244,7 +244,7 @@
     (contacts "Mario Domenech Goulart" "chicken-meisters at nongnu.org")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "cyclone")
     (title "Cyclone")
@@ -253,7 +253,7 @@
     (contacts "Justin Ethier")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "gambit")
     (title "Gambit")
@@ -271,7 +271,7 @@
     (contacts "shirok")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "gerbil")
     (title "Gerbil")
@@ -289,7 +289,7 @@
     (contacts "Guillaume Cartier")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "kawa")
     (title "Kawa")
@@ -298,7 +298,7 @@
     (contacts "Per Bothner")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "loko")
     (title "Loko")
@@ -316,7 +316,7 @@
     (contacts "arthur")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "mosh")
     (title "Mosh")
@@ -325,7 +325,7 @@
     (contacts "Taro Minowa")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "s7")
     (title "s7")
@@ -334,7 +334,7 @@
     (contacts "bil" "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "sagittarius")
     (title "Sagittarius")
@@ -343,7 +343,7 @@
     (contacts "Takashi Kato")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "scm")
     (title "SCM")
@@ -352,7 +352,7 @@
     (contacts "Aubrey Jaffer" "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "stklos")
     (title "STklos")
@@ -361,7 +361,7 @@
     (contacts "Erick Gallesio")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "ypsilon")
     (title "Ypsilon")
@@ -371,7 +371,7 @@
               "Yoshikatsu Fujita")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "redirect"))))
+              (data "go"))))
 
    ((project-id "conservatory")
     (title "Conservatory")
@@ -437,6 +437,14 @@
     (title "Gitea")
     (tagline "Host Git repositories under Scheme.org")
     (contacts "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
+   ((project-id "go")
+    (title "Go Scheme")
+    (tagline "URL shortening service")
+    (contacts "lassi" "Jakub T. Jankiewicz")
     (display? #t)
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
@@ -515,13 +523,7 @@
     (contacts "arthur" "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "lists"))))
-
-   ((project-id "redirect")
-    (contacts "lassi" "arthur")
-    (display? #f)
-    (dns (rec (type "CNAME")
-              (data "alpha.servers"))))))
+              (data "lists"))))))
 
  (people
 
