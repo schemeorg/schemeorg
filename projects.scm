@@ -94,6 +94,16 @@
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
 
+   ((project-id "chat")
+    (title "Chat")
+    (tagline "IRC, Discord, Gitter and other highly informal channels")
+    (contacts "Jakub T. Jankiewicz"
+              "Wolfgang Corcoran-Mathe"
+              "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
    ((project-id "lists")
     (title "Lists")
     (tagline "Mailing lists for email discussion of many Scheme topics")

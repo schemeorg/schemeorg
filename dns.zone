@@ -28,6 +28,8 @@ planet IN CNAME alpha.servers
 
 video IN CNAME alpha.servers
 
+chat IN CNAME alpha.servers
+
 lists IN CNAME alpha.servers
 
 wiki IN CNAME go
