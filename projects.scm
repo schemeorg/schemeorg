@@ -292,6 +292,16 @@
     (dns (rec (type "CNAME")
               (data "cons.io."))))
 
+   ((project-id "guile")
+    (title "Guile")
+    (tagline "Main Scheme implementation of the GNU project")
+    (sidenote "R^6 R^7")
+    (contacts "Ludovic Courtès"
+              "Andy Wingo")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "go"))))
+
    ((project-id "jazz")
     (title "JazzScheme")
     (tagline "Object-oriented GUI and IDE built on Gambit")

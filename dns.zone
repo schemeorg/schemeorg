@@ -72,6 +72,8 @@ gauche IN CNAME go
 
 gerbil IN CNAME cons.io.
 
+guile IN CNAME go
+
 jazz IN CNAME go
 
 kawa IN CNAME go
