@@ -341,7 +341,7 @@
    ((project-id "mosh")
     (title "Mosh")
     (tagline "Fast and complete R^6RS interpreter")
-    (sidenote "R^6")
+    (sidenote "R^6 R^7")
     (contacts "Taro Minowa")
     (display? #t)
     (dns (rec (type "CNAME")
