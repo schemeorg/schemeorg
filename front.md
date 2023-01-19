@@ -8,3 +8,13 @@ but adapts to other styles. Known for its clean and minimalist design,
 Scheme is one of the longest-lived and best-studied
 <a class="offsite" href="//en.wikipedia.org/wiki/Dynamic_programming_language">dynamic languages</a>,
 and has many fast and portable implementations.
+
+From the Scheme standard reports:
+
+> Programming languages should be designed not by piling feature on
+> top of feature, but by removing the weaknesses and restrictions that
+> make additional features appear necessary.  Scheme demonstrates that
+> a very small number of rules for forming expressions, with no
+> restrictions on how they are composed, suffice to form a practical
+> and efficient programming language that is flexible enough to
+> support most of the major programming paradigms in use today.
