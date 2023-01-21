@@ -326,19 +326,23 @@
    "scheme.org/www/index.html"
    #;"schemers.org/www/index.html"
    '(div (@ (class "round-box orange-box"))
-	 (p "Welcome to the new "
-	    (a (@ (href "https://schemers.org/"))
-	       "schemers.org")
-	    ".  "
+	 (p "Welcome to "
 	    (a (@ (href "https://scheme.org/"))
-	       "scheme.org "))
+	       "scheme.org")
+	    ".  You arrived via the URL "
+	    (code "schemers.org")
+	    ".  Here's a "
+	    (a (@ (href "https://schemers.org/"))
+	       "snapshot")
+	    " of the old "
+	    (code "schemers.org")
+	    " home page.")
 	 (p "Thanks to "
 	    (a (@ (href "https://cs.brown.edu/~sk/"))
 	       "Prof. Shriram Krishnamurthi")
-	    " and all the other people who gave Scheme a home on the "
-	    (a (@ (href "https://schemers.org/"))
-	       "schemers.org")
-	    " web site for nearly twenty-five years.")))
+	    " and all the other people who gave Scheme a home on "
+	    (code "schemers.org")
+	    " for nearly twenty-five years.")))
   (write-simple-page "scheme.org/www/about/index.html"
 		     "scheme.org/about.md"
                      "description here")
