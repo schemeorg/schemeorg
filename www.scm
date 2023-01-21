@@ -321,7 +321,7 @@
 (define (main)
   (create-directory "scheme.org/www/about")
   (create-directory "scheme.org/www/charter")
-  (write-front-page "scheme.org/www/index.html" '())
+  #;(write-front-page "scheme.org/www/index.html" '())
   (write-front-page
    "scheme.org/www/index.html"
    #;"schemers.org/www/index.html"
@@ -329,15 +329,12 @@
 	 (p "Welcome to "
 	    (a (@ (href "https://scheme.org/"))
 	       "scheme.org")
-	    ".  You arrived via the URL "
-	    (code "schemers.org")
-	    ".  Here's a "
+	    ", a new home page for Scheme.  Here is a "
 	    (a (@ (href "https://schemers.org/"))
 	       "snapshot")
 	    " of the old "
 	    (code "schemers.org")
-	    " home page.")
-	 (p "Thanks to "
+	    ".  Thanks to "
 	    (a (@ (href "https://cs.brown.edu/~sk/"))
 	       "Prof. Shriram Krishnamurthi")
 	    " and all the other people who gave Scheme a home on "
