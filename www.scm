@@ -269,7 +269,7 @@
                     ("Implementations" "https://get.scheme.org/")))
      (h1 (@ (id "logo")) "Scheme")
      ,extra-banner
-     ,@(markdown-file->sxml "scheme.org/front.md")
+     ,@(markdown-file->sxml "front.md")
      (div (@ (class "round-box green-box blog-posts"))
           (h2 "What's new in Scheme")
           ;; We should guard against rogue content, e.g. by filtering
@@ -319,12 +319,11 @@
      (p (a (@ (href "about/")) "About Scheme.org")))))
 
 (define (main)
-  (create-directory "scheme.org/www/about")
-  (create-directory "scheme.org/www/charter")
-  #;(write-front-page "scheme.org/www/index.html" '())
+  (create-directory "www/about")
+  (create-directory "www/charter")
+  (write-front-page "www/index.html" '())
   (write-front-page
-   "scheme.org/www/index.html"
-   #;"schemers.org/www/index.html"
+   "www/schemers.html"
    '(div (@ (class "round-box orange-box"))
 	 (p "Welcome to "
 	    (a (@ (href "https://scheme.org/"))
@@ -340,12 +339,8 @@
 	    " and all the other people who gave Scheme a home on "
 	    (code "schemers.org")
 	    " for nearly twenty-five years.")))
-  (write-simple-page "scheme.org/www/about/index.html"
-		     "scheme.org/about.md"
-                     "description here")
-  (write-simple-page "scheme.org/www/charter/index.html"
-		     "scheme.org/charter.md"
-                     "description here")
+  (write-simple-page "www/about/index.html" "about.md" "description here")
+  (write-simple-page "www/charter/index.html" "charter.md" "description here")
   0)
 
 (main)
