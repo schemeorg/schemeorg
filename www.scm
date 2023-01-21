@@ -329,7 +329,7 @@
 	    (a (@ (href "https://scheme.org/"))
 	       "scheme.org")
 	    ", a new home page for Scheme.  Here is a "
-	    (a (@ (href "https://schemers.org/"))
+	    (a (@ (href "https://conservatory.scheme.org/schemers/"))
 	       "snapshot")
 	    " of the old "
 	    (code "schemers.org")
