@@ -38,9 +38,11 @@ Scheme eggs. The `*.sh` wrappers use Chicken 5 with the `r7rs` egg.
 
 ### DNS maintenance
 
-- `./dns.sh` -- generate `dns.zone` based on `projects.scm`.
-- `./dnsput.sh` -- upload `dns.zone` to Gandi.
-- `./dnsget.sh` -- download `dns.zone` from Gandi.
+- `./dns.sh` -- generate `dns.scheme.org.zone` based on `projects.scm`.
+- `./dnsput.sh scheme.org` -- upload `dns.scheme.org.zone` to Gandi.
+- `./dnsput.sh schemers.org` -- upload `dns.schemers.org.zone` to Gandi.
+- `./dnsget.sh scheme.org` -- download `dns.scheme.org.zone` from Gandi.
+- `./dnsget.sh schemers.org` -- download `dns.schemers.org.zone` from Gandi.
 
 ### WWW maintenance
 
