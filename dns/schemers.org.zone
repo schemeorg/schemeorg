@@ -2,11 +2,15 @@ $TTL 10800
 
 @ IN A 128.148.32.110
 @ IN TXT "v=spf1 include:simplelists.com -all"
-selector1._domainkey.srfi IN TXT "k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCdnStwjJpJVTuAILoc4EJTjp3MAeVyXs6GGr7SeET2h0RNfBBSrj9O8NS1y4iAGLs0e8FPa3XsWAtajbBHs7SGb++MelY5f9hiYLI2Rez9+U3eDxNIfncuKlMtmvu81sJ/UDB36cTI9EHAds1fMAp2y0/9N14th6YoPLfyUzIlwIDAQAB"
+
+www IN A 128.148.32.110
+
 srfi IN A 45.33.17.102
 srfi IN AAAA 2600:3c00::f03c:93ff:fe96:b4e
+srfi IN TXT "v=spf1 include:simplelists.com -all"
 srfi IN MX 0 mx1.simplelists.com.
 srfi IN MX 10 mx2.simplelists.com.
-srfi IN TXT "v=spf1 include:simplelists.com -all"
+
 srfi-email IN A 78.143.254.30
-www IN A 128.148.32.110
+
+selector1._domainkey.srfi IN TXT "k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCdnStwjJpJVTuAILoc4EJTjp3MAeVyXs6GGr7SeET2h0RNfBBSrj9O8NS1y4iAGLs0e8FPa3XsWAtajbBHs7SGb++MelY5f9hiYLI2Rez9+U3eDxNIfncuKlMtmvu81sJ/UDB36cTI9EHAds1fMAp2y0/9N14th6YoPLfyUzIlwIDAQAB"
