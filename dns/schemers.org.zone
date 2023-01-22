@@ -1,11 +1,13 @@
-@ 10800 IN SOA ns1.gandi.net. hostmaster.gandi.net. 1674342040 10800 3600 604800 10800
-@ 3600 IN A 128.148.32.110
-@ 300 IN TXT "v=spf1 include:simplelists.com -all"
-selector1._domainkey.srfi 300 IN TXT "k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCdnStwjJpJVTuAILoc4EJTjp3MAeVyXs6GGr7SeET2h0RNfBBSrj9O8NS1y4iAGLs0e8FPa3XsWAtajbBHs7SGb++MelY5f9hiYLI2Rez9+U3eDxNIfncuKlMtmvu81sJ/UDB36cTI9EHAds1fMAp2y0/9N14th6YoPLfyUzIlwIDAQAB"
-srfi 3600 IN A 45.33.17.102
-srfi 300 IN AAAA 2600:3c00::f03c:93ff:fe96:b4e
-srfi 3600 IN MX 0 mx1.simplelists.com.
-srfi 3600 IN MX 10 mx2.simplelists.com.
-srfi 300 IN TXT "v=spf1 include:simplelists.com -all"
-srfi-email 300 IN A 78.143.254.30
-www 3600 IN A 128.148.32.110
+$TTL 10800
+
+@ IN SOA ns1.gandi.net. hostmaster.gandi.net. 1674430452 10800 3600 604800 10800
+@ IN A 128.148.32.110
+@ IN TXT "v=spf1 include:simplelists.com -all"
+selector1._domainkey.srfi IN TXT "k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCdnStwjJpJVTuAILoc4EJTjp3MAeVyXs6GGr7SeET2h0RNfBBSrj9O8NS1y4iAGLs0e8FPa3XsWAtajbBHs7SGb++MelY5f9hiYLI2Rez9+U3eDxNIfncuKlMtmvu81sJ/UDB36cTI9EHAds1fMAp2y0/9N14th6YoPLfyUzIlwIDAQAB"
+srfi IN A 45.33.17.102
+srfi IN AAAA 2600:3c00::f03c:93ff:fe96:b4e
+srfi IN MX 0 mx1.simplelists.com.
+srfi IN MX 10 mx2.simplelists.com.
+srfi IN TXT "v=spf1 include:simplelists.com -all"
+srfi-email IN A 78.143.254.30
+www IN A 128.148.32.110
