@@ -1,6 +1,5 @@
 $TTL 10800
 
-@ IN SOA ns1.gandi.net. hostmaster.gandi.net. 1674430452 10800 3600 604800 10800
 @ IN A 128.148.32.110
 @ IN TXT "v=spf1 include:simplelists.com -all"
 selector1._domainkey.srfi IN TXT "k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCdnStwjJpJVTuAILoc4EJTjp3MAeVyXs6GGr7SeET2h0RNfBBSrj9O8NS1y4iAGLs0e8FPa3XsWAtajbBHs7SGb++MelY5f9hiYLI2Rez9+U3eDxNIfncuKlMtmvu81sJ/UDB36cTI9EHAds1fMAp2y0/9N14th6YoPLfyUzIlwIDAQAB"
