@@ -3,6 +3,8 @@
 This is the main version control repository for the internet domain
 name `scheme.org`.
 
+(Also included is a vestigial site for `schemers.org`.)
+
 ## Projects
 
 Scheme.org is divided into _projects_. Each project corresponds to a
@@ -21,7 +23,8 @@ records.
 
 The `www` project corresponds to `www.scheme.org`, the front page of
 `scheme.org`. The website at this subdomain is generated from
-`projects.scm` as well as the Markdown (`*.md`) files in this repo.
+`projects.scm` as well as the Markdown (`doc/*.md`) files in this
+repo.
 
 The `lists` project is responsible for `@scheme.org` mailing lists
 (TODO).
@@ -34,21 +37,22 @@ which may be the same as its main server.
 ## Maintenance scripts
 
 Scripts are written for R7RS-small. The WWW scripts use a few Chicken
-Scheme eggs. The `*.sh` wrappers use Chicken 5 with the `r7rs` egg.
+Scheme eggs. The `scripts/*.sh` wrappers use Chicken 5 with the `r7rs`
+egg.
 
 ### DNS maintenance
 
-- `./dns.sh` -- generate `dns.scheme.org.zone` based on `projects.scm`.
-- `./dnsput.sh scheme.org` -- upload `dns.scheme.org.zone` to Gandi.
-- `./dnsput.sh schemers.org` -- upload `dns.schemers.org.zone` to Gandi.
-- `./dnsget.sh scheme.org` -- download `dns.scheme.org.zone` from Gandi.
-- `./dnsget.sh schemers.org` -- download `dns.schemers.org.zone` from Gandi.
+- `scripts/dns.sh` -- generate `dns/scheme.org.zone` based on `projects.scm`.
+- `scripts/dnsput.sh scheme.org` -- upload `dns/scheme.org.zone` to Gandi.
+- `scripts/dnsput.sh schemers.org` -- upload `dns/schemers.org.zone` to Gandi.
+- `scripts/dnsget.sh scheme.org` -- download `dns/scheme.org.zone` from Gandi.
+- `scripts/dnsget.sh schemers.org` -- download `dns/schemers.org.zone` from Gandi.
 
 ### WWW maintenance
 
-- `./www.sh` -- generate `www` subdirectory based on `projects.scm`
-  and `*.md`.
-- `./wwwlocal.sh` -- start localhost web server to browse `www`
+- `scripts/www.sh` -- generate HTML files in the `www` subdirectory
+  based on `projects.scm` and `doc/*.md`.
+- `scripts/wwwlocal.sh` -- start localhost web server to browse `www`
   subdirectory.
-- `./wwwstaging.sh` -- upload `www` subdirectory to staging server.
-- `./wwwproduction.sh` -- upload `www` subdirectory to production server.
+- `scripts/wwwstaging.sh` -- upload `www` subdirectory to staging server.
+- `scripts/wwwproduction.sh` -- upload `www` subdirectory to production server.
