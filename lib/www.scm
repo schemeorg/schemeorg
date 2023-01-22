@@ -236,7 +236,8 @@
           (else (rec (cdr tags))))))
 
 (define (markdown-file->sxml md-filename)
-  (call-with-port (open-input-file md-filename) markdown->sxml))
+  (call-with-port (open-input-file (string-append "doc/" md-filename))
+    markdown->sxml))
 
 (define (write-simple-page html-filename md-filename description)
   (let ((sxml (markdown-file->sxml md-filename)))
@@ -318,12 +319,23 @@
         project-groups)
      (p (a (@ (href "about/")) "About Scheme.org")))))
 
-(define (main)
-  (create-directory "www/about")
-  (create-directory "www/charter")
-  (write-front-page "www/index.html" '())
+(define (generate-scheme.org)
+  (create-directory "www/scheme.org")
+  (create-directory "www/scheme.org/about")
+  (create-directory "www/scheme.org/charter")
+  (write-front-page "www/scheme.org/index.html"
+                    '())
+  (write-simple-page "www/scheme.org/about/index.html"
+                     "about.md"
+                     "description here")
+  (write-simple-page "www/scheme.org/charter/index.html"
+                     "charter.md"
+                     "description here"))
+
+(define (generate-schemers.org)
+  (create-directory "www/schemers.org")
   (write-front-page
-   "www/schemers.html"
+   "www/schemers.org/index.html"
    '(div (@ (class "round-box orange-box"))
 	 (p "Welcome to "
 	    (a (@ (href "https://scheme.org/"))
@@ -338,9 +350,11 @@
 	       "Prof. Shriram Krishnamurthi")
 	    " and all the other people who gave Scheme a home on "
 	    (code "schemers.org")
-	    " for nearly twenty-five years.")))
-  (write-simple-page "www/about/index.html" "about.md" "description here")
-  (write-simple-page "www/charter/index.html" "charter.md" "description here")
+	    " for nearly twenty-five years."))))
+
+(define (main)
+  (generate-scheme.org)
+  (generate-schemers.org)
   0)
 
 (main)

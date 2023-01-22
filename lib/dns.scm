@@ -1,4 +1,4 @@
-;; Write all DNS records into the file "dns.scheme.org.zone".
+;; Write all DNS records into the file "dns/scheme.org.zone".
 ;;
 ;; File format: <https://en.wikipedia.org/wiki/Zone_file>
 ;;
@@ -56,8 +56,8 @@
    project-groups))
 
 (define (main)
-  (echo "Writing dns.scheme.org.zone")
-  (with-output-to-file "dns.scheme.org.zone" echo-zone-file)
+  (echo "Writing dns/scheme.org.zone")
+  (with-output-to-file "dns/scheme.org.zone" echo-zone-file)
   0)
 
 (main)
