@@ -256,7 +256,7 @@
                      `(li (a (@ (href ,(cadr i))) ,(car i)))))
                items))))
 
-(define (write-front-page html-filename extra-banner)
+(define (write-front-page html-filename atom-feed extra-banner)
   (write-html-file
    html-filename
    "The Scheme Programming Language"
@@ -279,8 +279,7 @@
           (ul ,@(map (lambda (fi)
                        `(li (a (@ href ,(fi/uri fi)) ,(fi/title fi))
                             " " (time (@ (class "date")) ,(fi-friendly-date fi))))
-                     (take (fetch-atom "https://planet.scheme.org/atom.xml")
-                           5)))
+                     (take atom-feed 5)))
 	  (p (@ class "more")
 	     "More on "
 	     (a (@ href "https://planet.scheme.org/")
@@ -321,32 +320,35 @@
            "About Scheme.org")))))
 
 (define (generate-scheme.org)
-  (create-directory "www/scheme.org")
-  (create-directory "www/scheme.org/about")
-  (create-directory "www/scheme.org/charter")
-  (create-directory "www/scheme.org/schemers")
-  (write-front-page "www/scheme.org/index.html"
-                    #f)
-  (write-simple-page "www/scheme.org/about/index.html"
-                     "about.md"
-                     "description here")
-  (write-simple-page "www/scheme.org/charter/index.html"
-                     "charter.md"
-                     "description here")
-  (write-front-page
-   "www/scheme.org/schemers/index.html"
-   '(div (@ (class "round-box orange-box"))
-	 (p "Welcome to "
-	    (a (@ (href "https://www.scheme.org/"))
-	       "Scheme.org")
-	    ", a new home page for Scheme. We host a "
-	    (a (@ (href "https://conservatory.scheme.org/schemers/"))
-	       "snapshot")
-	    " of the old Schemers.org. Thanks to "
-	    (a (@ (href "https://cs.brown.edu/~sk/"))
-	       "Prof. Shriram Krishnamurthi")
-	    " and all the other people who gave Scheme a home on Schemers.org"
-	    " for nearly twenty-five years."))))
+  (let ((atom-feed (fetch-atom "https://planet.scheme.org/atom.xml")))
+    (create-directory "www/scheme.org")
+    (create-directory "www/scheme.org/about")
+    (create-directory "www/scheme.org/charter")
+    (create-directory "www/scheme.org/schemers")
+    (write-front-page "www/scheme.org/index.html"
+                      atom-feed
+                      #f)
+    (write-simple-page "www/scheme.org/about/index.html"
+                       "about.md"
+                       "description here")
+    (write-simple-page "www/scheme.org/charter/index.html"
+                       "charter.md"
+                       "description here")
+    (write-front-page
+     "www/scheme.org/schemers/index.html"
+     atom-feed
+     '(div (@ (class "round-box orange-box"))
+	   (p "Welcome to "
+	      (a (@ (href "https://www.scheme.org/"))
+	         "Scheme.org")
+	      ", a new home page for Scheme. We host a "
+	      (a (@ (href "https://conservatory.scheme.org/schemers/"))
+	         "snapshot")
+	      " of the old Schemers.org. Thanks to "
+	      (a (@ (href "https://cs.brown.edu/~sk/"))
+	         "Prof. Shriram Krishnamurthi")
+	      " and all the other people who gave Scheme a home on Schemers.org"
+	      " for nearly twenty-five years.")))))
 
 (define (main)
   (generate-scheme.org)
