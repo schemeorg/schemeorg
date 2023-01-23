@@ -263,13 +263,13 @@
    (string-append "Scheme is a minimalist dialect of the Lisp family "
                   "of programming languages. This is the official website "
                   "for the Scheme language.")
-   `(,(write-menu '(("Home" "https://scheme.org/" . active)
+   `(,(write-menu `(("Home" "https://www.scheme.org/" . active)
                     ("Docs" "https://docs.scheme.org/")
                     ("Community" "https://community.scheme.org/")
                     ("Standards" "https://standards.scheme.org/")
                     ("Implementations" "https://get.scheme.org/")))
      (h1 (@ (id "logo")) "Scheme")
-     ,extra-banner
+     ,@(if extra-banner `(,extra-banner) '())
      ,@(markdown-file->sxml "front.md")
      (div (@ (class "round-box green-box blog-posts"))
           (h2 "What's new in Scheme")
@@ -317,14 +317,16 @@
                          (table (@ (class "no-border"))
                                 ,@trs)))))))
         project-groups)
-     (p (a (@ (href "about/")) "About Scheme.org")))))
+     (p (a (@ (href "/about/"))
+           "About Scheme.org")))))
 
 (define (generate-scheme.org)
   (create-directory "www/scheme.org")
   (create-directory "www/scheme.org/about")
   (create-directory "www/scheme.org/charter")
+  (create-directory "www/scheme.org/schemers")
   (write-front-page "www/scheme.org/index.html"
-                    '())
+                    #f)
   (write-simple-page "www/scheme.org/about/index.html"
                      "about.md"
                      "description here")
@@ -332,21 +334,18 @@
                      "charter.md"
                      "description here")
   (write-front-page
-   "www/scheme.org/schemers.html"
+   "www/scheme.org/schemers/index.html"
    '(div (@ (class "round-box orange-box"))
 	 (p "Welcome to "
-	    (a (@ (href "https://scheme.org/"))
-	       "scheme.org")
-	    ", a new home page for Scheme.  Here is a "
+	    (a (@ (href "https://www.scheme.org/"))
+	       "Scheme.org")
+	    ", a new home page for Scheme. We host a "
 	    (a (@ (href "https://conservatory.scheme.org/schemers/"))
 	       "snapshot")
-	    " of the old "
-	    (code "schemers.org")
-	    ".  Thanks to "
+	    " of the old Schemers.org. Thanks to "
 	    (a (@ (href "https://cs.brown.edu/~sk/"))
 	       "Prof. Shriram Krishnamurthi")
-	    " and all the other people who gave Scheme a home on "
-	    (code "schemers.org")
+	    " and all the other people who gave Scheme a home on Schemers.org"
 	    " for nearly twenty-five years."))))
 
 (define (main)
