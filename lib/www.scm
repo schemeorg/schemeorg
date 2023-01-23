@@ -330,12 +330,9 @@
                      "description here")
   (write-simple-page "www/scheme.org/charter/index.html"
                      "charter.md"
-                     "description here"))
-
-(define (generate-schemers.org)
-  (create-directory "www/schemers.org")
+                     "description here")
   (write-front-page
-   "www/schemers.org/index.html"
+   "www/scheme.org/schemers.html"
    '(div (@ (class "round-box orange-box"))
 	 (p "Welcome to "
 	    (a (@ (href "https://scheme.org/"))
@@ -354,7 +351,6 @@
 
 (define (main)
   (generate-scheme.org)
-  (generate-schemers.org)
   0)
 
 (main)
