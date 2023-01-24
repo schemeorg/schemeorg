@@ -94,8 +94,6 @@ stklos IN CNAME go
 
 ypsilon IN CNAME go
 
-conservatory IN CNAME alpha.servers
-
 index IN CNAME ironwolf.servers
 
 api IN CNAME alpha.servers
@@ -105,6 +103,8 @@ containers IN CNAME neptune.servers
 docs IN CNAME alpha.servers
 
 man IN CNAME alpha.servers
+
+conservatory IN CNAME alpha.servers
 
 files IN CNAME alpha.servers
 
