@@ -391,16 +391,7 @@
               "Yoshikatsu Fujita")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "go"))))
-
-   ((project-id "conservatory")
-    (title "Conservatory")
-    (tagline "Community maintenance of old implementations")
-    (sidenote "")
-    (contacts "lassi")
-    (display? #t)
-    (dns (rec (type "CNAME")
-              (data "alpha.servers")))))
+              (data "go")))))
 
   ("Tools"
 
@@ -441,6 +432,15 @@
     (title "Manual pages")
     (tagline "Unix manual pages for tools and libraries")
     (contacts "weinholt" "lassi")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "alpha.servers"))))
+
+   ((project-id "conservatory")
+    (title "Conservatory")
+    (tagline "Community maintenance of old implementations")
+    (sidenote "")
+    (contacts "lassi")
     (display? #t)
     (dns (rec (type "CNAME")
               (data "alpha.servers"))))
