@@ -438,7 +438,7 @@
 
    ((project-id "conservatory")
     (title "Conservatory")
-    (tagline "Preservation old software and websites")
+    (tagline "Preservation of old software and websites")
     (sidenote "")
     (contacts "lassi")
     (display? #t)
