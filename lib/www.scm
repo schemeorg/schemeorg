@@ -5,15 +5,20 @@
 ;; You need Chicken 5 and
 ;; `chicken-install http-client lowdown openssl r7rs srfi-19 ssax sxpath`.
 
-(import (scheme base) (scheme file) (scheme read) (scheme write))
-(import (chicken file)) ; For create-directory.
-(import (sxpath-lolevel))
-(import (sxml-transforms))
-(import (lowdown))      ; Markdown-to-SXML parser.
-(import (ssax))         ; SSAX for parsing RSS
-(import (srfi 1))
-(import (srfi 19))
-(import http-client)
+(import (scheme base)
+        (scheme file)
+        (scheme read)
+        (scheme write)
+
+        (srfi 1)
+        (only (srfi 19) date->string string->date)
+
+        (only (chicken file) create-directory)
+        (only (http-client) call-with-input-request)
+        (only (lowdown) markdown->sxml)
+        (only (ssax) ssax:xml->sxml)
+        (only (sxml-transforms) SXML->HTML)
+        (only (sxpath-lolevel) sxml:content))
 
 (define (disp . xs) (for-each display xs) (newline))
 
