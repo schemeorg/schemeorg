@@ -7,13 +7,15 @@
 ;;
 ;; You need Chicken 5 and `chicken-install spiffy`.
 
-(import (srfi 98))
-(import (spiffy))
+(import (scheme base)
+        (scheme process-context)
+
+        (spiffy))
 
 (define (disp . xs) (for-each display xs) (newline))
 
 (define (main)
-  (root-path "www")  ; Serve static files from this directory.
+  (root-path "www/scheme.org")  ; Serve static files from this directory.
   (server-bind-address "localhost")
   (let ((port (get-environment-variable "PORT")))
     (when port (server-port (string->number port))))
