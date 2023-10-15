@@ -347,6 +347,17 @@
     (dns (rec (type "CNAME")
               (data "go"))))
 
+   ((project-id "racket")
+    (title "Racket")
+    (tagline "Native-code compiler")
+    (sidenote "R^5 R^6 R^7")
+    (contacts "John Clements" "Matthias Felleisen" "Robby Findler" 
+              "Matthew Flatt" "Jay McCarthy" "Sam Tobin-Hochstadt" 
+              "management at racket-lang.org")
+    (display? #t)
+    (dns (rec (type "CNAME")
+              (data "racket-lang.org."))))
+
    ((project-id "s7")
     (title "s7")
     (tagline "Embeddable interpreter for music applications")
