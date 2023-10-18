@@ -426,9 +426,9 @@
     (title "Containers")
     (tagline "Ready-to-run Docker containers")
     (contacts "lassi")
-    (display? #f)
+    (display? #t)
     (dns (rec (type "CNAME")
-              (data "neptune.servers"))))
+              (data "alpha.servers"))))
 
    ((project-id "docs")
     (title "Documentation")
@@ -504,11 +504,7 @@
               (data "89.40.10.46"))
          (rec (name "ironwolf")
               (type "AAAA")
-              (data "2a02:7b40:5928:a2e::1"))
-
-         (rec (name "neptune")
-              (type "A")
-              (data "5.28.137.182"))))
+              (data "2a02:7b40:5928:a2e::1"))))
 
    ((project-id "staging")
     (title "Staging")
