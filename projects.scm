@@ -356,7 +356,7 @@
               "management at racket-lang.org")
     (display? #t)
     (dns (rec (type "CNAME")
-              (data "racket-lang.org."))))
+              (data "go"))))
 
    ((project-id "s7")
     (title "s7")
