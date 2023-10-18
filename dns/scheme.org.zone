@@ -84,7 +84,7 @@ mit IN CNAME go
 
 mosh IN CNAME go
 
-racket IN CNAME racket-lang.org.
+racket IN CNAME go
 
 s7 IN CNAME go
 
