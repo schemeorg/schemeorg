@@ -129,8 +129,8 @@ www.staging IN CNAME alpha.servers
 
 blog IN CNAME planet
 
-play IN CNAME try
-
 doc IN CNAME docs
 
 list IN CNAME lists
+
+play IN CNAME try

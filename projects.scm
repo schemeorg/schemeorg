@@ -534,12 +534,6 @@
     (dns (rec (type "CNAME")
               (data "planet"))))
 
-   ((project-id "play")
-    (contacts "lassi" "arthur")
-    (display? #f)
-    (dns (rec (type "CNAME")
-              (data "try"))))
-
    ((project-id "doc")
     (contacts "lassi" "arthur")
     (display? #f)
@@ -550,7 +544,13 @@
     (contacts "arthur" "lassi")
     (display? #f)
     (dns (rec (type "CNAME")
-              (data "lists"))))))
+              (data "lists"))))
+
+   ((project-id "play")
+    (contacts "lassi" "arthur")
+    (display? #f)
+    (dns (rec (type "CNAME")
+              (data "try"))))))
 
  (people
 
