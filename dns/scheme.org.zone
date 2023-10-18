@@ -84,6 +84,8 @@ mit IN CNAME go
 
 mosh IN CNAME go
 
+racket IN CNAME racket-lang.org.
+
 s7 IN CNAME go
 
 sagittarius IN CNAME go
