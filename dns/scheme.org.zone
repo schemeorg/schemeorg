@@ -117,7 +117,7 @@ go IN CNAME alpha.servers
 registry IN CNAME alpha.servers
 
 servers IN CNAME alpha.servers
-alpha.servers IN CNAME scheme.org.
+alpha.servers IN CNAME @
 ironwolf.servers IN A 89.40.10.46
 ironwolf.servers IN AAAA 2a02:7b40:5928:a2e::1
 

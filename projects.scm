@@ -495,9 +495,10 @@
     (display? #t)
     (dns (rec (type "CNAME")
               (data "alpha.servers"))
+
          (rec (name "alpha")
               (type "CNAME")
-              (data "scheme.org."))
+              (data "@"))
 
          (rec (name "ironwolf")
               (type "A")

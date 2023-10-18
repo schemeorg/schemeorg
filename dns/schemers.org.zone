@@ -7,7 +7,7 @@ $TTL 10800
 @ IN AAAA 2001:19f0:5:6000:5400:2ff:fe07:9aa6
 @ IN TXT "v=spf1 include:simplelists.com -all"
 
-www IN CNAME schemers.org.
+www IN CNAME @
 
 srfi IN A 45.33.17.102
 srfi IN AAAA 2600:3c00::f03c:93ff:fe96:b4e
