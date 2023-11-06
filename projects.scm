@@ -22,6 +22,7 @@
     (tagline "Frequently asked questions about Scheme")
     (contacts "lassi")
     (display? #t)
+    (redirect "http://community.schemewiki.org/?scheme-faq")
     (dns (CNAME "go")))
 
    ((project-id "cookbook")
@@ -104,6 +105,7 @@
     (tagline "Scheme community wiki")
     (contacts "lassi" "arthur")
     (display? #t)
+    (redirect "http://community.schemewiki.org/")
     (dns (CNAME "go")))
 
    ((project-id "groups")
@@ -168,6 +170,7 @@
     (tagline "Revised^5 Report on the Algorithmic Language Scheme (1998)")
     (contacts "lassi")
     (display? #f)
+    (redirect "http://schemers.org/Documents/Standards/R5RS/")
     (dns (CNAME "go")))
 
    ((project-id "r6rs")
@@ -175,6 +178,7 @@
     (tagline "Revised^6 Report on the Algorithmic Language Scheme (2007)")
     (contacts "lassi")
     (display? #f)
+    (redirect "http://www.r6rs.org/")
     (dns (CNAME "go")))
 
    ((project-id "r7rs")
@@ -182,6 +186,7 @@
     (tagline "Revised^7 Report on the Algorithmic Language Scheme (2013)")
     (contacts "lassi")
     (display? #f)
+    (redirect "http://r7rs.org/")
     (dns (CNAME "go"))))
 
   ("Implementations"
@@ -200,6 +205,7 @@
     (sidenote "R^5")
     (contacts "Manuel Serrano")
     (display? #t)
+    (redirect "https://www-sop.inria.fr/indes/fp/Bigloo/")
     (dns (CNAME "go")))
 
    ((project-id "chez")
@@ -209,6 +215,7 @@
     (contacts "Bob Burger"
               "Andy Keep")
     (display? #t)
+    (redirect "https://cisco.github.io/ChezScheme/")
     (dns (CNAME "go")))
 
    ((project-id "chibi")
@@ -217,6 +224,7 @@
     (sidenote "R^7")
     (contacts "Alex Shinn")
     (display? #t)
+    (redirect "https://synthcode.com/scheme/chibi/")
     (dns (CNAME "go")))
 
    ((project-id "chicken")
@@ -225,6 +233,7 @@
     (sidenote "R^5 R^7")
     (contacts "Mario Domenech Goulart" "chicken-meisters at nongnu.org")
     (display? #t)
+    (redirect "https://call-cc.org/")
     (dns (CNAME "go")))
 
    ((project-id "cyclone")
@@ -233,6 +242,7 @@
     (sidenote "R^7")
     (contacts "Justin Ethier")
     (display? #t)
+    (redirect "https://justinethier.github.io/cyclone/")
     (dns (CNAME "go")))
 
    ((project-id "gambit")
@@ -249,6 +259,7 @@
     (sidenote "R^5 R^7")
     (contacts "shirok")
     (display? #t)
+    (redirect "https://practical-scheme.net/gauche/")
     (dns (CNAME "go")))
 
    ((project-id "gerbil")
@@ -266,6 +277,7 @@
     (contacts "Ludovic Courtès"
               "Andy Wingo")
     (display? #t)
+    (redirect "https://www.gnu.org/software/guile/")
     (dns (CNAME "go")))
 
    ((project-id "jazz")
@@ -274,6 +286,8 @@
     (sidenote "R^5")
     (contacts "Guillaume Cartier")
     (display? #t)
+    ;; The "www." and "index.htm" are mandatory.
+    (redirect "http://www.jazzscheme.org/index.htm")
     (dns (CNAME "go")))
 
    ((project-id "kawa")
@@ -282,6 +296,7 @@
     (sidenote "R^7")
     (contacts "Per Bothner")
     (display? #t)
+    (redirect "https://www.gnu.org/software/kawa/")
     (dns (CNAME "go")))
 
    ((project-id "loko")
@@ -298,6 +313,7 @@
     (sidenote "R^5 R^7")
     (contacts "arthur")
     (display? #t)
+    (redirect "https://www.gnu.org/software/mit-scheme/")
     (dns (CNAME "go")))
 
    ((project-id "mosh")
@@ -306,6 +322,7 @@
     (sidenote "R^6 R^7")
     (contacts "Taro Minowa")
     (display? #t)
+    (redirect "https://mosh.monaos.org/")
     (dns (CNAME "go")))
 
    ((project-id "racket")
@@ -316,6 +333,7 @@
               "Matthew Flatt" "Jay McCarthy" "Sam Tobin-Hochstadt"
               "management at racket-lang.org")
     (display? #t)
+    (redirect "https://racket-lang.org/")
     (dns (CNAME "go")))
 
    ((project-id "s7")
@@ -324,6 +342,7 @@
     (sidenote "R^7")
     (contacts "bil" "lassi")
     (display? #t)
+    (redirect "https://ccrma.stanford.edu/software/s7/")
     (dns (CNAME "go")))
 
    ((project-id "sagittarius")
@@ -332,6 +351,7 @@
     (sidenote "R^6 R^7")
     (contacts "Takashi Kato")
     (display? #t)
+    (redirect "https://ktakashi.github.io/")
     (dns (CNAME "go")))
 
    ((project-id "scm")
@@ -340,6 +360,7 @@
     (sidenote "R^5")
     (contacts "Aubrey Jaffer" "lassi")
     (display? #t)
+    (redirect "https://people.csail.mit.edu/jaffer/SCM")
     (dns (CNAME "go")))
 
    ((project-id "stklos")
@@ -348,6 +369,7 @@
     (sidenote "R^7")
     (contacts "Erick Gallesio")
     (display? #t)
+    (redirect "https://stklos.net/")
     (dns (CNAME "go")))
 
    ((project-id "ypsilon")
@@ -357,6 +379,7 @@
     (contacts "Göran Weinholt"
               "Yoshikatsu Fujita")
     (display? #t)
+    (redirect "http://www.littlewingpinball.com/doc/en/ypsilon/")
     (dns (CNAME "go"))))
 
   ("Tools"
