@@ -29,6 +29,8 @@ repo.
 The `lists` project is responsible for `@scheme.org` mailing lists
 (TODO).
 
+The `redirect` project tracks subdomains that are just HTTP redirects.
+
 The `staging` project gives staging subdomains to projects that want
 them. For example, `www.staging.scheme.org` is a staging version of
 `www.scheme.org`. Each project must bring its own staging server,

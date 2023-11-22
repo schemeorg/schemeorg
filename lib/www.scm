@@ -14,6 +14,7 @@
         (only (srfi 19) date->string string->date)
 
         (only (chicken file) create-directory)
+        (only (chicken sort) sort)
         (only (http-client) call-with-input-request)
         (only (lowdown) markdown->sxml)
         (only (ssax) ssax:xml->sxml)
@@ -56,18 +57,27 @@
         ((string? expr) expr)
         (else (error "Bad XML expression"))))
 
-(define (get-list property alist)
-  (let ((entry (assoc property alist)))
-    (if entry (cdr entry) '())))
+(define (get-list key alist)
+  (let ((entry (assoc key alist)))
+    (if (not entry)
+        '()
+        (cdr entry))))
+
+(define (get-one? valid? key alist not-found)
+  (let ((entry (assoc key alist)))
+    (if (not entry)
+        (not-found)
+        (if (and (= 2 (length entry))
+                 (valid? (second entry)))
+            (second entry)
+            (error "Bad alist entry" entry)))))
 
 (define (get-one valid? key alist)
-  (let ((tail (cdr (or (assoc key alist) (error "Missing key" key)))))
-    (if (and (= 1 (length tail)) (valid? (car tail)))
-        (car tail)
-        (error "Bad alist entry"))))
+  (get-one? valid? key alist (lambda () (error "Missing key" key))))
 
 (define (get-boolean key alist) (get-one boolean? key alist))
 (define (get-string  key alist) (get-one string?  key alist))
+(define (get-string? key alist) (get-one? string? key alist (lambda () #f)))
 
 (define (superscripts s)
   (let ((n (string-length s)))
@@ -251,6 +261,42 @@
                      description
                      sxml)))
 
+(define redirect-project-id first)
+(define redirect-uri second)
+
+(define (redirect-list)
+  (sort
+   (append-map
+    (lambda (group)
+      (filter-map
+       (lambda (project)
+         (let ((uri (get-string? 'redirect project)))
+           (and uri (list (get-string 'project-id project)
+                          uri))))
+       (cdr group)))
+    project-groups)
+   (lambda (a b) (string<? (redirect-project-id a)
+                           (redirect-project-id b)))))
+
+(define (write-redirect-page)
+  (write-html-file
+   "www/redirect.scheme.org/index.html"
+   "redirect.scheme.org"
+   "Explains the redirects at Scheme.org."
+   `((h1 (@ (id "logo"))
+         "Redirects under Scheme.org")
+     (table
+      (tr (th "Subdomain")
+          (th "Destination"))
+      ,@(map (lambda (redirect)
+               (let ((subdomain (string-append (redirect-project-id redirect)
+                                               ".scheme.org")))
+                 `(tr (td (a (@ (href ,(string-append "//" subdomain)))
+                             (code ,subdomain)))
+                      (td (code ,(redirect-uri redirect))))))
+             (redirect-list)))
+     ,@(markdown-file->sxml "redirect.md"))))
+
 (define (write-menu items)
   `(header
     (ul (@ (class "menu"))
@@ -353,7 +399,8 @@
 	      (a (@ (href "https://cs.brown.edu/~sk/"))
 	         "Prof. Shriram Krishnamurthi")
 	      " and all the other people who gave Scheme a home on Schemers.org"
-	      " for nearly twenty-five years.")))))
+	      " for nearly twenty-five years.")))
+    (write-redirect-page)))
 
 (define (main)
   (generate-scheme.org)

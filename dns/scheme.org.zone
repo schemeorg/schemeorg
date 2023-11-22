@@ -10,7 +10,7 @@ www IN CNAME alpha.servers
 
 try IN CNAME alpha.servers
 
-faq IN CNAME go
+faq IN CNAME redirect
 
 cookbook IN CNAME alpha.servers
 
@@ -32,7 +32,7 @@ chat IN CNAME alpha.servers
 
 lists IN CNAME alpha.servers
 
-wiki IN CNAME go
+wiki IN CNAME redirect
 
 groups IN CNAME alpha.servers
 
@@ -48,53 +48,53 @@ test IN CNAME alpha.servers
 
 web IN CNAME alpha.servers
 
-r5rs IN CNAME go
+r5rs IN CNAME redirect
 
-r6rs IN CNAME go
+r6rs IN CNAME redirect
 
-r7rs IN CNAME go
+r7rs IN CNAME redirect
 
 get IN CNAME alpha.servers
 
-bigloo IN CNAME go
+bigloo IN CNAME redirect
 
-chez IN CNAME go
+chez IN CNAME redirect
 
-chibi IN CNAME go
+chibi IN CNAME redirect
 
-chicken IN CNAME go
+chicken IN CNAME redirect
 
-cyclone IN CNAME go
+cyclone IN CNAME redirect
 
 gambit IN CNAME gambitscheme.org.
 
-gauche IN CNAME go
+gauche IN CNAME redirect
 
 gerbil IN CNAME cons.io.
 
-guile IN CNAME go
+guile IN CNAME redirect
 
-jazz IN CNAME go
+jazz IN CNAME redirect
 
-kawa IN CNAME go
+kawa IN CNAME redirect
 
 loko IN CNAME scheme.fail.
 
-mit IN CNAME go
+mit IN CNAME redirect
 
-mosh IN CNAME go
+mosh IN CNAME redirect
 
-racket IN CNAME go
+racket IN CNAME redirect
 
-s7 IN CNAME go
+s7 IN CNAME redirect
 
-sagittarius IN CNAME go
+sagittarius IN CNAME redirect
 
-scm IN CNAME go
+scm IN CNAME redirect
 
-stklos IN CNAME go
+stklos IN CNAME redirect
 
-ypsilon IN CNAME go
+ypsilon IN CNAME redirect
 
 index IN CNAME ironwolf.servers
 
@@ -134,3 +134,5 @@ doc IN CNAME docs
 list IN CNAME lists
 
 play IN CNAME try
+
+redirect IN CNAME @
