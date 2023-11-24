@@ -135,7 +135,7 @@
     (title "Communications")
     (tagline "Comms and networks: TCP/IP, WebSockets, peer-to-peer, radio...")
     (comments "Discussed on the schemecomm@srfi.schemers.org mailing list.")
-    (contacts "hga")
+    (contacts "Harold Ancell")
     (display? #f)
     (dns (CNAME "alpha.servers")))
 
@@ -143,7 +143,7 @@
     (title "Persistence")
     (tagline "Databases, encoding, and logging")
     (comments "Discussed on the schemepersist@srfi.schemers.org mailing list.")
-    (contacts "hga")
+    (contacts "Harold Ancell")
     (display? #f)
     (dns (CNAME "alpha.servers")))
 
@@ -151,7 +151,7 @@
     (title "Testing")
     (tagline "Everything having to do with testing in Scheme")
     (comments "Discussed on the schemetest@srfi.schemers.org mailing list.")
-    (contacts "hga")
+    (contacts "Harold Ancell")
     (display? #f)
     (dns (CNAME "alpha.servers")))
 
@@ -257,7 +257,7 @@
     (title "Gauche")
     (tagline "Fast script interpreter with many built-in libraries")
     (sidenote "R^5 R^7")
-    (contacts "shirok")
+    (contacts "Shiro Kawai")
     (display? #t)
     (redirect "https://practical-scheme.net/gauche/")
     (dns (CNAME "redirect")))
@@ -303,7 +303,7 @@
     (title "Loko")
     (tagline "Bare-metal native-code compiler")
     (sidenote "R^6 R^7")
-    (contacts "weinholt")
+    (contacts "Göran Weinholt")
     (display? #t)
     (dns (CNAME "scheme.fail.")))
 
@@ -340,7 +340,7 @@
     (title "s7")
     (tagline "Embeddable interpreter for music applications")
     (sidenote "R^7")
-    (contacts "bil" "Lassi")
+    (contacts "Bill Schottstaedt" "Lassi")
     (display? #t)
     (redirect "https://ccrma.stanford.edu/software/s7/")
     (dns (CNAME "redirect")))
@@ -416,7 +416,7 @@
    ((project-id "man")
     (title "Manual pages")
     (tagline "Unix manual pages for tools and libraries")
-    (contacts "weinholt" "Lassi")
+    (contacts "Göran Weinholt" "Lassi")
     (display? #t)
     (dns (CNAME "alpha.servers")))
 
@@ -452,7 +452,7 @@
    ((project-id "registry")
     (title "Registry")
     (tagline "Catalog of identifiers and other data")
-    (contacts "Lassi" "hga" "Arthur")
+    (contacts "Lassi" "Harold Ancell" "Arthur")
     (display? #t)
     (dns (CNAME "alpha.servers")))
 
@@ -502,24 +502,4 @@
    ((project-id "redirect")
     (contacts "Lassi" "Arthur")
     (display? #f)
-    (dns (CNAME "@")))))
-
- (people
-
-  ((username "arthur")
-   (realname "Arthur A. Gleckler"))
-
-  ((username "bil")
-   (realname "Bill Schottstaedt"))
-
-  ((username "hga")
-   (realname "Harold Ancell"))
-
-  ((username "lassi")
-   (realname "Lassi Kortela"))
-
-  ((username "shirok")
-   (realname "Shiro Kawai"))
-
-  ((username "weinholt")
-   (realname "Göran Weinholt"))))
+    (dns (CNAME "@"))))))
