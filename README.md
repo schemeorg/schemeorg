@@ -58,3 +58,9 @@ egg.
   subdirectory.
 - `scripts/wwwstaging.sh` -- upload `www` subdirectory to staging server.
 - `scripts/wwwproduction.sh` -- upload `www` subdirectory to production server.
+
+## See also
+
+- https://github.com/schemedoc
+- https://github.com/schemeorg-community
+- https://github.com/schemeorg-community/linux-configuration
