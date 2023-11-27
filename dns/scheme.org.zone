@@ -100,7 +100,7 @@ index IN CNAME ironwolf
 
 api IN CNAME alpha.servers
 
-containers IN CNAME alpha.servers
+containers IN CNAME tuonela
 
 docs IN CNAME alpha.servers
 
@@ -110,7 +110,7 @@ conservatory IN CNAME alpha.servers
 
 files IN CNAME alpha.servers
 
-gitea IN CNAME alpha.servers
+gitea IN CNAME tuonela
 
 go IN CNAME alpha.servers
 
@@ -122,7 +122,7 @@ alpha.servers IN CNAME @
 staging IN CNAME www.staging
 api.staging IN CNAME alpha.servers
 docs.staging IN CNAME alpha.servers
-wiki.staging IN CNAME alpha.servers
+wiki.staging IN CNAME tuonela
 www.staging IN CNAME alpha.servers
 
 ironwolf IN A 89.40.10.46
