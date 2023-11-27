@@ -96,7 +96,7 @@ stklos IN CNAME redirect
 
 ypsilon IN CNAME redirect
 
-index IN CNAME ironwolf.servers
+index IN CNAME ironwolf
 
 api IN CNAME alpha.servers
 
@@ -118,14 +118,15 @@ registry IN CNAME alpha.servers
 
 servers IN CNAME alpha.servers
 alpha.servers IN CNAME @
-ironwolf.servers IN A 89.40.10.46
-ironwolf.servers IN AAAA 2a02:7b40:5928:a2e::1
 
 staging IN CNAME www.staging
 api.staging IN CNAME alpha.servers
 docs.staging IN CNAME alpha.servers
 wiki.staging IN CNAME alpha.servers
 www.staging IN CNAME alpha.servers
+
+ironwolf IN A 89.40.10.46
+ironwolf IN AAAA 2a02:7b40:5928:a2e::1
 
 blog IN CNAME planet
 

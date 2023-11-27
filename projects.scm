@@ -389,7 +389,7 @@
     (tagline "Library search using types, tags, and names")
     (contacts "Arvydas Silanskas")
     (display? #t)
-    (dns (CNAME "ironwolf.servers")))
+    (dns (CNAME "ironwolf")))
 
    ((project-id "api")
     (title "API")
@@ -462,9 +462,7 @@
     (contacts "Lassi")
     (display? #t)
     (dns (CNAME "alpha.servers")
-         ("alpha" CNAME "@")
-         ("ironwolf" A "89.40.10.46")
-         ("ironwolf" AAAA "2a02:7b40:5928:a2e::1")))
+         ("alpha" CNAME "@")))
 
    ((project-id "staging")
     (title "Staging")
@@ -476,6 +474,14 @@
          ("docs" CNAME "alpha.servers")
          ("wiki" CNAME "alpha.servers")
          ("www" CNAME "alpha.servers"))))
+
+  ("Servers"
+
+   ((project-id "ironwolf")
+    (contacts "Arvydas Silanskas")
+    (display? #f)
+    (dns (A "89.40.10.46")
+         (AAAA "2a02:7b40:5928:a2e::1"))))
 
   ("Aliases"
 
