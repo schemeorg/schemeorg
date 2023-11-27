@@ -403,7 +403,7 @@
     (tagline "Ready-to-run Docker containers")
     (contacts "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "docs")
     (title "Documentation")
@@ -440,7 +440,7 @@
     (tagline "Host Git repositories under Scheme.org")
     (contacts "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "go")
     (title "Go Scheme")
@@ -472,7 +472,7 @@
     (dns (CNAME "www.staging")
          ("api" CNAME "alpha.servers")
          ("docs" CNAME "alpha.servers")
-         ("wiki" CNAME "alpha.servers")
+         ("wiki" CNAME "tuonela")
          ("www" CNAME "alpha.servers"))))
 
   ("Servers"
