@@ -54,8 +54,6 @@ egg.
 
 - `scripts/www.sh` -- generate HTML files in the `www` subdirectory
   based on `projects.scm` and `doc/*.md`.
-- `scripts/wwwlocal.sh` -- start localhost web server to browse `www`
-  subdirectory.
 - `scripts/wwwstaging.sh` -- upload `www` subdirectory to staging server.
 - `scripts/wwwproduction.sh` -- upload `www` subdirectory to production server.
 
