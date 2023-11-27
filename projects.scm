@@ -481,7 +481,12 @@
     (contacts "Arvydas Silanskas")
     (display? #f)
     (dns (A "89.40.10.46")
-         (AAAA "2a02:7b40:5928:a2e::1"))))
+         (AAAA "2a02:7b40:5928:a2e::1")))
+
+   ((project-id "tuonela")
+    (contacts "Lassi")
+    (display? #f)
+    (dns (A "107.175.124.234"))))
 
   ("Aliases"
 

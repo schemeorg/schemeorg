@@ -128,6 +128,8 @@ www.staging IN CNAME alpha.servers
 ironwolf IN A 89.40.10.46
 ironwolf IN AAAA 2a02:7b40:5928:a2e::1
 
+tuonela IN A 107.175.124.234
+
 blog IN CNAME planet
 
 doc IN CNAME docs
