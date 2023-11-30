@@ -8,45 +8,45 @@ $TTL 10800
 
 www IN CNAME alpha.servers
 
-try IN CNAME alpha.servers
+try IN CNAME tuonela
 
 faq IN CNAME redirect
 
-cookbook IN CNAME alpha.servers
+cookbook IN CNAME tuonela
 
-standards IN CNAME alpha.servers
+standards IN CNAME tuonela
 
 srfi IN CNAME srfi.schemers.org.
 
-research IN CNAME alpha.servers
+research IN CNAME tuonela
 
 community IN CNAME alpha.servers
 
-events IN CNAME alpha.servers
+events IN CNAME tuonela
 
 planet IN CNAME alpha.servers
 
-video IN CNAME alpha.servers
+video IN CNAME tuonela
 
-chat IN CNAME alpha.servers
+chat IN CNAME tuonela
 
 lists IN CNAME alpha.servers
 
 wiki IN CNAME redirect
 
-groups IN CNAME alpha.servers
+groups IN CNAME tuonela
 
-learn IN CNAME alpha.servers
+learn IN CNAME tuonela
 
-apps IN CNAME alpha.servers
+apps IN CNAME tuonela
 
-comm IN CNAME alpha.servers
+comm IN CNAME tuonela
 
-persist IN CNAME alpha.servers
+persist IN CNAME tuonela
 
-test IN CNAME alpha.servers
+test IN CNAME tuonela
 
-web IN CNAME alpha.servers
+web IN CNAME tuonela
 
 r5rs IN CNAME redirect
 
@@ -54,7 +54,7 @@ r6rs IN CNAME redirect
 
 r7rs IN CNAME redirect
 
-get IN CNAME alpha.servers
+get IN CNAME tuonela
 
 bigloo IN CNAME redirect
 
@@ -104,9 +104,9 @@ containers IN CNAME tuonela
 
 docs IN CNAME alpha.servers
 
-man IN CNAME alpha.servers
+man IN CNAME tuonela
 
-conservatory IN CNAME alpha.servers
+conservatory IN CNAME tuonela
 
 files IN CNAME alpha.servers
 
@@ -114,7 +114,7 @@ gitea IN CNAME tuonela
 
 go IN CNAME alpha.servers
 
-registry IN CNAME alpha.servers
+registry IN CNAME tuonela
 
 servers IN CNAME alpha.servers
 alpha.servers IN CNAME @

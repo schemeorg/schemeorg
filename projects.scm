@@ -15,7 +15,7 @@
     (tagline "Type Scheme code and run it in your browser")
     (contacts "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "faq")
     (title "FAQ")
@@ -30,14 +30,14 @@
     (tagline "Code snippets that solve common problems")
     (contacts "Jakub T. Jankiewicz" "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "standards")
     (title "Standards")
     (tagline "Revised^n Report on Scheme and other standards")
     (contacts "Arthur" "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "srfi")
     (title "SRFI")
@@ -52,7 +52,7 @@
     (tagline "Dive into the academic research behind Scheme")
     (contacts "Lassi" "Arthur")
     (display? #t)
-    (dns (CNAME "alpha.servers"))))
+    (dns (CNAME "tuonela"))))
 
   ("Community"
 
@@ -68,7 +68,7 @@
     (tagline "Scheme Workshop, conferences, and other meetups")
     (contacts "Arthur" "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "planet")
     (title "Planet")
@@ -82,7 +82,7 @@
     (tagline "Videos about Scheme")
     (contacts "Jakub T. Jankiewicz")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "chat")
     (title "Chat")
@@ -91,7 +91,7 @@
               "Wolfgang Corcoran-Mathe"
               "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "lists")
     (title "Lists")
@@ -113,7 +113,7 @@
     (tagline "Work groups")
     (contacts "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers"))))
+    (dns (CNAME "tuonela"))))
 
   ("Topics"
 
@@ -122,14 +122,14 @@
     (tagline "Learn Scheme, and learn computer science using Scheme")
     (contacts "Arthur" "Lassi")
     (display? #f)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "apps")
     (title "Applications")
     (tagline "Software written or scripted in Scheme")
     (contacts "Lassi" "Arthur")
     (display? #f)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "comm")
     (title "Communications")
@@ -137,7 +137,7 @@
     (comments "Discussed on the schemecomm@srfi.schemers.org mailing list.")
     (contacts "Harold Ancell")
     (display? #f)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "persist")
     (title "Persistence")
@@ -145,7 +145,7 @@
     (comments "Discussed on the schemepersist@srfi.schemers.org mailing list.")
     (contacts "Harold Ancell")
     (display? #f)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "test")
     (title "Testing")
@@ -153,7 +153,7 @@
     (comments "Discussed on the schemetest@srfi.schemers.org mailing list.")
     (contacts "Harold Ancell")
     (display? #f)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "web")
     (title "Web development")
@@ -161,7 +161,7 @@
     (comments "Discussed on the schemeweb@srfi.schemers.org mailing list.")
     (contacts "Lassi" "Arthur")
     (display? #f)
-    (dns (CNAME "alpha.servers"))))
+    (dns (CNAME "tuonela"))))
 
   ("Standards"
 
@@ -197,7 +197,7 @@
     (sidenote "")
     (contacts "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "bigloo")
     (title "Bigloo")
@@ -418,7 +418,7 @@
     (tagline "Unix manual pages for tools and libraries")
     (contacts "Göran Weinholt" "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "conservatory")
     (title "Conservatory")
@@ -426,7 +426,7 @@
     (sidenote "")
     (contacts "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "files")
     (title "Files")
@@ -454,7 +454,7 @@
     (tagline "Catalog of identifiers and other data")
     (contacts "Lassi" "Harold Ancell" "Arthur")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "servers")
     (title "Servers")
