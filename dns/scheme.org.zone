@@ -6,7 +6,7 @@ $TTL 10800
 @ IN A 8.9.4.141
 @ IN AAAA 2001:19f0:5:6000:5400:2ff:fe07:9aa6
 
-www IN CNAME alpha.servers
+www IN CNAME @
 
 try IN CNAME tuonela
 
@@ -20,17 +20,17 @@ srfi IN CNAME srfi.schemers.org.
 
 research IN CNAME tuonela
 
-community IN CNAME alpha.servers
+community IN CNAME tuonela
 
 events IN CNAME tuonela
 
-planet IN CNAME alpha.servers
+planet IN CNAME tuonela
 
 video IN CNAME tuonela
 
 chat IN CNAME tuonela
 
-lists IN CNAME alpha.servers
+lists IN CNAME @
 
 wiki IN CNAME redirect
 
@@ -98,32 +98,29 @@ ypsilon IN CNAME redirect
 
 index IN CNAME ironwolf
 
-api IN CNAME alpha.servers
+api IN CNAME tuonela
 
 containers IN CNAME tuonela
 
-docs IN CNAME alpha.servers
+docs IN CNAME tuonela
 
 man IN CNAME tuonela
 
 conservatory IN CNAME tuonela
 
-files IN CNAME alpha.servers
+files IN CNAME @
 
 gitea IN CNAME tuonela
 
-go IN CNAME alpha.servers
+go IN CNAME tuonela
 
 registry IN CNAME tuonela
 
-servers IN CNAME alpha.servers
-alpha.servers IN CNAME @
-
 staging IN CNAME www.staging
-api.staging IN CNAME alpha.servers
-docs.staging IN CNAME alpha.servers
+api.staging IN CNAME tuonela
+docs.staging IN CNAME tuonela
 wiki.staging IN CNAME tuonela
-www.staging IN CNAME alpha.servers
+www.staging IN CNAME @
 
 ironwolf IN A 89.40.10.46
 ironwolf IN AAAA 2a02:7b40:5928:a2e::1

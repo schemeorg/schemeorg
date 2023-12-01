@@ -50,9 +50,6 @@
 `staging` (subdomain `staging.scheme.org`): Staging versions of
 production projects.
 
-`servers` (subdomain `servers.scheme.org`): Server pool for Scheme
-projects.
-
 ## Email
 
 The following standard `@scheme.org` email addresses:
