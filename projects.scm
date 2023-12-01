@@ -6,7 +6,7 @@
     (comments "The www.scheme.org front page")
     (contacts "Arthur" "Lassi")
     (display? #f)
-    (dns (CNAME "alpha.servers"))))
+    (dns (CNAME "@"))))
 
   ("Language"
 
@@ -61,7 +61,7 @@
     (tagline "Scheme gathering spots around the internet")
     (contacts "Lassi" "Arthur" "Jakub T. Jankiewicz")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "events")
     (title "Events")
@@ -75,7 +75,7 @@
     (tagline "Blog posts from every corner of the Scheme community")
     (contacts "Lassi" "Arthur")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "video")
     (title "Video")
@@ -98,7 +98,7 @@
     (tagline "Mailing lists for email discussion of many Scheme topics")
     (contacts "Arthur")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "@")))
 
    ((project-id "wiki")
     (title "Wiki")
@@ -396,7 +396,7 @@
     (tagline "Programmable queries for all things Scheme")
     (contacts "Lassi")
     (display? #f)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "containers")
     (title "Containers")
@@ -411,7 +411,7 @@
     (comments "Discussed on the schemedoc@srfi.schemers.org mailing list.")
     (contacts "Lassi" "Arthur")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "man")
     (title "Manual pages")
@@ -433,7 +433,7 @@
     (tagline "Archive of current and historical files")
     (contacts "Lassi")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "@")))
 
    ((project-id "gitea")
     (title "Gitea")
@@ -447,7 +447,7 @@
     (tagline "URL shortening service")
     (contacts "Lassi" "Jakub T. Jankiewicz")
     (display? #t)
-    (dns (CNAME "alpha.servers")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "registry")
     (title "Registry")
@@ -456,13 +456,6 @@
     (display? #t)
     (dns (CNAME "tuonela")))
 
-   ((project-id "servers")
-    (title "Servers")
-    (tagline "Server pool for Scheme projects")
-    (contacts "Lassi")
-    (display? #t)
-    (dns (CNAME "alpha.servers")
-         ("alpha" CNAME "@")))
 
    ((project-id "staging")
     (title "Staging")
@@ -470,10 +463,10 @@
     (contacts "Lassi")
     (display? #f)
     (dns (CNAME "www.staging")
-         ("api" CNAME "alpha.servers")
-         ("docs" CNAME "alpha.servers")
+         ("api" CNAME "tuonela")
+         ("docs" CNAME "tuonela")
          ("wiki" CNAME "tuonela")
-         ("www" CNAME "alpha.servers"))))
+         ("www" CNAME "@"))))
 
   ("Servers"
 
