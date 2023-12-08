@@ -413,6 +413,13 @@
     (display? #t)
     (dns (CNAME "tuonela")))
 
+   ((project-id "mailman")
+    (title "Mailman")
+    (tagline "Host mailing lists under Scheme.org")
+    (contacts "Lassi")
+    (display? #t)
+    (dns (CNAME "@")))
+
    ((project-id "man")
     (title "Manual pages")
     (tagline "Unix manual pages for tools and libraries")

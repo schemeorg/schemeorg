@@ -104,6 +104,8 @@ containers IN CNAME tuonela
 
 docs IN CNAME tuonela
 
+mailman IN CNAME @
+
 man IN CNAME tuonela
 
 conservatory IN CNAME tuonela
