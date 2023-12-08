@@ -490,21 +490,17 @@
   ("Aliases"
 
    ((project-id "blog")
-    (contacts "Lassi" "Arthur")
     (display? #f)
     (dns (CNAME "planet")))
 
    ((project-id "doc")
-    (contacts "Lassi" "Arthur")
     (display? #f)
     (dns (CNAME "docs")))
 
    ((project-id "list")
-    (contacts "Arthur" "Lassi")
     (display? #f)
     (dns (CNAME "lists")))
 
    ((project-id "play")
-    (contacts "Lassi" "Arthur")
     (display? #f)
     (dns (CNAME "try"))))))
