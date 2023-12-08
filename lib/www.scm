@@ -5,36 +5,23 @@
 ;; You need Chicken 5 and
 ;; `chicken-install http-client lowdown openssl r7rs srfi-19 ssax sxpath`.
 
+(cond-expand (chicken (include "schemeorglib.sld")))
+
 (import (scheme base)
         (scheme file)
         (scheme read)
         (scheme write)
 
-        (srfi 1)
         (only (srfi 19) date->string string->date)
 
         (only (chicken file) create-directory)
-        (only (chicken sort) sort)
         (only (http-client) call-with-input-request)
         (only (lowdown) markdown->sxml)
         (only (ssax) ssax:xml->sxml)
         (only (sxml-transforms) SXML->HTML)
-        (only (sxpath-lolevel) sxml:content))
+        (only (sxpath-lolevel) sxml:content)
 
-(define (disp . xs) (for-each display xs) (newline))
-
-(define (circular-generator . elements)  ; Specified in SRFI 158.
-  (let ((xs elements))
-    (lambda ()
-      (let ((x (car xs)))
-        (set! xs (if (null? (cdr xs)) elements (cdr xs)))
-        x))))
-
-(define (string->file string file)
-  (call-with-port (open-output-file file)
-                  (lambda (out)
-                    (write-string string out)
-                    (newline out))))
+        (schemeorglib))
 
 (define (sxml->html expr)
   (cond ((and (pair? expr) (symbol? (car expr)))
@@ -56,28 +43,6 @@
             "</" elem ">")))
         ((string? expr) expr)
         (else (error "Bad XML expression"))))
-
-(define (get-list key alist)
-  (let ((entry (assoc key alist)))
-    (if (not entry)
-        '()
-        (cdr entry))))
-
-(define (get-one? valid? key alist not-found)
-  (let ((entry (assoc key alist)))
-    (if (not entry)
-        (not-found)
-        (if (and (= 2 (length entry))
-                 (valid? (second entry)))
-            (second entry)
-            (error "Bad alist entry" entry)))))
-
-(define (get-one valid? key alist)
-  (get-one? valid? key alist (lambda () (error "Missing key" key))))
-
-(define (get-boolean key alist) (get-one boolean? key alist))
-(define (get-string  key alist) (get-one string?  key alist))
-(define (get-string? key alist) (get-one? string? key alist (lambda () #f)))
 
 (define (superscripts s)
   (let ((n (string-length s)))
@@ -103,12 +68,13 @@
               (loop chars
                     (+ i 1) (not (null? chars))))))))
 
-(define-record-type feed-item (make-feed-item date-time description title uri)
-    feed-item?
-    (date-time fi/date-time)
-    (description fi/description)
-    (title fi/title)
-    (uri fi/uri))
+(define-record-type feed-item
+  (make-feed-item date-time description title uri)
+  feed-item?
+  (date-time fi/date-time)
+  (description fi/description)
+  (title fi/title)
+  (uri fi/uri))
 
 (define (fi-iso-date fi)
   "Convert into \"YYYY-MM-DD\" format."
@@ -227,7 +193,7 @@
 (define project-groups (get-list 'projects projects-scm))
 
 (define (write-html-file html-filename title description body)
-  (disp "Writing " html-filename)
+  (echo "Writing " html-filename)
   (with-output-to-file html-filename
     (lambda ()
       (write-string "<!DOCTYPE html>")
@@ -265,7 +231,9 @@
 (define redirect-uri second)
 
 (define (redirect-list)
-  (sort
+  (list-sort
+   (lambda (a b) (string<? (redirect-project-id a)
+                           (redirect-project-id b)))
    (append-map
     (lambda (group)
       (filter-map
@@ -274,9 +242,7 @@
            (and uri (list (get-string 'project-id project)
                           uri))))
        (cdr group)))
-    project-groups)
-   (lambda (a b) (string<? (redirect-project-id a)
-                           (redirect-project-id b)))))
+    project-groups)))
 
 (define (write-redirect-page)
   (write-html-file
@@ -331,11 +297,11 @@
                        `(li (a (@ href ,(fi/uri fi)) ,(fi/title fi))
                             " " (time (@ (class "date")) ,(fi-friendly-date fi))))
                      (take atom-feed 5)))
-	  (p (@ class "more")
-	     "More on "
-	     (a (@ href "https://planet.scheme.org/")
-		"Planet Scheme")
-	     "."))
+          (p (@ class "more")
+             "More on "
+             (a (@ href "https://planet.scheme.org/")
+                "Planet Scheme")
+             "."))
      ,@(append-map
         (let ((next-color (circular-generator "blue" "orange")))
           (lambda (group)
@@ -389,17 +355,17 @@
      "www/scheme.org/schemers/index.html"
      atom-feed
      '(div (@ (class "round-box orange-box"))
-	   (p "Welcome to "
-	      (a (@ (href "https://www.scheme.org/"))
-	         "Scheme.org")
-	      ", a new home page for Scheme. We host a "
-	      (a (@ (href "https://conservatory.scheme.org/schemers/"))
-	         "snapshot")
-	      " of the old Schemers.org. Thanks to "
-	      (a (@ (href "https://cs.brown.edu/~sk/"))
-	         "Prof. Shriram Krishnamurthi")
-	      " and all the other people who gave Scheme a home on Schemers.org"
-	      " for nearly twenty-five years.")))
+           (p "Welcome to "
+              (a (@ (href "https://www.scheme.org/"))
+                 "Scheme.org")
+              ", a new home page for Scheme. We host a "
+              (a (@ (href "https://conservatory.scheme.org/schemers/"))
+                 "snapshot")
+              " of the old Schemers.org. Thanks to "
+              (a (@ (href "https://cs.brown.edu/~sk/"))
+                 "Prof. Shriram Krishnamurthi")
+              " and all the other people who gave Scheme a home on Schemers.org"
+              " for nearly twenty-five years.")))
     (write-redirect-page)))
 
 (define (main)

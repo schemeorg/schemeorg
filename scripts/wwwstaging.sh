@@ -5,4 +5,4 @@ cd ..
 echo "Entering directory '$PWD'"
 set -x
 rsync -crv --delete --exclude="*~" www/shared/ www/scheme.org/ \
-    stag-www@scheme.org:www/
+    scheme.org:/var/www/www.staging.scheme.org/

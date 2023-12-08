@@ -4,25 +4,16 @@
 ;;
 ;; This should run in any R7RS-small implementation.
 
-(import (scheme base) (scheme file) (scheme read) (scheme write))
+(cond-expand (chicken (include "schemeorglib.sld")))
+
+(import (scheme base)
+        (scheme file)
+        (schemeorglib))
 
 (define domain-name "scheme.org")
 (define domain-ipv4 "8.9.4.141")
 (define domain-ipv6 "2001:19f0:5:6000:5400:2ff:fe07:9aa6")
 (define domain-time-to-live "10800")
-
-(define (echo . strings) (for-each write-string strings) (newline))
-
-(define (get-list property alist) (cdr (or (assoc property alist) '(#f))))
-
-(define (get-string? property alist)
-  (let ((pair (assoc property alist))) (and pair (cadr pair))))
-
-(define (get-string property alist)
-  (or (get-string? property alist) (error "Not defined:" property alist)))
-
-(define projects-scm (call-with-input-file "projects.scm" read))
-(define project-groups (get-list 'projects projects-scm))
 
 (define (echo-dns-record* name type data)
   (unless (member type '(A AAAA CNAME MX))
@@ -63,7 +54,7 @@
               (for-each (lambda (record) (echo-dns-record project-id record))
                         dns)))))
       (cdr group)))
-   project-groups))
+   (project-groups)))
 
 (define (main)
   (echo "Writing dns/scheme.org.zone")
