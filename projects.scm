@@ -456,17 +456,16 @@
     (display? #t)
     (dns (CNAME "tuonela")))
 
-
    ((project-id "staging")
     (title "Staging")
     (tagline "Staging versions of Scheme.org projects")
     (contacts "Lassi")
     (display? #f)
     (dns (CNAME "www.staging")
+         ("www" CNAME "@")
          ("api" CNAME "tuonela")
          ("docs" CNAME "tuonela")
-         ("wiki" CNAME "tuonela")
-         ("www" CNAME "@"))))
+         ("wiki" CNAME "tuonela"))))
 
   ("Servers"
 
@@ -480,6 +479,13 @@
     (contacts "Lassi")
     (display? #f)
     (dns (A "107.175.124.234"))))
+
+  ("Redirect"
+
+   ((project-id "redirect")
+    (contacts "Lassi" "Arthur")
+    (display? #f)
+    (dns (CNAME "@"))))
 
   ("Aliases"
 
@@ -501,9 +507,4 @@
    ((project-id "play")
     (contacts "Lassi" "Arthur")
     (display? #f)
-    (dns (CNAME "try")))
-
-   ((project-id "redirect")
-    (contacts "Lassi" "Arthur")
-    (display? #f)
-    (dns (CNAME "@"))))))
+    (dns (CNAME "try"))))))

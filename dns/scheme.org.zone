@@ -117,15 +117,17 @@ go IN CNAME tuonela
 registry IN CNAME tuonela
 
 staging IN CNAME www.staging
+www.staging IN CNAME @
 api.staging IN CNAME tuonela
 docs.staging IN CNAME tuonela
 wiki.staging IN CNAME tuonela
-www.staging IN CNAME @
 
 ironwolf IN A 89.40.10.46
 ironwolf IN AAAA 2a02:7b40:5928:a2e::1
 
 tuonela IN A 107.175.124.234
+
+redirect IN CNAME @
 
 blog IN CNAME planet
 
@@ -134,5 +136,3 @@ doc IN CNAME docs
 list IN CNAME lists
 
 play IN CNAME try
-
-redirect IN CNAME @
