@@ -32,7 +32,6 @@
           (only (srfi 1)
                 append-map filter filter-map find first fold
                 second take third)
-          (only (srfi 132) list-delete-neighbor-dups)
           (only (srfi 193) script-directory))
   (cond-expand
    ((library (srfi 166))
@@ -79,6 +78,15 @@
             '()
             (insert (car xs)
                     (loop (cdr xs))))))
+
+    (define (list-delete-neighbor-dups = lis)  ; SRFI 132
+      (let loop ((lis lis) (new '()))
+        (if (null? lis)
+            (reverse new)
+            (loop (cdr lis)
+                  (if (or (null? new) (not (= (car new) (car lis))))
+                      (cons (car lis) new)
+                      new)))))
 
     (define (sort-unique strings)
       (list-delete-neighbor-dups string=? (list-sort string<? strings)))
