@@ -440,7 +440,7 @@
     (tagline "Archive of current and historical files")
     (contacts "Lassi")
     (display? #t)
-    (dns (CNAME "@")))
+    (dns (CNAME "tuonela")))
 
    ((project-id "gitea")
     (title "Gitea")
@@ -485,7 +485,7 @@
    ((project-id "tuonela")
     (contacts "Lassi")
     (display? #f)
-    (dns (A "107.175.124.234"))))
+    (dns (A "192.210.181.186"))))
 
   ("Redirect"
 
