@@ -155,16 +155,18 @@
     (block "location = /"
            (string-append "return 301 " redirect-to ";")))))
 
+(define (log-directives hostname)
+  (list (string-append "access_log /var/log/nginx/" hostname "_access.log;")
+        (string-append "error_log /var/log/nginx/" hostname "_error.log;")))
+
 (define (static-site hostnames . body)
   (let ((primary (car hostnames)))
     (apply
      https-server
      hostnames
      (append
-      (list
-       (string-append "access_log /var/log/nginx/" primary "_access.log;")
-       (string-append "error_log /var/log/nginx/" primary "_error.log;")
-       (string-append "root /var/www/" primary ";"))
+      (log-directives primary)
+      (list (string-append "root /var/www/" primary ";"))
       body))))
 
 ;;
