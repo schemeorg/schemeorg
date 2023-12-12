@@ -417,7 +417,7 @@
     (title "Mailman")
     (tagline "Host mailing lists under Scheme.org")
     (contacts "Lassi")
-    (display? #t)
+    (display? #f)
     (dns (CNAME "@")))
 
    ((project-id "man")
