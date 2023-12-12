@@ -110,7 +110,7 @@ man IN CNAME tuonela
 
 conservatory IN CNAME tuonela
 
-files IN CNAME @
+files IN CNAME tuonela
 
 gitea IN CNAME tuonela
 
@@ -127,7 +127,7 @@ wiki.staging IN CNAME tuonela
 ironwolf IN A 89.40.10.46
 ironwolf IN AAAA 2a02:7b40:5928:a2e::1
 
-tuonela IN A 107.175.124.234
+tuonela IN A 192.210.181.186
 
 redirect IN CNAME @
 
