@@ -201,7 +201,7 @@
 
    ((project-id "bigloo")
     (title "Bigloo")
-    (tagline "Fast Scheme-to-C and Scheme-to-JVM compiler")
+    (tagline "Scheme-to-C and Scheme-to-JVM compiler")
     (sidenote "")
     (contacts "Manuel Serrano")
     (display? #t)
@@ -247,7 +247,7 @@
 
    ((project-id "gambit")
     (title "Gambit")
-    (tagline "Fast, concurrent, retargetable optimizing compiler")
+    (tagline "Concurrent, retargetable, optimizing compiler")
     (sidenote "R^7")
     (contacts "Marc Feeley")
     (display? #t)
@@ -255,7 +255,7 @@
 
    ((project-id "gauche")
     (title "Gauche")
-    (tagline "Fast script interpreter with many built-in libraries")
+    (tagline "Script interpreter with many built-in libraries")
     (sidenote "R^7")
     (contacts "Shiro Kawai")
     (display? #t)
@@ -318,7 +318,7 @@
 
    ((project-id "mosh")
     (title "Mosh")
-    (tagline "Fast and complete R^6RS interpreter")
+    (tagline "Complete R^6RS interpreter")
     (sidenote "R^6 R^7")
     (contacts "Taro Minowa")
     (display? #t)
