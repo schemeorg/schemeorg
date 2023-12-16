@@ -22,6 +22,8 @@ research IN CNAME tuonela
 
 community IN CNAME tuonela
 
+workshop IN CNAME redirect
+
 events IN CNAME tuonela
 
 planet IN CNAME tuonela

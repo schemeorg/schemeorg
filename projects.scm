@@ -63,9 +63,17 @@
     (display? #t)
     (dns (CNAME "tuonela")))
 
+   ((project-id "workshop")
+    (title "Workshop")
+    (tagline "The Scheme and Functional Programming Workshop")
+    (contacts "Arthur" "Lassi")
+    (display? #t)
+    (redirect "https://www.schemeworkshop.org/")
+    (dns (CNAME "redirect")))
+
    ((project-id "events")
     (title "Events")
-    (tagline "Scheme Workshop, conferences, and other meetups")
+    (tagline "Conferences and other meetups")
     (contacts "Arthur" "Lassi")
     (display? #t)
     (dns (CNAME "tuonela")))
