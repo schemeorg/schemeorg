@@ -5,6 +5,7 @@ domain="$1"
 case "${domain}" in
 scheme.org) ;;
 schemers.org) ;;
+schemeworkshop.org) ;;
 *)
     echo "Invalid domain."
     exit 1

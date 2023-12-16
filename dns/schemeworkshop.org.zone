@@ -1,0 +1,10 @@
+; This DNS zone file is handcrafted.
+
+; $ORIGIN schemeworkshop.org.
+$TTL 10800
+
+@ IN A 165.124.180.241
+
+www IN CNAME @
+
+www.staging IN A 192.210.181.186
