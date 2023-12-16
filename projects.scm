@@ -117,13 +117,6 @@
 
   ("Topics"
 
-   ((project-id "learn")
-    (title "Education")
-    (tagline "Learn Scheme, and learn computer science using Scheme")
-    (contacts "Arthur" "Lassi")
-    (display? #f)
-    (dns (CNAME "tuonela")))
-
    ((project-id "apps")
     (title "Applications")
     (tagline "Software written or scripted in Scheme")

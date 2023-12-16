@@ -36,8 +36,6 @@ wiki IN CNAME redirect
 
 groups IN CNAME tuonela
 
-learn IN CNAME tuonela
-
 apps IN CNAME tuonela
 
 comm IN CNAME tuonela
