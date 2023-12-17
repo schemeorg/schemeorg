@@ -99,7 +99,6 @@
      human-users
      site-www
      site-www-staging
-     site-schemers
      site-redirect
      site-lists
      nginx
@@ -241,10 +240,6 @@
    (role
     (name site-www-staging)
     (tasks ,@(site-tasks "www.staging.scheme.org")))
-
-   (role
-    (name site-schemers)
-    (tasks ,@(site-tasks "www.schemers.org")))
 
    (role
     (name site-redirect)
