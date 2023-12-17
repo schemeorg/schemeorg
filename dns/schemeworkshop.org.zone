@@ -3,8 +3,8 @@
 ; $ORIGIN schemeworkshop.org.
 $TTL 10800
 
-@ IN A 165.124.180.241
+@ IN A 192.210.181.186
 
 www IN CNAME @
 
-www.staging IN A 192.210.181.186
+www.staging IN A @
