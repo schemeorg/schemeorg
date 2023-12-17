@@ -217,8 +217,6 @@
 
  (static-site '("lists.scheme.org"))
 
- (static-site '("files.scheme.org"))
-
  (filter-map
   (lambda (project)
     (let ((redirect (get-string? 'redirect project)))

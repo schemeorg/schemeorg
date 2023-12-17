@@ -101,7 +101,6 @@
      site-www-staging
      site-schemers
      site-redirect
-     site-files
      site-lists
      nginx
      sshd)))
@@ -254,34 +253,6 @@
    (role
     (name site-lists)
     (tasks ,@(site-tasks "lists.scheme.org")))
-
-   (role
-    (name site-files)
-    (tasks
-     (task
-      (title "symlink")
-      (file
-       (path "/var/www/files.scheme.org")
-       (state "link")
-       (src "/blockstorage/www/files.scheme.org")))
-     (task
-      (title "chmod home dir")
-      (file
-       (path "/blockstorage/www/files.scheme.org")
-       (state "directory")
-       (mode "u=rwX,g=rX,o=rX")
-       (follow false)
-       (recurse false)))
-     (task
-      (title "chown home dir")
-      (file
-       (path "/blockstorage/www/files.scheme.org")
-       (state "directory")
-       (owner "www-data")
-       (group "users")
-       (mode "u=rwX,g=rwX,o=rX")
-       (follow false)
-       (recurse true)))))
 
    (role
     (name nginx)
