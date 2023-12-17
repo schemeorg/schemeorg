@@ -46,15 +46,7 @@
 (define (site-tasks subdomain)
   (let ((site-home (string-append "/var/www/" subdomain)))
     `((task
-       (title "chmod home dir")
-       (file
-        (path ,site-home)
-        (state "directory")
-        (mode "u=rwX,g=rX,o=rX")
-        (follow false)
-        (recurse false)))
-      (task
-       (title "chown home dir")
+       (title ,(string-append "chown and chmod " site-home))
        (file
         (path ,site-home)
         (state "directory")
