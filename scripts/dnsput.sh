@@ -17,7 +17,6 @@ cd ..
 echo "Entering directory '$PWD'"
 set -x
 curl \
-    --fail \
     --silent \
     --show-error \
     --request PUT \
