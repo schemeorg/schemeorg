@@ -333,7 +333,8 @@
                          (table (@ (class "no-border"))
                                 ,@trs)))))))
         project-groups)
-     (p (a (@ (href "/about/"))
+     (p (@ (class "center"))
+        (a (@ (href "/about/"))
            "About Scheme.org")))))
 
 (define (generate-scheme.org)
