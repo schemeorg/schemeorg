@@ -7,4 +7,4 @@ $TTL 10800
 
 www IN CNAME @
 
-www.staging IN A @
+www.staging IN A 192.210.181.186
