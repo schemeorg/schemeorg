@@ -65,6 +65,5 @@ egg.
 
 ## See also
 
-- https://github.com/schemedoc
 - https://github.com/schemeorg-community
-- https://github.com/schemeorg-community/linux-configuration
+- https://github.com/schemedoc
