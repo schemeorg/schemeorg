@@ -111,6 +111,10 @@ a.offsite:visited {
   font-size: 80%;
 }
 
+.center {
+  text-align: center;
+}
+
 .sidenote {
   text-align: right;
 }
