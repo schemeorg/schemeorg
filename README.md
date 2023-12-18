@@ -3,7 +3,13 @@
 This is the main version control repository for the internet domain
 name `scheme.org`.
 
-(Also included is a vestigial site for `schemers.org`.)
+## Related domains
+
+DNS zones for the following domains are also managed here.
+
+`schemers.org` moved here in January 2023.
+
+`schemeworkshop.org` moved here in December 2023.
 
 ## Projects
 
