@@ -12,6 +12,8 @@ try IN CNAME tuonela
 
 faq IN CNAME redirect
 
+books IN CNAME tuonela
+
 cookbook IN CNAME tuonela
 
 standards IN CNAME tuonela

@@ -25,6 +25,13 @@
     (redirect "http://community.schemewiki.org/?scheme-faq")
     (dns (CNAME "redirect")))
 
+   ((project-id "books")
+    (title "Books")
+    (tagline "Published books")
+    (contacts "Lassi")
+    (display? #t)
+    (dns (CNAME "tuonela")))
+
    ((project-id "cookbook")
     (title "Cookbook")
     (tagline "Code snippets that solve common problems")
