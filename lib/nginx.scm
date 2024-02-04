@@ -206,7 +206,7 @@
 
               (string-append
                "rewrite"
-               " ^/welcome.shtml$"
+               " ^/welcome\\.shtml$"
                " https://conservatory.scheme.org/schemers/Welcome/"
                " permanent;")
 
