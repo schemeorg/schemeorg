@@ -18,6 +18,6 @@ transparent to any interested party, not just to one or two sysadmins.
 ## Maintenance
 
 The ground truth lies in
-[`projects.scm`](https://raw.githubusercontent.com/schemeorg/schemeorg/master/projects.scm).
+[`projects.pose`](https://raw.githubusercontent.com/schemeorg/schemeorg/master/projects.pose).
 Search for `redirect` in that file and you will find everything
 pertinent.
