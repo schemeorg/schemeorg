@@ -189,9 +189,6 @@
 (define file-rss (read-file rss))
 (define file-atom (read-file atom))
 
-(define projects-scm (call-with-input-file "projects.scm" read))
-(define project-groups (get-list 'projects projects-scm))
-
 (define (write-html-file html-filename title description body)
   (echo "Writing " html-filename)
   (with-output-to-file html-filename
@@ -242,7 +239,7 @@
            (and uri (list (get-string 'project-id project)
                           uri))))
        (cdr group)))
-    project-groups)))
+    (project-groups))))
 
 (define (write-redirect-page)
   (write-html-file
@@ -322,7 +319,7 @@
                                              ,@(superscripts note)))
                                       (get-list 'sidenote project))))
                         (filter (lambda (project)
-                                  (get-boolean 'display? project))
+                                  (get-symbol-boolean 'display? project))
                                 (cdr group)))))
               (if (null? trs) '()
                   `((div (@ (class ,(string-append
@@ -332,7 +329,7 @@
                              ,group-heading)
                          (table (@ (class "no-border"))
                                 ,@trs)))))))
-        project-groups)
+        (project-groups))
      (p (@ (class "center"))
         (a (@ (href "/about/"))
            "About Scheme.org")))))

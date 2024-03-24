@@ -11,10 +11,10 @@
    flatten-all
    fold
    generator->list
-   get-boolean
    get-list
    get-string
    get-string?
+   get-symbol-boolean
    list-sort
    pretty-print
    project-groups
@@ -131,13 +131,15 @@
     (define (get-string key alist)
       (get-value key alist string?))
 
-    (define (get-boolean key alist)
-      (get-value key alist boolean?))
+    (define (get-symbol-boolean key alist)
+      (define (boolean-symbol? object)
+        (or (eqv? 'false object) (eqv? 'true object)))
+      (eqv? 'true (get-value key alist boolean-symbol?)))
 
     ;;
 
     (define (projects-file)
-      (string-append (script-directory) "../projects.scm"))
+      (string-append (script-directory) "../projects.pose"))
 
     (define (projects-data)
       (call-with-input-file (projects-file) read))

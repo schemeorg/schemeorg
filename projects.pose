@@ -5,7 +5,7 @@
    ((project-id "www")
     (comments "The www.scheme.org front page")
     (contacts "Arthur" "Lassi")
-    (display? #f)
+    (display? false)
     (dns (CNAME "@"))))
 
   ("Language"
@@ -14,14 +14,14 @@
     (title "Try Scheme")
     (tagline "Type Scheme code and run it in your browser")
     (contacts "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "faq")
     (title "FAQ")
     (tagline "Frequently asked questions about Scheme")
     (contacts "Lassi")
-    (display? #t)
+    (display? true)
     (redirect "http://community.schemewiki.org/?scheme-faq")
     (dns (CNAME "redirect")))
 
@@ -29,21 +29,21 @@
     (title "Books")
     (tagline "Published books")
     (contacts "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "cookbook")
     (title "Cookbook")
     (tagline "Code snippets that solve common problems")
     (contacts "Jakub T. Jankiewicz" "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "standards")
     (title "Standards")
     (tagline "Revised^n Report on Scheme and other standards")
     (contacts "Arthur" "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "srfi")
@@ -51,14 +51,14 @@
     (tagline "Scheme Requests for Implementation")
     (comments "Continues under schemers.org until planned how to move.")
     (contacts "Arthur")
-    (display? #t)
+    (display? true)
     (dns (CNAME "srfi.schemers.org.")))
 
    ((project-id "research")
     (title "Research")
     (tagline "Dive into the academic research behind Scheme")
     (contacts "Lassi" "Arthur")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela"))))
 
   ("Community"
@@ -67,14 +67,14 @@
     (title "Community")
     (tagline "Scheme gathering spots around the internet")
     (contacts "Lassi" "Arthur" "Jakub T. Jankiewicz")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "workshop")
     (title "Workshop")
     (tagline "The Scheme and Functional Programming Workshop")
     (contacts "Arthur" "Lassi")
-    (display? #t)
+    (display? true)
     (redirect "https://www.schemeworkshop.org/")
     (dns (CNAME "redirect")))
 
@@ -82,21 +82,21 @@
     (title "Events")
     (tagline "Conferences and other meetups")
     (contacts "Arthur" "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "planet")
     (title "Planet")
     (tagline "Blog posts from every corner of the Scheme community")
     (contacts "Lassi" "Arthur")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "video")
     (title "Video")
     (tagline "Videos about Scheme")
     (contacts "Jakub T. Jankiewicz")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "chat")
@@ -105,21 +105,21 @@
     (contacts "Jakub T. Jankiewicz"
               "Wolfgang Corcoran-Mathe"
               "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "lists")
     (title "Lists")
     (tagline "Mailing lists for email discussion of many Scheme topics")
     (contacts "Arthur")
-    (display? #t)
+    (display? true)
     (dns (CNAME "@")))
 
    ((project-id "wiki")
     (title "Wiki")
     (tagline "Scheme community wiki")
     (contacts "Lassi" "Arthur")
-    (display? #t)
+    (display? true)
     (redirect "http://community.schemewiki.org/")
     (dns (CNAME "redirect")))
 
@@ -127,7 +127,7 @@
     (title "Groups")
     (tagline "Work groups")
     (contacts "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela"))))
 
   ("Topics"
@@ -136,7 +136,7 @@
     (title "Applications")
     (tagline "Software written or scripted in Scheme")
     (contacts "Lassi" "Arthur")
-    (display? #f)
+    (display? false)
     (dns (CNAME "tuonela")))
 
    ((project-id "comm")
@@ -144,7 +144,7 @@
     (tagline "Comms and networks: TCP/IP, WebSockets, peer-to-peer, radio...")
     (comments "Discussed on the schemecomm@srfi.schemers.org mailing list.")
     (contacts "Harold Ancell")
-    (display? #f)
+    (display? false)
     (dns (CNAME "tuonela")))
 
    ((project-id "persist")
@@ -152,7 +152,7 @@
     (tagline "Databases, encoding, and logging")
     (comments "Discussed on the schemepersist@srfi.schemers.org mailing list.")
     (contacts "Harold Ancell")
-    (display? #f)
+    (display? false)
     (dns (CNAME "tuonela")))
 
    ((project-id "test")
@@ -160,7 +160,7 @@
     (tagline "Everything having to do with testing in Scheme")
     (comments "Discussed on the schemetest@srfi.schemers.org mailing list.")
     (contacts "Harold Ancell")
-    (display? #f)
+    (display? false)
     (dns (CNAME "tuonela")))
 
    ((project-id "web")
@@ -168,7 +168,7 @@
     (tagline "HTTP, HTML, JavaScript, WebAssembly, and other web standards")
     (comments "Discussed on the schemeweb@srfi.schemers.org mailing list.")
     (contacts "Lassi" "Arthur")
-    (display? #f)
+    (display? false)
     (dns (CNAME "tuonela"))))
 
   ("Standards"
@@ -177,7 +177,7 @@
     (title "R^5RS")
     (tagline "Revised^5 Report on the Algorithmic Language Scheme (1998)")
     (contacts "Lassi")
-    (display? #f)
+    (display? false)
     (redirect "http://schemers.org/Documents/Standards/R5RS/")
     (dns (CNAME "redirect")))
 
@@ -185,7 +185,7 @@
     (title "R^6RS")
     (tagline "Revised^6 Report on the Algorithmic Language Scheme (2007)")
     (contacts "Lassi")
-    (display? #f)
+    (display? false)
     (redirect "http://www.r6rs.org/")
     (dns (CNAME "redirect")))
 
@@ -193,7 +193,7 @@
     (title "R^7RS")
     (tagline "Revised^7 Report on the Algorithmic Language Scheme (2013)")
     (contacts "Lassi")
-    (display? #f)
+    (display? false)
     (redirect "http://r7rs.org/")
     (dns (CNAME "redirect"))))
 
@@ -204,7 +204,7 @@
     (tagline "Browse and compare all known Scheme systems")
     (sidenote "")
     (contacts "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "bigloo")
@@ -212,7 +212,7 @@
     (tagline "Scheme-to-C and Scheme-to-JVM compiler")
     (sidenote "")
     (contacts "Manuel Serrano")
-    (display? #t)
+    (display? true)
     (redirect "https://www-sop.inria.fr/indes/fp/Bigloo/")
     (dns (CNAME "redirect")))
 
@@ -222,7 +222,7 @@
     (sidenote "R^6")
     (contacts "Bob Burger"
               "Andy Keep")
-    (display? #t)
+    (display? true)
     (redirect "https://cisco.github.io/ChezScheme/")
     (dns (CNAME "redirect")))
 
@@ -231,7 +231,7 @@
     (tagline "Small embeddable interpreter with many optional libraries")
     (sidenote "R^7")
     (contacts "Alex Shinn")
-    (display? #t)
+    (display? true)
     (redirect "https://synthcode.com/scheme/chibi/")
     (dns (CNAME "redirect")))
 
@@ -240,7 +240,7 @@
     (tagline "Scheme-to-C compiler with a big, friendly community")
     (sidenote "R^7")
     (contacts "Mario Domenech Goulart" "chicken-meisters at nongnu.org")
-    (display? #t)
+    (display? true)
     (redirect "https://call-cc.org/")
     (dns (CNAME "redirect")))
 
@@ -249,7 +249,7 @@
     (tagline "New Scheme-to-C compiler with native threads")
     (sidenote "R^7")
     (contacts "Justin Ethier")
-    (display? #t)
+    (display? true)
     (redirect "https://justinethier.github.io/cyclone/")
     (dns (CNAME "redirect")))
 
@@ -258,7 +258,7 @@
     (tagline "Concurrent, retargetable, optimizing compiler")
     (sidenote "R^7")
     (contacts "Marc Feeley")
-    (display? #t)
+    (display? true)
     (dns (CNAME "gambitscheme.org.")))
 
    ((project-id "gauche")
@@ -266,7 +266,7 @@
     (tagline "Script interpreter with many built-in libraries")
     (sidenote "R^7")
     (contacts "Shiro Kawai")
-    (display? #t)
+    (display? true)
     (redirect "https://practical-scheme.net/gauche/")
     (dns (CNAME "redirect")))
 
@@ -275,7 +275,7 @@
     (tagline "Scheme with actors and objects built on Gambit")
     (sidenote "R^7")
     (contacts "Dimitris Vyzovitis")
-    (display? #t)
+    (display? true)
     (dns (CNAME "cons.io.")))
 
    ((project-id "guile")
@@ -284,7 +284,7 @@
     (sidenote "R^6 R^7")
     (contacts "Ludovic Courtès"
               "Andy Wingo")
-    (display? #t)
+    (display? true)
     (redirect "https://www.gnu.org/software/guile/")
     (dns (CNAME "redirect")))
 
@@ -293,7 +293,7 @@
     (tagline "Object-oriented GUI and IDE built on Gambit")
     (sidenote "")
     (contacts "Guillaume Cartier")
-    (display? #t)
+    (display? true)
     ;; The "www." and "index.htm" are mandatory.
     (redirect "http://www.jazzscheme.org/index.htm")
     (dns (CNAME "redirect")))
@@ -303,7 +303,7 @@
     (tagline "JVM compiler with many extensions to Scheme")
     (sidenote "R^7")
     (contacts "Per Bothner")
-    (display? #t)
+    (display? true)
     (redirect "https://www.gnu.org/software/kawa/")
     (dns (CNAME "redirect")))
 
@@ -312,7 +312,7 @@
     (tagline "Bare-metal native-code compiler")
     (sidenote "R^6 R^7")
     (contacts "Göran Weinholt")
-    (display? #t)
+    (display? true)
     (dns (CNAME "scheme.fail.")))
 
    ((project-id "mit")
@@ -320,7 +320,7 @@
     (tagline "Native-code compiler and development environment")
     (sidenote "R^7")
     (contacts "Arthur")
-    (display? #t)
+    (display? true)
     (redirect "https://www.gnu.org/software/mit-scheme/")
     (dns (CNAME "redirect")))
 
@@ -329,7 +329,7 @@
     (tagline "Complete R^6RS interpreter")
     (sidenote "R^6 R^7")
     (contacts "Taro Minowa")
-    (display? #t)
+    (display? true)
     (redirect "https://mosh.monaos.org/")
     (dns (CNAME "redirect")))
 
@@ -340,7 +340,7 @@
     (contacts "John Clements" "Matthias Felleisen" "Robby Findler"
               "Matthew Flatt" "Jay McCarthy" "Sam Tobin-Hochstadt"
               "management at racket-lang.org")
-    (display? #t)
+    (display? true)
     (redirect "https://racket-lang.org/")
     (dns (CNAME "redirect")))
 
@@ -349,7 +349,7 @@
     (tagline "Embeddable interpreter for music applications")
     (sidenote "R^7")
     (contacts "Bill Schottstaedt" "Lassi")
-    (display? #t)
+    (display? true)
     (redirect "https://ccrma.stanford.edu/software/s7/")
     (dns (CNAME "redirect")))
 
@@ -358,7 +358,7 @@
     (tagline "Script interpreter with many built-in libraries")
     (sidenote "R^6 R^7")
     (contacts "Takashi Kato")
-    (display? #t)
+    (display? true)
     (redirect "https://ktakashi.github.io/")
     (dns (CNAME "redirect")))
 
@@ -367,7 +367,7 @@
     (tagline "Portable C implementation that begat Guile and SLIB")
     (sidenote "")
     (contacts "Aubrey Jaffer" "Lassi")
-    (display? #t)
+    (display? true)
     (redirect "https://people.csail.mit.edu/jaffer/SCM")
     (dns (CNAME "redirect")))
 
@@ -376,7 +376,7 @@
     (tagline "Interpreter with CLOS object-oriented GUI")
     (sidenote "R^7")
     (contacts "Erick Gallesio")
-    (display? #t)
+    (display? true)
     (redirect "https://stklos.net/")
     (dns (CNAME "redirect")))
 
@@ -386,7 +386,7 @@
     (sidenote "R^6 R^7")
     (contacts "Göran Weinholt"
               "Yoshikatsu Fujita")
-    (display? #t)
+    (display? true)
     (redirect "http://www.littlewingpinball.com/doc/en/ypsilon/")
     (dns (CNAME "redirect"))))
 
@@ -396,21 +396,21 @@
     (title "Index")
     (tagline "Library search using types, tags, and names")
     (contacts "Arvydas Silanskas")
-    (display? #t)
+    (display? true)
     (dns (CNAME "ironwolf")))
 
    ((project-id "api")
     (title "API")
     (tagline "Programmable queries for all things Scheme")
     (contacts "Lassi")
-    (display? #f)
+    (display? false)
     (dns (CNAME "tuonela")))
 
    ((project-id "containers")
     (title "Containers")
     (tagline "Ready-to-run Docker containers")
     (contacts "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "docs")
@@ -418,21 +418,21 @@
     (tagline "Study Scheme implementations and libraries")
     (comments "Discussed on the schemedoc@srfi.schemers.org mailing list.")
     (contacts "Lassi" "Arthur")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "mailman")
     (title "Mailman")
     (tagline "Host mailing lists under Scheme.org")
     (contacts "Lassi")
-    (display? #f)
+    (display? false)
     (dns (CNAME "@")))
 
    ((project-id "man")
     (title "Manual pages")
     (tagline "Unix manual pages for tools and libraries")
     (contacts "Göran Weinholt" "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "conservatory")
@@ -440,42 +440,42 @@
     (tagline "Preservation of old software and websites")
     (sidenote "")
     (contacts "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "files")
     (title "Files")
     (tagline "Archive of current and historical files")
     (contacts "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "gitea")
     (title "Gitea")
     (tagline "Host Git repositories under Scheme.org")
     (contacts "Lassi")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "go")
     (title "Go Scheme")
     (tagline "URL shortening service")
     (contacts "Lassi" "Jakub T. Jankiewicz")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "registry")
     (title "Registry")
     (tagline "Catalog of identifiers and other data")
     (contacts "Lassi" "Harold Ancell" "Arthur")
-    (display? #t)
+    (display? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "staging")
     (title "Staging")
     (tagline "Staging versions of Scheme.org projects")
     (contacts "Lassi")
-    (display? #f)
+    (display? false)
     (dns (CNAME "www.staging")
          ("www" CNAME "@")
          ("api" CNAME "tuonela")
@@ -486,36 +486,36 @@
 
    ((project-id "ironwolf")
     (contacts "Arvydas Silanskas")
-    (display? #f)
+    (display? false)
     (dns (A "89.40.10.46")
          (AAAA "2a02:7b40:5928:a2e::1")))
 
    ((project-id "tuonela")
     (contacts "Lassi")
-    (display? #f)
+    (display? false)
     (dns (A "192.210.181.186"))))
 
   ("Redirect"
 
    ((project-id "redirect")
     (contacts "Lassi" "Arthur")
-    (display? #f)
+    (display? false)
     (dns (CNAME "@"))))
 
   ("Aliases"
 
    ((project-id "blog")
-    (display? #f)
+    (display? false)
     (dns (CNAME "planet")))
 
    ((project-id "doc")
-    (display? #f)
+    (display? false)
     (dns (CNAME "docs")))
 
    ((project-id "list")
-    (display? #f)
+    (display? false)
     (dns (CNAME "lists")))
 
    ((project-id "play")
-    (display? #f)
+    (display? false)
     (dns (CNAME "try"))))))

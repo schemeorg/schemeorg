@@ -18,7 +18,7 @@ subdomain under `scheme.org`. The project ID `example` corresponds to
 the subdomain `example.scheme.org`. That project also controls all
 nested subdomains `*.example.scheme.org`.
 
-The file `projects.scm` holds the ground truth for all project
+The file `projects.pose` holds the ground truth for all project
 definitions, including DNS records. Edits should be made to this file.
 
 Each project is responsible for its own servers. This top-level repo
@@ -29,7 +29,7 @@ records.
 
 The `www` project corresponds to `www.scheme.org`, the front page of
 `scheme.org`. The website at this subdomain is generated from
-`projects.scm` as well as the Markdown (`doc/*.md`) files in this
+`projects.pose` as well as the Markdown (`doc/*.md`) files in this
 repo.
 
 The `lists` project is responsible for `@scheme.org` mailing lists
@@ -50,7 +50,7 @@ egg.
 
 ### DNS maintenance
 
-- `scripts/dns.sh` -- generate `dns/scheme.org.zone` based on `projects.scm`.
+- `scripts/dns.sh` -- generate `dns/scheme.org.zone` based on `projects.pose`.
 - `scripts/dnsput.sh scheme.org` -- upload `dns/scheme.org.zone` to Gandi.
 - `scripts/dnsput.sh schemers.org` -- upload `dns/schemers.org.zone` to Gandi.
 - `scripts/dnsget.sh scheme.org` -- download `dns/scheme.org.zone` from Gandi.
@@ -59,7 +59,7 @@ egg.
 ### WWW maintenance
 
 - `scripts/www.sh` -- generate HTML files in the `www` subdirectory
-  based on `projects.scm` and `doc/*.md`.
+  based on `projects.pose` and `doc/*.md`.
 - `scripts/wwwstaging.sh` -- upload `www` subdirectory to staging server.
 - `scripts/wwwproduction.sh` -- upload `www` subdirectory to production server.
 
