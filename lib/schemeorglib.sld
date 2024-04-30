@@ -148,4 +148,4 @@
       (get-list 'projects (projects-data)))
 
     (define (all-projects)
-      (append-map cdr (get-list 'projects (projects-data))))))
+      (append-map cdr (project-groups)))))
