@@ -23,27 +23,6 @@
 
         (schemeorglib))
 
-(define (sxml->html expr)
-  (cond ((and (pair? expr) (symbol? (car expr)))
-         (let* ((elem (symbol->string (car expr)))
-                (attr (and (pair? (cdr expr))
-                           (pair? (cadr expr))
-                           (eqv? '@ (car (cadr expr)))
-                           (cdr (cadr expr))))
-                (body (if attr (cddr expr) (cdr expr))))
-           (string-append
-            "<" elem
-            (apply string-append
-                   (map (lambda (pair)
-                          (string-append " " (symbol->string (car pair))
-                                         "=\"" (cadr pair) "\""))
-                        (or attr '())))
-            ">"
-            (apply string-append (map sxml->html body))
-            "</" elem ">")))
-        ((string? expr) expr)
-        (else (error "Bad XML expression"))))
-
 (define (superscripts s)
   (let ((n (string-length s)))
     (let loop ((a 0) (b 0) (acc '()))
