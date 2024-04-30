@@ -1,3 +1,4 @@
-*.html
 *~
+/README.html
 /server/ansible/
+/www/**/*.html
