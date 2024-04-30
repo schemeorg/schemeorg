@@ -29,7 +29,7 @@ records.
 
 The `www` project corresponds to `www.scheme.org`, the front page of
 `scheme.org`. The website at this subdomain is generated from
-`projects.pose` as well as the Markdown (`doc/*.md`) files in this
+`projects.pose` as well as the HTML fragments (`doc/*.html`) in this
 repo.
 
 The `lists` project is responsible for `@scheme.org` mailing lists
@@ -59,7 +59,7 @@ egg.
 ### WWW maintenance
 
 - `scripts/www.sh` -- generate HTML files in the `www` subdirectory
-  based on `projects.pose` and `doc/*.md`.
+  based on `projects.pose` and `doc/*.html`.
 - `scripts/wwwstaging.sh` -- upload `www` subdirectory to staging server.
 - `scripts/wwwproduction.sh` -- upload `www` subdirectory to production server.
 

@@ -1,0 +1,27 @@
+<?xml?>
+<html>
+<body>
+  <h2>Explanation</h2>
+  <p>Some subdomains of Scheme.org are just HTTP redirects. Each of
+  those subdomains has a DNS CNAME pointing to
+  <code>redirect.scheme.org</code>.</p>
+  <p>The subdomain <code>redirect.scheme.org</code> itself has a
+  CNAME pointing to the origin server of Scheme.org. This subdomain
+  exists to make <a href=
+  "https://raw.githubusercontent.com/schemeorg/schemeorg/master/dns/scheme.org.zone">
+  our dns zone</a> easier to read. If the zone listed over 20
+  subdomains pointing to the origin server, it would be hard to
+  figure out which sites are actually hosted on that server and
+  which are mere redirects.</p>
+  <p>It may seem excessive to put so much effort into the
+  readability of a DNS zone but the zone is the most central part
+  of Scheme.org. The long-term maintenance of the domain relies on
+  its structure being transparent to any interested party, not just
+  to one or two sysadmins.</p>
+  <h2>Maintenance</h2>
+  <p>The ground truth lies in <a href=
+  "https://raw.githubusercontent.com/schemeorg/schemeorg/master/projects.pose">
+  <code>projects.pose</code></a>. Search for <code>redirect</code>
+  in that file and you will find everything pertinent.</p>
+</body>
+</html>

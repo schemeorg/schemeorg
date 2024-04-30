@@ -1,9 +1,10 @@
 ;; Write HTML files into the `www` subdirectory.
 ;;
-;; Based on S-expressions, markdown, and SXML templates in this file.
+;; Based on the S-expressions in projects.pose, the HTML fragments in
+;; the doc subdirectory, and the SXML templates in this file.
 ;;
 ;; You need Chicken 5 and
-;; `chicken-install http-client lowdown openssl r7rs srfi-19 ssax sxpath`.
+;; `chicken-install http-client openssl r7rs srfi-19 ssax sxpath`.
 
 (cond-expand (chicken (include "schemeorglib.sld")))
 
@@ -16,7 +17,6 @@
 
         (only (chicken file) create-directory)
         (only (http-client) call-with-input-request)
-        (only (lowdown) markdown->sxml)
         (only (ssax) ssax:xml->sxml)
         (only (sxml-transforms) SXML->HTML)
         (only (sxpath-lolevel) sxml:content)
@@ -187,19 +187,27 @@
                         (content ,description))))
               (body ,@body))))))
 
-(define (page-title-from-sxml tags)
-  (let rec ((tags tags))
-    (cond ((not (pair? tags)) (error "Markdown page has no title"))
-          ((eqv? 'h1 (car (car tags)))
-           (apply string-append (cadr (car tags))))
-          (else (rec (cdr tags))))))
+(define (find-subtree head tree)
+  (and (pair? tree)
+       (if (equal? head (car tree))
+           tree
+           (or (find-subtree head (car tree))
+               (find-subtree head (cdr tree))))))
 
-(define (markdown-file->sxml md-filename)
-  (call-with-port (open-input-file (string-append "doc/" md-filename))
-    markdown->sxml))
+(define (page-title-from-sxml sxml)
+  (let ((h1 (or (find-subtree 'h1 sxml)
+                (error "Page has no title" sxml))))
+    (apply string-append (cdr h1))))
 
-(define (write-simple-page html-filename md-filename description)
-  (let ((sxml (markdown-file->sxml md-filename)))
+(define (doc-body-as-sxml html-filename)
+  (call-with-port (open-input-file (string-append "doc/" html-filename))
+    (lambda (port)
+      (let ((sxml (ssax:xml->sxml port '())))
+        (cdr (or (find-subtree 'body sxml)
+                 (error "No <body> found in" html-filename sxml)))))))
+
+(define (write-simple-page html-filename doc-filename description)
+  (let ((sxml (doc-body-as-sxml doc-filename)))
     (write-html-file html-filename
                      (page-title-from-sxml sxml)
                      description
@@ -236,7 +244,7 @@
                              (code ,subdomain)))
                       (td (code ,(redirect-uri redirect))))))
              (redirect-list)))
-     ,@(markdown-file->sxml "redirect.md"))))
+     ,@(doc-body-as-sxml "redirect.html"))))
 
 (define (write-menu items)
   `(header
@@ -281,7 +289,7 @@
                     ("Implementations" "https://get.scheme.org/")))
      (h1 (@ (id "logo")) "Scheme")
      ,@(if extra-banner `(,extra-banner) '())
-     ,@(markdown-file->sxml "front.md")
+     ,@(doc-body-as-sxml "front.html")
      ,(whats-new-div atom-feed)
      ,@(append-map
         (let ((next-color (circular-generator "blue" "orange")))
@@ -328,10 +336,10 @@
                       atom-feed
                       #f)
     (write-simple-page "www/scheme.org/about/index.html"
-                       "about.md"
+                       "about.html"
                        "description here")
     (write-simple-page "www/scheme.org/charter/index.html"
-                       "charter.md"
+                       "charter.html"
                        "description here")
     (write-front-page
      "www/scheme.org/schemers/index.html"
