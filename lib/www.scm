@@ -124,7 +124,8 @@
                                => (lambda (attributes)
                                     (cond ((find-one 'type attributes)
                                            => (lambda (t)
-                                                (string=? (car t) "text/html")))
+                                                (string=? (car t)
+                                                          "text/html")))
                                           (else #f))))
                               (else #f))))
                  tree)
@@ -134,7 +135,8 @@
                         (else #f)))))
           (else #f)))
   (define (parse-date value) (parse-atom-date (car value)))
-  (let ((sxml (ssax:xml->sxml port '((atom . "http://www.w3.org/2005/Atom")))))
+  (let ((sxml (ssax:xml->sxml port
+                              '((atom . "http://www.w3.org/2005/Atom")))))
     (map (lambda (e)
            (make-feed-item
             (cond ((find-one 'atom:published e) => parse-date)
@@ -179,7 +181,7 @@
                (title ,title)
                (link (@ (rel "stylesheet") (href "/schemeorg.css")))
                (link (@ (rel "canonical") (href "https://www.scheme.org/")))
-	       (meta (@ (name "viewport")
+               (meta (@ (name "viewport")
                         (content "width=device-width, initial-scale=1")))
                (meta (@ (name "description")
                         (content ,description))))
@@ -347,8 +349,8 @@
               " of the old Schemers.org. Thanks to "
               (a (@ (href "https://cs.brown.edu/~sk/"))
                  "Prof. Shriram Krishnamurthi")
-              " and all the other people who gave Scheme a home on Schemers.org"
-              " for nearly twenty-five years.")))
+              " and all the other people who gave Scheme a home"
+              " on Schemers.org for nearly twenty-five years.")))
     (write-redirect-page)))
 
 (define (main)
