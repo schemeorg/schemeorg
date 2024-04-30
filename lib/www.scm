@@ -48,20 +48,19 @@
                     (+ i 1) (not (null? chars))))))))
 
 (define-record-type feed-item
-  (make-feed-item date-time description title uri)
+  (make-feed-item date-object description title uri)
   feed-item?
-  (date-time fi/date-time)
-  (description fi/description)
-  (title fi/title)
-  (uri fi/uri))
+  (date-object feed-item-date-object)
+  (description feed-item-description)
+  (title feed-item-title)
+  (uri feed-item-uri))
 
-(define (fi-iso-date fi)
+(define (feed-item-iso-date fi)
   "Convert into \"YYYY-MM-DD\" format."
-  (date->string (fi/date-time fi) "~Y-~m-~d"))
+  (date->string (feed-item-date-object fi) "~Y-~m-~d"))
 
-(define (fi-friendly-date fi)
-  "Convert into \"YYYY-MM-DD\" format."
-  (date->string (fi/date-time fi) "~b ~e"))
+(define (feed-item-friendly-date fi)
+  (date->string (feed-item-date-object fi) "~b ~e"))
 
 (define (matching-subtree? name tree)
   (and (pair? tree)
@@ -250,6 +249,25 @@
                      `(li (a (@ (href ,(cadr i))) ,(car i)))))
                items))))
 
+(define (whats-new-div atom-feed)
+  `(div (@ (class "round-box green-box blog-posts"))
+        (h2 "What's new in Scheme")
+        ;; We should guard against rogue content, e.g. by filtering
+        ;; out entries with foul language or dangerous HTML; and
+        ;; include the source.
+        (ul ,@(map (lambda (item)
+                     `(li (a (@ href ,(feed-item-uri item))
+                             ,(feed-item-title item))
+                          " "
+                          (time (@ (class "date"))
+                                ,(feed-item-friendly-date item))))
+                   (take atom-feed 5)))
+        (p (@ class "more")
+           "More on "
+           (a (@ href "https://planet.scheme.org/")
+              "Planet Scheme")
+           ".")))
+
 (define (write-front-page html-filename atom-feed extra-banner)
   (write-html-file
    html-filename
@@ -265,20 +283,7 @@
      (h1 (@ (id "logo")) "Scheme")
      ,@(if extra-banner `(,extra-banner) '())
      ,@(markdown-file->sxml "front.md")
-     (div (@ (class "round-box green-box blog-posts"))
-          (h2 "What's new in Scheme")
-          ;; We should guard against rogue content, e.g. by filtering
-          ;; out entries with foul language or dangerous HTML; and
-          ;; include the source.
-          (ul ,@(map (lambda (fi)
-                       `(li (a (@ href ,(fi/uri fi)) ,(fi/title fi))
-                            " " (time (@ (class "date")) ,(fi-friendly-date fi))))
-                     (take atom-feed 5)))
-          (p (@ class "more")
-             "More on "
-             (a (@ href "https://planet.scheme.org/")
-                "Planet Scheme")
-             "."))
+     ,(whats-new-div atom-feed)
      ,@(append-map
         (let ((next-color (circular-generator "blue" "orange")))
           (lambda (group)
