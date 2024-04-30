@@ -18,6 +18,8 @@
    list-sort
    pretty-print
    project-groups
+   project-group-title
+   project-group-projects
    projects-data
    script-directory
    second
@@ -147,5 +149,8 @@
     (define (project-groups)
       (get-list 'projects (projects-data)))
 
+    (define project-group-title car)
+    (define project-group-projects cdr)
+
     (define (all-projects)
-      (append-map cdr (project-groups)))))
+      (append-map project-group-projects (project-groups)))))

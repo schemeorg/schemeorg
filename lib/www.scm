@@ -212,15 +212,12 @@
   (list-sort
    (lambda (a b) (string<? (redirect-project-id a)
                            (redirect-project-id b)))
-   (append-map
-    (lambda (group)
-      (filter-map
-       (lambda (project)
-         (let ((uri (get-string? 'redirect project)))
-           (and uri (list (get-string 'project-id project)
-                          uri))))
-       (cdr group)))
-    (project-groups))))
+   (filter-map
+    (lambda (project)
+      (let ((uri (get-string? 'redirect project)))
+        (and uri (list (get-string 'project-id project)
+                       uri))))
+    (all-projects))))
 
 (define (write-redirect-page)
   (write-html-file
@@ -289,8 +286,7 @@
      ,@(append-map
         (let ((next-color (circular-generator "blue" "orange")))
           (lambda (group)
-            (let ((group-heading (car group))
-                  (trs
+            (let ((trs
                    (map (lambda (project)
                           `(tr (th (a (@ (href
                                           ,(string-append
@@ -307,13 +303,14 @@
                                       (get-list 'sidenote project))))
                         (filter (lambda (project)
                                   (get-symbol-boolean 'display? project))
-                                (cdr group)))))
+                                (project-group-projects group)))))
               (if (null? trs) '()
                   `((div (@ (class ,(string-append
                                      "front-page-group round-box "
                                      (next-color) "-box")))
-                         (h2 (@ (id ,(string->html-id group-heading)))
-                             ,group-heading)
+                         (h2 (@ (id ,(string->html-id
+                                      (project-group-title group))))
+                             ,(project-group-title group))
                          (table (@ (class "no-border"))
                                 ,@trs)))))))
         (project-groups))
