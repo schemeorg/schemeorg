@@ -1,6 +1,7 @@
 (define-library (schemeorglib)
   (export
    all-projects
+   any
    append-map
    circular-generator
    echo
@@ -33,7 +34,7 @@
           (scheme read)
           (scheme write)
           (only (srfi 1)
-                append-map filter filter-map find first fold
+                any append-map filter filter-map find first fold
                 second take third)
           (only (srfi 193) script-directory))
   (cond-expand

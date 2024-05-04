@@ -246,6 +246,74 @@
              (redirect-list)))
      ,@(html-body-as-sxml "doc/redirect.html"))))
 
+(define (project-https-uri project)
+  (string-append "https://" (get-string 'project-id project) ".scheme.org/"))
+
+(define (project-source-uri project)
+  (let ((source (get-list 'source project)))
+    (and (not (null? source))
+         (let ((host (get-string 'host source))
+               (organization (get-string 'organization source))
+               (repository (get-string 'repository source))
+               (path (get-string? 'path source)))
+           (string-append "https://" host "/" organization "/" repository
+                          (if path
+                              (string-append "/tree/master/" path)
+                              ""))))))
+
+(define (project-server project)
+  (define (dotted? host) (memv #\. (string->list host)))
+  (any (lambda (record)
+         (and (= (length record) 2)
+              (eqv? 'CNAME (first record))
+              (let ((host (second record)))
+                (and (not (dotted? host))
+                     host))))
+       (get-list 'dns project)))
+
+(define (source-project-tds project)
+  `((td (a (@ (href ,(project-https-uri project)))
+           (code ,(get-string 'project-id project))))
+    (td ,(or (project-server project)
+             ""))
+    (td ,(cond ((get-string? 'redirect project)
+                "redirect")
+               ((get-symbol-boolean? 'dynamic? project)
+                "dynamic")
+               (else
+                "static"))
+        ,@(if (get-symbol-boolean 'display? project) '() '(" hidden")))
+    (td ,(let ((uri (project-source-uri project)))
+           (if uri
+               `(a (@ (href ,uri))
+                   (img (@ (alt "GitHub")
+                           (src "github16.png"))))
+               "")))))
+
+(define (write-source-page)
+  (write-html-file
+   "www/scheme.org/source/index.html"
+   "Scheme.org Source"
+   "Explains where to find the source code of Scheme.org."
+   `((h1 "Scheme.org Source")
+     (table
+      (@ (class "full-width no-border"))
+      ,@(append-map
+         (lambda (group)
+           `((tr (td (@ (colspan "4")
+                        (class "no-border"))
+                     (h2 ,(project-group-title group))))
+             (tr (th "Subdomain")
+                 (th "Server")
+                 (th "Type")
+                 (th "Source"))
+             ,@(map (let ((even-row? (circular-generator #t #f)))
+                      (lambda (project)
+                        `(tr ,@(if (even-row?) '((@ (class "even"))) '())
+                             ,@(source-project-tds project))))
+                    (project-group-projects group))))
+         (project-groups))))))
+
 (define (menu items)
   `(header
     (ul (@ (class "menu"))
@@ -339,7 +407,10 @@
         (project-groups))
      (p (@ (class "center"))
         (a (@ (href "/about/"))
-           "About Scheme.org")))))
+           "About Scheme.org")
+        " | "
+        (a (@ (href "/source/"))
+           "Source")))))
 
 (define (generate-scheme.org)
   (let ((atom-feed (fetch-atom "https://planet.scheme.org/atom.xml")))
@@ -347,6 +418,7 @@
     (create-directory "www/scheme.org/about")
     (create-directory "www/scheme.org/charter")
     (create-directory "www/scheme.org/schemers")
+    (create-directory "www/scheme.org/source")
     (write-front-page "www/scheme.org/index.html"
                       atom-feed
                       #f)
@@ -359,7 +431,8 @@
     (write-simple-page "www/scheme.org/charter/index.html"
                        "doc/charter.html"
                        "description here")
-    (write-redirect-page)))
+    (write-redirect-page)
+    (write-source-page)))
 
 (define (main)
   (generate-scheme.org)
