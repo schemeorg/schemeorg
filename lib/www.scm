@@ -275,6 +275,20 @@
               "Planet Scheme")
            ".")))
 
+(define (schemers-landing-notice)
+  '(div (@ (class "round-box orange-box"))
+        (p "Welcome to "
+           (a (@ (href "https://www.scheme.org/"))
+              "Scheme.org")
+           ", a new home page for Scheme. We host a "
+           (a (@ (href "https://conservatory.scheme.org/schemers/"))
+              "snapshot")
+           " of the old Schemers.org. Thanks to "
+           (a (@ (href "https://cs.brown.edu/~sk/"))
+              "Prof. Shriram Krishnamurthi")
+           " and all the other people who gave Scheme a home"
+           " on Schemers.org for nearly twenty-five years.")))
+
 (define (write-front-page www-filename atom-feed extra-banner)
   (write-html-file
    www-filename
@@ -336,27 +350,15 @@
     (write-front-page "www/scheme.org/index.html"
                       atom-feed
                       #f)
+    (write-front-page "www/scheme.org/schemers/index.html"
+                      atom-feed
+                      (schemers-landing-notice))
     (write-simple-page "www/scheme.org/about/index.html"
                        "doc/about.html"
                        "description here")
     (write-simple-page "www/scheme.org/charter/index.html"
                        "doc/charter.html"
                        "description here")
-    (write-front-page
-     "www/scheme.org/schemers/index.html"
-     atom-feed
-     '(div (@ (class "round-box orange-box"))
-           (p "Welcome to "
-              (a (@ (href "https://www.scheme.org/"))
-                 "Scheme.org")
-              ", a new home page for Scheme. We host a "
-              (a (@ (href "https://conservatory.scheme.org/schemers/"))
-                 "snapshot")
-              " of the old Schemers.org. Thanks to "
-              (a (@ (href "https://cs.brown.edu/~sk/"))
-                 "Prof. Shriram Krishnamurthi")
-              " and all the other people who gave Scheme a home"
-              " on Schemers.org for nearly twenty-five years.")))
     (write-redirect-page)))
 
 (define (main)
