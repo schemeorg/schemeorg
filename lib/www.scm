@@ -228,23 +228,24 @@
     (all-projects))))
 
 (define (write-redirect-page)
-  (write-html-file
-   "www/redirect.scheme.org/index.html"
-   "redirect.scheme.org"
-   "Explains the redirects at Scheme.org."
-   `((h1 (@ (id "logo"))
-         "Redirects under Scheme.org")
-     (table
-      (tr (th "Subdomain")
-          (th "Destination"))
-      ,@(map (lambda (redirect)
-               (let ((subdomain (string-append (redirect-project-id redirect)
-                                               ".scheme.org")))
-                 `(tr (td (a (@ (href ,(string-append "//" subdomain)))
-                             (code ,subdomain)))
-                      (td (code ,(redirect-uri redirect))))))
-             (redirect-list)))
-     ,@(html-body-as-sxml "doc/redirect.html"))))
+  (let ()
+    (write-html-file
+     "www/redirect.scheme.org/index.html"
+     "redirect.scheme.org"
+     "Explains the redirects at Scheme.org."
+     `((h1 (@ (id "logo"))
+           "Redirects under Scheme.org")
+       (table
+        (tr (th "Subdomain")
+            (th "Destination"))
+        ,@(map (lambda (redirect)
+                 (let ((subdomain (string-append (redirect-project-id redirect)
+                                                 ".scheme.org")))
+                   `(tr (td (a (@ (href ,(string-append "//" subdomain)))
+                               (code ,subdomain)))
+                        (td (code ,(redirect-uri redirect))))))
+               (redirect-list)))
+       ,@(html-body-as-sxml "doc/redirect.html")))))
 
 (define (project-https-uri project)
   (string-append "https://" (get-string 'project-id project) ".scheme.org/"))
