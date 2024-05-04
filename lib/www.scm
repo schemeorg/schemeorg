@@ -55,12 +55,12 @@
   (title feed-item-title)
   (uri feed-item-uri))
 
-(define (feed-item-iso-date fi)
+(define (feed-item-iso-date item)
   "Convert into \"YYYY-MM-DD\" format."
-  (date->string (feed-item-date-object fi) "~Y-~m-~d"))
+  (date->string (feed-item-date-object item) "~Y-~m-~d"))
 
-(define (feed-item-friendly-date fi)
-  (date->string (feed-item-date-object fi) "~b ~e"))
+(define (feed-item-friendly-date item)
+  (date->string (feed-item-date-object item) "~b ~e"))
 
 (define (matching-subtree? name tree)
   (and (pair? tree)
