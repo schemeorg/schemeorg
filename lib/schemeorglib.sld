@@ -15,6 +15,7 @@
    get-string
    get-string?
    get-symbol-boolean
+   get-symbol-boolean?
    list-sort
    pretty-print
    project-groups
@@ -133,9 +134,14 @@
     (define (get-string key alist)
       (get-value key alist string?))
 
+    (define (boolean-symbol? object)
+      (or (eqv? object 'true)
+          (eqv? object 'false)))
+
+    (define (get-symbol-boolean? key alist)
+      (eqv? 'true (get-value? key alist boolean-symbol? (lambda () 'false))))
+
     (define (get-symbol-boolean key alist)
-      (define (boolean-symbol? object)
-        (or (eqv? 'false object) (eqv? 'true object)))
       (eqv? 'true (get-value key alist boolean-symbol?)))
 
     ;;
