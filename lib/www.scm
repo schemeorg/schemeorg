@@ -228,14 +228,14 @@
     (all-projects))))
 
 (define (write-redirect-page)
-  (let ()
+  (let ((title "Scheme.org redirects"))
     (write-html-file
      "www/redirect.scheme.org/index.html"
-     "redirect.scheme.org"
-     "Explains the redirects at Scheme.org."
-     `((h1 (@ (id "logo"))
-           "Redirects under Scheme.org")
+     title
+     "Explains the redirect subdomains of Scheme.org."
+     `((h1 ,title)
        (table
+        (@ (class "full-width"))
         (tr (th "Subdomain")
             (th "Destination"))
         ,@(map (lambda (redirect)
