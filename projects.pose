@@ -447,6 +447,7 @@
     (tagline "Library search using types, tags, and names")
     (contacts "Arvydas Silanskas")
     (display? true)
+    (dynamic? true)
     (dns (CNAME "ironwolf"))
     (source (host "github.com")
             (organization "schemeorg-community")
@@ -523,6 +524,7 @@
     (tagline "Host Git repositories under Scheme.org")
     (contacts "Lassi")
     (display? true)
+    (dynamic? true)
     (dns (CNAME "tuonela")))
 
    ((project-id "go")
