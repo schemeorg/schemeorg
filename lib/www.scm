@@ -169,9 +169,9 @@
 (define file-rss (read-file rss))
 (define file-atom (read-file atom))
 
-(define (write-html-file html-filename title description body)
-  (echo "Writing " html-filename)
-  (with-output-to-file html-filename
+(define (write-html-file www-filename title description body)
+  (echo "Writing " www-filename)
+  (with-output-to-file www-filename
     (lambda ()
       (write-string "<!DOCTYPE html>")
       (SXML->HTML
@@ -199,16 +199,16 @@
                 (error "Page has no title" sxml))))
     (apply string-append (cdr h1))))
 
-(define (doc-body-as-sxml html-filename)
-  (call-with-port (open-input-file (string-append "doc/" html-filename))
+(define (html-body-as-sxml filename)
+  (call-with-port (open-input-file filename)
     (lambda (port)
       (let ((sxml (ssax:xml->sxml port '())))
         (cdr (or (find-subtree 'body sxml)
-                 (error "No <body> found in" html-filename sxml)))))))
+                 (error "No <body> found in" filename sxml)))))))
 
-(define (write-simple-page html-filename doc-filename description)
-  (let ((sxml (doc-body-as-sxml doc-filename)))
-    (write-html-file html-filename
+(define (write-simple-page www-filename doc-filename description)
+  (let ((sxml (html-body-as-sxml doc-filename)))
+    (write-html-file www-filename
                      (page-title-from-sxml sxml)
                      description
                      sxml)))
@@ -244,7 +244,7 @@
                              (code ,subdomain)))
                       (td (code ,(redirect-uri redirect))))))
              (redirect-list)))
-     ,@(doc-body-as-sxml "redirect.html"))))
+     ,@(html-body-as-sxml "doc/redirect.html"))))
 
 (define (menu items)
   `(header
@@ -275,9 +275,9 @@
               "Planet Scheme")
            ".")))
 
-(define (write-front-page html-filename atom-feed extra-banner)
+(define (write-front-page www-filename atom-feed extra-banner)
   (write-html-file
-   html-filename
+   www-filename
    "The Scheme Programming Language"
    (string-append "Scheme is a minimalist dialect of the Lisp family "
                   "of programming languages. This is the official website "
@@ -290,7 +290,7 @@
          ("Implementations" "https://get.scheme.org/")))
      (h1 (@ (id "logo")) "Scheme")
      ,@(if extra-banner `(,extra-banner) '())
-     ,@(doc-body-as-sxml "front.html")
+     ,@(html-body-as-sxml "doc/front.html")
      ,(whats-new-div atom-feed)
      ,@(append-map
         (let ((next-color (circular-generator "blue" "orange")))
@@ -337,10 +337,10 @@
                       atom-feed
                       #f)
     (write-simple-page "www/scheme.org/about/index.html"
-                       "about.html"
+                       "doc/about.html"
                        "description here")
     (write-simple-page "www/scheme.org/charter/index.html"
-                       "charter.html"
+                       "doc/charter.html"
                        "description here")
     (write-front-page
      "www/scheme.org/schemers/index.html"
