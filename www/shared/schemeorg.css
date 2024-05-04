@@ -54,6 +54,10 @@ td {
   border: 1px solid #1E1E24;
 }
 
+tr.even td {
+  background-color: #ddc;
+}
+
 .no-border {
   border: none;
 }
@@ -61,6 +65,10 @@ td {
 table.no-border th,
 table.no-border td {
   border: none;
+}
+
+table.full-width {
+  width: 100%;
 }
 
 .front-page-group table {
