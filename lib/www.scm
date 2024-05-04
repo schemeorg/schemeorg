@@ -246,7 +246,7 @@
              (redirect-list)))
      ,@(doc-body-as-sxml "redirect.html"))))
 
-(define (write-menu items)
+(define (menu items)
   `(header
     (ul (@ (class "menu"))
         ,@(map (lambda (i)
@@ -282,11 +282,12 @@
    (string-append "Scheme is a minimalist dialect of the Lisp family "
                   "of programming languages. This is the official website "
                   "for the Scheme language.")
-   `(,(write-menu `(("Home" "https://www.scheme.org/" . active)
-                    ("Docs" "https://docs.scheme.org/")
-                    ("Community" "https://community.scheme.org/")
-                    ("Standards" "https://standards.scheme.org/")
-                    ("Implementations" "https://get.scheme.org/")))
+   `(,(menu
+       `(("Home" "https://www.scheme.org/" . active)
+         ("Docs" "https://docs.scheme.org/")
+         ("Community" "https://community.scheme.org/")
+         ("Standards" "https://standards.scheme.org/")
+         ("Implementations" "https://get.scheme.org/")))
      (h1 (@ (id "logo")) "Scheme")
      ,@(if extra-banner `(,extra-banner) '())
      ,@(doc-body-as-sxml "front.html")
