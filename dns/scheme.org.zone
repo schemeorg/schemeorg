@@ -124,6 +124,7 @@ staging IN CNAME www.staging
 www.staging IN CNAME @
 api.staging IN CNAME tuonela
 docs.staging IN CNAME tuonela
+get.staging IN CNAME tuonela
 wiki.staging IN CNAME tuonela
 
 ironwolf IN A 89.40.10.46

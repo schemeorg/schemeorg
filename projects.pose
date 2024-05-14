@@ -556,6 +556,7 @@
          ("www" CNAME "@")
          ("api" CNAME "tuonela")
          ("docs" CNAME "tuonela")
+         ("get" CNAME "tuonela")
          ("wiki" CNAME "tuonela"))))
 
   ("Servers"
