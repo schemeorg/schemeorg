@@ -537,6 +537,14 @@
             (organization "schemeorg-community")
             (repository "go.scheme.org")))
 
+   ((project-id "jenkins")
+    (title "Jenkins")
+    (tagline "Continuous Integration (CI)")
+    (contacts "Retropikzel" "Lassi")
+    (display? true)
+    (dynamic? true)
+    (dns (A "49.13.140.103")))
+
    ((project-id "registry")
     (title "Registry")
     (tagline "Catalog of identifiers and other data")
@@ -557,7 +565,7 @@
          ("api" CNAME "tuonela")
          ("docs" CNAME "tuonela")
          ("get" CNAME "tuonela")
-         ("jenkins" A "49.13.140.103")
+         ("jenkins" CNAME "jenkins")
          ("wiki" CNAME "tuonela"))))
 
   ("Servers"

@@ -118,6 +118,8 @@ gitea IN CNAME tuonela
 
 go IN CNAME tuonela
 
+jenkins IN A 49.13.140.103
+
 registry IN CNAME tuonela
 
 staging IN CNAME www.staging
@@ -125,7 +127,7 @@ www.staging IN CNAME @
 api.staging IN CNAME tuonela
 docs.staging IN CNAME tuonela
 get.staging IN CNAME tuonela
-jenkins.staging IN A 49.13.140.103
+jenkins.staging IN CNAME jenkins
 wiki.staging IN CNAME tuonela
 
 ironwolf IN A 89.40.10.46
