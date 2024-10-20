@@ -147,7 +147,7 @@
     (contacts "Jakub T. Jankiewicz"
               "Wolfgang Corcoran-Mathe"
               "Lassi")
-    (display? true)
+    (display? false)
     (dns (CNAME "tuonela")))
 
    ((project-id "lists")
