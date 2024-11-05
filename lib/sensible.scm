@@ -71,30 +71,31 @@
      (host
       (name scheme)
       (vars
-       ;; (var ansible-user "root")
        (var ansible-host "8.9.4.141")
        (var ansible-python-interpreter "/usr/bin/python3"))))))
 
  `(playbooks
-
    (playbook
-    (name schemeorg)
-    (hosts schemeorg)
-    (become true)
-    (roles
-     apt-upgrade
-     apt-comfort
-     hostname
-     sudo
-     firewall
-     docker
-     human-users
-     site-www
-     site-www-staging
-     site-redirect
-     site-lists
-     nginx
-     sshd)))
+    (name "schemeorg")
+    (plays
+     (play
+      (name schemeorg)
+      (hosts schemeorg)
+      (become true)
+      (roles
+       apt-upgrade
+       apt-comfort
+       hostname
+       sudo
+       firewall
+       docker
+       human-users
+       site-www
+       site-www-staging
+       site-redirect
+       site-lists
+       nginx
+       sshd)))))
 
  `(roles
 
