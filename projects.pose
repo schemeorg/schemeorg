@@ -448,7 +448,7 @@
     (contacts "Arvydas Silanskas")
     (display? true)
     (dynamic? true)
-    (dns (CNAME "ironwolf"))
+    (dns (CNAME "tuonela"))
     (source (host "github.com")
             (organization "schemeorg-community")
             (repository "index.scheme.org")))
@@ -569,12 +569,6 @@
          ("wiki" CNAME "tuonela"))))
 
   ("Servers"
-
-   ((project-id "ironwolf")
-    (contacts "Arvydas Silanskas")
-    (display? false)
-    (dns (A "89.40.10.46")
-         (AAAA "2a02:7b40:5928:a2e::1")))
 
    ((project-id "tuonela")
     (contacts "Lassi")
