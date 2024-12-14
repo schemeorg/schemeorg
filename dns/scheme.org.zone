@@ -98,7 +98,7 @@ stklos IN CNAME redirect
 
 ypsilon IN CNAME redirect
 
-index IN CNAME ironwolf
+index IN CNAME tuonela
 
 api IN CNAME tuonela
 
@@ -129,9 +129,6 @@ docs.staging IN CNAME tuonela
 get.staging IN CNAME tuonela
 index.staging IN CNAME tuonela
 wiki.staging IN CNAME tuonela
-
-ironwolf IN A 89.40.10.46
-ironwolf IN AAAA 2a02:7b40:5928:a2e::1
 
 tuonela IN A 192.210.181.186
 
