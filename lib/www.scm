@@ -4,7 +4,7 @@
 ;; the doc subdirectory, and the SXML templates in this file.
 ;;
 ;; You need Chicken 5 and
-;; `chicken-install http-client openssl r7rs srfi-19 ssax sxpath`.
+;; `chicken-install http-client openssl r7rs srfi-19 ssax sxml-transforms sxpath`.
 
 (cond-expand (chicken (include "schemeorglib.sld")))
 
