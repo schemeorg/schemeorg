@@ -123,7 +123,7 @@ jenkins IN A 49.13.140.103
 registry IN CNAME tuonela
 
 staging IN CNAME www.staging
-www.staging IN CNAME @
+www.staging IN A 64.176.208.18
 api.staging IN CNAME tuonela
 docs.staging IN CNAME tuonela
 get.staging IN CNAME tuonela
