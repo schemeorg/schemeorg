@@ -3,7 +3,7 @@
 ; $ORIGIN scheme.org.
 $TTL 10800
 
-@ IN A 8.9.4.141
+@ IN A 64.176.208.18
 @ IN AAAA 2001:19f0:5:6000:5400:2ff:fe07:9aa6
 
 www IN CNAME @
@@ -123,7 +123,7 @@ jenkins IN A 49.13.140.103
 registry IN CNAME tuonela
 
 staging IN CNAME www.staging
-www.staging IN A 64.176.208.18
+www.staging IN CNAME @
 api.staging IN CNAME tuonela
 docs.staging IN CNAME tuonela
 get.staging IN CNAME tuonela
