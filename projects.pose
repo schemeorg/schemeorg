@@ -561,7 +561,7 @@
     (contacts "Lassi")
     (display? false)
     (dns (CNAME "www.staging")
-         ("www" CNAME "@")
+         ("www" A "64.176.208.18")
          ("api" CNAME "tuonela")
          ("docs" CNAME "tuonela")
          ("get" CNAME "tuonela")
