@@ -12,7 +12,7 @@
 
 (define domain-name "scheme.org")
 (define domain-ipv4 "64.176.208.18")
-(define domain-ipv6 "2001:19f0:5:6000:5400:2ff:fe07:9aa6")
+(define domain-ipv6 "2001:19f0:1000:9f14:5400:5ff:fe6a:9982")
 (define domain-time-to-live "10800")
 
 (define (echo-dns-record* name type data)
