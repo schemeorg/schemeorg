@@ -3,7 +3,7 @@
 ; $ORIGIN schemers.org.
 $TTL 10800
 
-@ IN A 8.9.4.141
+@ IN A 64.176.208.18
 @ IN AAAA 2001:19f0:5:6000:5400:2ff:fe07:9aa6
 @ IN TXT "v=spf1 include:simplelists.com -all"
 
