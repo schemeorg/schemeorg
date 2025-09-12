@@ -421,6 +421,15 @@
     (redirect "https://people.csail.mit.edu/jaffer/SCM")
     (dns (CNAME "redirect")))
 
+   ((project-id "stak")
+    (title "Stak")
+    (tagline "The miniature, embeddable R7RS Scheme implementation in Rust")
+    (sidenote "R^7")
+    (contacts "Yota Toyama")
+    (display? true)
+    (redirect "https://raviqqe.com/stak/")
+    (dns (CNAME "redirect")))
+
    ((project-id "stklos")
     (title "STklos")
     (tagline "Interpreter with CLOS object-oriented GUI")
