@@ -94,6 +94,8 @@ sagittarius IN CNAME redirect
 
 scm IN CNAME redirect
 
+stak IN CNAME redirect
+
 stklos IN CNAME redirect
 
 ypsilon IN CNAME redirect
