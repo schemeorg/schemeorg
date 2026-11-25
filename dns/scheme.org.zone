@@ -80,6 +80,8 @@ jazz IN CNAME redirect
 
 kawa IN CNAME redirect
 
+larceny IN CNAME redirect
+
 loko IN CNAME scheme.fail.
 
 mit IN CNAME redirect

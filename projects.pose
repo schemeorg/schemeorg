@@ -357,6 +357,15 @@
     (redirect "https://www.gnu.org/software/kawa/")
     (dns (CNAME "redirect")))
 
+   ((project-id "larceny")
+    (title "Larceny")
+    (tagline "Native-code compiler with precise generational GC")
+    (sidenote "R^5 R^6 R^7")
+    (contacts "William Clinger")
+    (display? true)
+    (redirect "http://larcenists.org/")
+    (dns (CNAME "redirect")))
+
    ((project-id "loko")
     (title "Loko")
     (tagline "Bare-metal native-code compiler")
